@@ -20,6 +20,11 @@ body {
     width: 45%;
     height: 100%;
     background: #072560;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 80px;
 }
 
 .container .content-right{
@@ -31,3 +36,64 @@ body {
     background: #f7f7f7;
 }
 
+.logo {
+    width: 45%;
+}
+.title h1 {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.title p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.select-container {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background: #fff;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-radius: 15px;
+}
+
+.subtitle h2 {
+    font-size: 32px;
+}
+
+.subtitle h3 {
+    font-size: 24px;
+}
+
+
+.button-container .button {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+#admin-button{
+    background: #072560;
+    color: #fff;
+}
+
+#employee-button{
+    background: #d2d2d2;
+    color: #000;
+}
