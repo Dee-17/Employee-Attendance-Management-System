@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background: #f7f7f7;
 }
 
 .container {
@@ -12,6 +13,8 @@ body {
     width: 75%;
     height: 550px;
     
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
 }
 
 .container .content-left{
@@ -75,6 +78,7 @@ body {
     padding-bottom: 20px;
 
     border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .subtitle h2 {
@@ -88,7 +92,7 @@ body {
 
 
 .button-container .button {
-    width: 100%;
+    width: 90%;
     font-size: 18px;
     font-weight: 400;
     text-align: center;
