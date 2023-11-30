@@ -10,10 +10,13 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
-        .container-fluid{
-            padding-left: 0rem;
-            padding-right: 0rem;
-            overflow: hidden;
+        .container-fluid {
+            margin: 0;
+            padding: 0;
+        }
+        .employee_name {
+            font-weight: bolder;
+            color: #072560;
         }
         .left_panel {
             background-color: #072560;
@@ -23,18 +26,38 @@
             background-color: #F7F7F7;
             color: black;
         }
-
+        .subtitle_1 {
+            margin: 0;
+            padding: 0;
+            font-size: small;
+        }
+        .title_1 {
+            font-size: large;
+            font-weight: bold;
+        }
+        .title_2 {
+            font-size: 2rem;
+        }
     </style>
 </head>
+
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
         <!-- Navigation Bar -->
-        <div class="left_panel col-2 container">
-            <p>hello</p>
+        <div class="left_panel col-2 container text-center pt-3">
+            <p class="title_1 mt-3 mb-0">C597 Corporation</p>
+            <p class="subtitle_1">Employee Attendance System</p>
+
+            <div class="mt-3 mb-3">
+                <a class="btn btn-primary" href="#" role="button">Employee Attendance</a>
+            </div>
+            <div class="mb-3">
+                <a class="btn btn-primary" href="#" role="button">Log Out</a>
+            </div>
         </div>
         <!-- Main contents -->
-        <div class="right_panel col-10 container">
-            <p>hello</p>
+        <div class="right_panel col-10 container p-4">
+            <p class="title_2">Welcome <span class="employee_name">JUAN DELA CRUZ</span>!</p>
         </div>
     </div>
 </body>
