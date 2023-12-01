@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #f7f7f7;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    background: #f7f7f7;
 }
 
 .container {
@@ -10,8 +12,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
-    height: 550px;
+    width: 850px;
+    height: 500px;
     
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 15px;
@@ -28,7 +30,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-left: 80px;
+    padding-left: 50px;
 
     border-radius: 15px;
 }
@@ -50,7 +52,7 @@ body {
 } */
 
 .title h1 {
-    font-size: 55px;
+    font-size: 50px;
     font-weight: 600;
 }
 
