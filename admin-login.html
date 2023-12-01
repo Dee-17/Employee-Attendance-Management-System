@@ -11,7 +11,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="admin-login.php" method="post">
+            <form action="3" method="post">
                 <h1>Create Account</h1>
                 <div class="infield">
                     <input type="text" placeholder="Name" />
@@ -64,6 +64,17 @@
         const container = document.getElementById('container');
         const overlayCon = document.getElementById('overlayCon');
         const overlayBtn = document.getElementById('overlayBtn');
+
+        overlayBtn.addEventListener('click', () => {
+            container.classList.toggle('right-panel-active');
+            overlayCon.classList.toggle('overlay-active');
+        });
+        overlayBtn.classList.remove('btnScaled');
+        window.requestAnimationFrame( () => {
+            overlayBtn.classList.add('btnScaled');
+        });
+
+
 
     </script>
 
