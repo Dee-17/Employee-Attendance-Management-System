@@ -8,15 +8,3 @@
     <link rel="stylesheet" href="css/landing-page.css">
 
 <!--Head-->  
-<?php
-$database = "emp2";// change this to your own database name 
-$conn = mysqli_connect('localhost', 'root', '', $database);
-
-if (!$conn) {
-    echo "Connect failed";
-    return;
-}
-else{
-    echo "Connected Succesfully";
-}
-?>
