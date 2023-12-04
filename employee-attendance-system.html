@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/employee-attendance-system.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+    <script src="js/nav_bar.js" defer></script>
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
@@ -14,19 +15,19 @@
         <div class="left_panel sticky-top container text-center pt-3">
             <p class="title_1 mt-3 mb-0">C597 Corporation</p>
             <p class="subtitle_1">Employee Attendance System</p>
-            <!-- Active button -->
-            <nav class="nav flex-column nav-pills mt-4 p-3">
-                <a class="nav-link active" aria-current="page" href="#">Employee Log in</a>
-            </nav>
-            <!-- Log out button -->
-            <nav class="nav flex-column justify-content-end nav-pills mt-4 p-3">
-                <a class="nav-link " href="#">Log out</a>
+
+            <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
+                <a class="nav_button nav-link" href="employee-attendance-system.html">Employee Log in</a>
+                <!-- <a class="nav_button nav-link" href="login-report.html">Log in Report</a>
+                <a class="nav_button nav-link" href="employee-maintenance.html">Employee Maintenance</a>
+                <a class="nav_button nav-link" href="daily-report.html">Daily Report</a>
+                <a class="nav_button nav-link" href="monthly-report.html">Monthly Report</a> -->
+                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
             </nav>
         </div>
         <!-- Main contents -->
         <div class="right_panel container p-4">
             <p class="title_2">Welcome <span class="employee_name">JUAN DELA CRUZ</span>!</p>
-
             <div class="row">
                 <div class="col-10">
                 </div>
