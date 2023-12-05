@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/nav_bar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
     <script src="js/nav_bar.js" defer></script>
+    <script src="js/date_time.js" defer></script>
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
@@ -46,8 +47,15 @@
                     </div>
                 </div>
                 <!-- Display real-time clock -->
-                <div class="card col col-4 p-0 m-0">
-                    time nalang
+                <div class="clock_container grey_container col col-4-sm m-0 p-0">
+                    <div class="clock_elements">
+                        <span id="hour"></span>
+                        <span id="point">:</span>
+                        <span id="minute"></span>
+                        <span id="point">:</span>
+                        <span id="second"></span>
+                        <span id="am_pm"></span>
+                    </div>
                 </div>
             </div>
 

@@ -16,6 +16,15 @@ body {
     margin: 0;
     padding: 0;
 }
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
+}
 .date_container {
     background-color: #A4C3FF;
     box-shadow: 0 0 15px 1px #A4C3FF;
@@ -38,11 +47,15 @@ body {
 .employee_table table {
     color: #7e7e7e;
 }
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
 .header_title {
     font-size: 2rem;
 }
-.table_header {
-    color: #7e7e7e;
+.table_header th {
+    color: #525252;
 }
 .right_panel {
     width: 80%;
