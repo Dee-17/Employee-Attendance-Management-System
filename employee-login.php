@@ -21,7 +21,7 @@
 
         <div class="content-right">
             <div class="form-container sign-in-container">
-                <a href="landing-page.html"><button id="exit-button"><img id="exit-button-img" src="images/quit.png"></button></a>
+                <a href="landing-page.php"><button id="exit-button"><img id="exit-button-img" src="images/quit.png"></button></a>
                 <form action="#">
                     <h1>Employee Log In</h1>
                     <div class="infield">

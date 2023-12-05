@@ -20,8 +20,8 @@
 
             <!-- Links / buttons -->
             <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
-                <a class="nav_button nav-link" href="employee-attendance-system.html">Employee Log in</a>
-                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
+                <a class="nav_button nav-link" href="employee-attendance-system.php">Employee Log in</a>
+                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.php">Log out</a></span>
             </nav>
         </div>
         <!-- Main contents -->

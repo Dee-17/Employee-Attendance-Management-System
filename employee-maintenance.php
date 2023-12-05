@@ -20,11 +20,11 @@
 
             <!-- Links / buttons -->
             <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
-                <a class="nav_button nav-link" href="login-report.html">Log in Report</a>
-                <a class="nav_button nav-link" href="employee-maintenance.html">Employee Maintenance</a>
-                <a class="nav_button nav-link" href="daily-report.html">Daily Report</a>
-                <a class="nav_button nav-link" href="monthly-report.html">Monthly Report</a>
-                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
+                <a class="nav_button nav-link" href="login-report.php">Log in Report</a>
+                <a class="nav_button nav-link" href="employee-maintenance.php">Employee Maintenance</a>
+                <a class="nav_button nav-link" href="daily-report.php">Daily Report</a>
+                <a class="nav_button nav-link" href="monthly-report.php">Monthly Report</a>
+                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.php">Log out</a></span>
             </nav>
         </div>
         <!-- Main contents -->
