@@ -29,6 +29,10 @@ body {
     font-size: 35px;
     font-weight: bold;
 }
+.company_name {
+    font-size: large;
+    font-weight: bold;
+}
 .container-fluid {
     margin: 0;
     padding: 0;
@@ -61,6 +65,9 @@ body {
 .grey_container {
     background-color: #efefefa5;
     border-radius: 10px;
+}
+.header_title {
+    font-size: 2rem;
 }
 .in_button, .out_button {
     background-color: #ededed9f;
@@ -131,15 +138,8 @@ body {
     color: black;
     min-height: 100vh;
 }
-.subtitle_1 {
+.system_name {
     margin: 0;
     padding: 0;
     font-size: small;
-}
-.title_1 {
-    font-size: large;
-    font-weight: bold;
-}
-.title_2 {
-    font-size: 2rem;
 }
