@@ -2,6 +2,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 /* arranged alphabetically */
+/* .alert_container {
+
+}
+.alert_message {
+
+} */
+.am_title, .pm_title {
+    background-color: #072560;
+    color: #F7F7F7;
+    font-size: 20px;
+    font-weight: bold;
+}
 .card {
     border: none;
     border-radius: 10px;
@@ -29,6 +41,17 @@ body {
     font-weight: bolder;
     color: #072560;
 }
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
+.in_button, .out_button {
+    background-color: #ededed9f;
+}
+.in_out_button button {
+    width: 45%;
+    font-size: 18px;
+}
 .left_panel {
     background-color: #072560;
     color: white;
@@ -47,6 +70,17 @@ body {
     position: fixed;
     bottom: 0;
     align-self: center;
+}
+.message {
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.message_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+    padding: 10px;
 }
 .nav {
     font-size: 13px;
