@@ -12,9 +12,9 @@ function date_time() {
     var second = today.getSeconds();
     var day = hour<12 ? "AM": "PM";
 
-    hour = hour<10 ? '0'+hour: hour;
-    minute = minute<10 ? '0'+minute: minute;
-    second = second<10 ? '0'+second: second;
+    hour = hour<10? '0'+hour: hour;
+    minute = minute<10? '0'+minute: minute;
+    second = second<10? '0'+second: second;
 
     // convert into 12hr format
     var new_hour = hour>12 ? hour-12: hour;
