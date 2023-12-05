@@ -29,7 +29,7 @@
         </div>
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <!-- Name must be according to id inputted by employee -->
+            <!-- Name must be according to id inputted by admin -->
             <p class="title_2">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">
@@ -40,9 +40,9 @@
                                     <button type="button" class="register_button btn me-3 btn-outline-primary">Register Employee</button>
                                     <input class="form-control me-3" type="search" placeholder="Enter employee name or id" aria-label="Search">
                                     <button class="search_button btn btn-outline-success" type="submit">Search</button>
-                                  </form>
-                              </div>
-                         </div>
+                                </form>
+                            </div>
+                        </div>
 
                     <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
                         <table class="table">
