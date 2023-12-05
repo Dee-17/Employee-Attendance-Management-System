@@ -1,12 +1,16 @@
 function date_time() {         
-    var month_name = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var day_name = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var today = new Date();
-
-    // sets date for the day
-    document.getElementById('day_today').innerHTML = (day_name[today.getDay()]);
-    document.getElementById('full_date').innerHTML = (month_name[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear()).toUpperCase();
-
+    try {
+        var month_name = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var day_name = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var today = new Date();
+        // sets date for the day
+        document.getElementById('day_today').innerHTML = (day_name[today.getDay()]);
+        document.getElementById('full_date').innerHTML = (month_name[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear()).toUpperCase();
+    
+    } catch (error) {
+        // wala lang
+    }
+    
     var hour = today.getHours();
     var minute = today.getMinutes();
     var second = today.getSeconds();
