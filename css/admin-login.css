@@ -7,9 +7,9 @@
 }
 
 :root {
-    --linear-grad: linear-gradient(to right, #141E30, #243B55);
-    --grad-clr1: #141E30;
-    --grad-clr2: #243B55;
+    --linear-grad: linear-gradient(to right, #061b46, #072560);
+    --grad-clr1: #061b46;
+    --grad-clr2: #072560;
 }
 
 body {
@@ -107,7 +107,7 @@ a.forgot {
 
 button {
     border-radius: 20px;
-    border: 1px solid var(--grad-clr1);
+    border: 1px solid var(--grad-clr2);
     background: var(--grad-clr2);
     color: #fff;
     font-size: 12px;
@@ -125,6 +125,7 @@ button {
 .form-container button:hover {
     background: var(--grad-clr1);
     color: #fff;
+    cursor: pointer;
 }
 
 .overlay-container {
@@ -149,6 +150,24 @@ button {
     background: transparent;
     border-radius: 20px;
 }
+
+#exit-button {
+    position: absolute;
+    padding: 0px 0px;;
+    left: 85%;
+    top: 80px;
+    transform: translateX(-50%);
+    width: 30px;
+    background: transparent;
+    color: #fff;
+}
+
+#exit-button-img {
+    width: 25px;
+}
+
+
+
 
 .overlay {
     position: relative;
