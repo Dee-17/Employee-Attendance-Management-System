@@ -17,7 +17,8 @@ body {
     background: #f6f5f7;
     display: grid;
     place-content: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
+
 }
 
 .container {
@@ -155,17 +156,21 @@ button {
     position: absolute;
     padding: 0px 0px;;
     left: 85%;
-    top: 80px;
+    top: 70px;
     transform: translateX(-50%);
     width: 30px;
     background: transparent;
     color: #fff;
+    border: none;
 }
 
 #exit-button-img {
     width: 25px;
 }
 
+#exit-button:hover {
+    cursor: pointer;
+}
 
 
 
@@ -221,8 +226,8 @@ p {
 .overlay-panel button {
     border: none;
     background-color: transparent;
-    padding-top: 0;
-    padding-bottom: 24px;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
 
 .right-panel-active .overlay-container {
