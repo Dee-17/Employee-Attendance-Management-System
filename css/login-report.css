@@ -1,0 +1,118 @@
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+
+.admin_name {
+    font-weight: bold;
+    color: #072560;
+}
+
+.date_container {
+    background-color: #A4C3FF;
+    box-shadow: 0 0 15px 1px #A4C3FF;
+}
+.date_title, .day_title {
+    color: #072560;
+    font-weight: bold;
+    margin-top: -3px;
+    font-style: normal;
+}
+.date_title {
+    font-size: 25px;
+    margin-top: -8px;
+}
+.day_title {
+    font-size: 20px;
+}
+.date_subtitle {
+    color: #072560;
+    font-style: italic;
+}
+
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
+.am_button, .pm_button {
+    background-color: #ededed9f;
+}
+.am_pm_button button {
+    width: 45%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.am_pm_button button:hover {
+    background-color: #d4d4d4;
+    /* color: white; */
+}
+
+.white_container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.am_title, .pm_title {
+    background-color: #072560;
+    color: #F7F7F7;
+    font-size: 20px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+
+.message {
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.message_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+    padding: 10px;
+}
+.right_panel {
+    width: 80%;
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #F7F7F7;
+    color: black;
+    min-height: 100vh;
+}
+.subtitle_1 {
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}
+.title_1 {
+    font-size: large;
+    font-weight: bold;
+}
+.title_2 {
+    font-size: 2rem;
+}
