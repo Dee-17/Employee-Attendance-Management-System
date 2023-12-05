@@ -30,8 +30,6 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-left: 50px;
-
     border-radius: 15px;
 }
 
@@ -47,13 +45,24 @@ body {
     border-bottom-right-radius: 15px;
 }
 
-/* .logo {
-    width: 45%;
-} */
+.logo {
+    width: 25%;
+    padding-top: 30px;
+    margin-left: -5px;
+
+    margin-bottom: 10px;
+}
+
+.company-title {
+    column-gap: 20px;
+    justify-content: space-between;
+    padding-left: 45px;
+}
 
 .title h1 {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 600;
+    margin-bottom: 70px;
 }
 
 .title p {
@@ -71,8 +80,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 55%;
     background: #fff;
 
     padding-left: 20px;
@@ -92,7 +101,6 @@ body {
     font-weight: 400;
 }
 
-
 .button-container .button {
     width: 90%;
     font-size: 18px;
@@ -103,7 +111,6 @@ body {
     border-radius: 10px;
 }
 
-
 .button-container .button:first-child {
     margin-bottom: 12px;
 }
@@ -111,7 +118,6 @@ body {
 .button-container span {
     font-weight: 600;
 }
-
 
 .button-container .button:focus {
     outline: none;
