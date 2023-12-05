@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+
+    font-family: 'Inter', sans-serif;
+    background: #f7f7f7;
+}
+
 .container-fluid {
     margin: 0;
     padding: 0;
@@ -39,6 +47,12 @@
     border-radius: 10px;
     padding: 10px;
 }
+
+a {
+    margin: 0;
+    padding: 0;
+}
+
 
 .register_button {
     width: 40%;
