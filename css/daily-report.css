@@ -3,3 +3,22 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+.bold_title {
+    font-weight: bold;
+    color: #072560;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+.header_title {
+    font-size: 2rem;
+}
+.right_panel {
+    width: 80%;
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #F7F7F7;
+    color: black;
+    min-height: 100vh;
+}
