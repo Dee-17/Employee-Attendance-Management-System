@@ -1,7 +1,9 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-/* arranged alphabetically */
+
+/* ============================================= */
+
 /* .alert_container {
 
 }
@@ -12,12 +14,20 @@ body {
     background-color: #072560;
     color: #F7F7F7;
     font-size: 20px;
-    font-weight: bold;
 }
 .card {
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
 }
 .container-fluid {
     margin: 0;
@@ -27,18 +37,25 @@ body {
     background-color: #A4C3FF;
     box-shadow: 0 0 15px 1px #A4C3FF;
 }
-.date_title {
+.date_title, .day_title {
     color: #072560;
     font-weight: bold;
-    font-size: 20px;
     margin-top: -3px;
+    font-style: normal;
+}
+.date_title {
+    font-size: 25px;
+    margin-top: -8px;
+}
+.day_title {
+    font-size: 20px;
 }
 .date_subtitle {
     color: #072560;
     font-style: italic;
 }
 .employee_name {
-    font-weight: bolder;
+    font-weight: bold;
     color: #072560;
 }
 .grey_container {
@@ -51,6 +68,11 @@ body {
 .in_out_button button {
     width: 45%;
     font-size: 18px;
+    font-weight: bold;
+}
+.in_out_button button:hover {
+    background-color: #d4d4d4;
+    /* color: white; */
 }
 .left_panel {
     background-color: #072560;

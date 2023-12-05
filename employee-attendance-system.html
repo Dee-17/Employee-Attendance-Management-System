@@ -15,33 +15,37 @@
         <!-- Navigation Bar -->
         <div class="left_panel sticky-top container text-center pt-3">
             <img class="mt-3" src="images/company-logo.png" alt="C597 Corporation Logo">
-            <p class="title_1 mt-2 mb-0">C597 Corporation</p>
-            <p class="subtitle_1">Employee Attendance System</p>
+            <p class="company_name mt-2 mb-0">C597 Corporation</p>
+            <p class="system_name">Employee Attendance System</p>
 
             <!-- Links / buttons -->
             <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
                 <a class="nav_button nav-link" href="employee-attendance-system.html">Employee Log in</a>
-                <!-- <a class="nav_button nav-link" href="login-report.html">Log in Report</a>
-                <a class="nav_button nav-link" href="employee-maintenance.html">Employee Maintenance</a>
-                <a class="nav_button nav-link" href="daily-report.html">Daily Report</a>
-                <a class="nav_button nav-link" href="monthly-report.html">Monthly Report</a> -->
                 <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
             </nav>
         </div>
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <p class="title_2">Welcome <span class="employee_name">JUAN DELA CRUZ</span>!</p>
+            <!-- Name must be according to id inputted by employee -->
+            <p class="title_2">Welcome <span class="employee_name" id="employee_name">JUAN DELA CRUZ</span>!</p>
             <div class="container mt-4 row gap-3">
-                <div class="col col-7 p-0">
+                <div class="col col-8 p-0">
                     <div class="row m-0 gap-3">
-                        <div class="date_container card px-4 py-2 col col-5 m-0">
-                            <p class="date_subtitle m-0 p-0">Today is</p>
-                            <!-- DATE MUST BE REAL-TIME -->
-                            <span class="date_title"><p class="mb-0 p-0">DECEMBER 14, 2023</p></span>
-                        </div>
-    
-                        <div class="message_container col col-7-sm m-auto">
-                            <p class="message">Click the buttons below to log in or log out</p>
+                        <div class="date_container card px-4 py-2 col col-5">
+                            <p class="date_subtitle m-0 p-0">Today is <span class="day_title" id="day_today"></span></p>
+                            <!-- Date today -->
+                            <span class="date_title"><p class="mb-0 p-0" id="full_date"></p></span>
+                        </div>                       
+                        <!-- Clock based on local time -->
+                        <div class="clock_container grey_container col col-7-sm m-0 p-0">
+                            <div class="clock_elements">
+                                <span id="hour"></span>
+                                <span id="point">:</span>
+                                <span id="minute"></span>
+                                <span id="point">:</span>
+                                <span id="second"></span>
+                                <span id="am_pm"></span>
+                            </div>
                         </div>
                     </div>
 
@@ -65,12 +69,6 @@
                         <!-- <div class="alert_container card mt-3">
                            
                         </div> -->
-                    </div>
-                </div>
-
-                <div class="grey_container col col-4 p-4 mx-0 text-center align-items-center">
-                    <div class="col col-12 card px-4 py-2">
-                        <p class="m-0">REAL TIME CLOCK</p>
                     </div>
                 </div>
             </div>
