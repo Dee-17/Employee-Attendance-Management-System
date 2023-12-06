@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/nav_bar.css">
     <link rel="stylesheet" href="css/login-report.css">
     <script src="js/nav_bar.js" defer></script>
-    <script src="js/employee-attendance-system.js" defer></script>
+    <script src="js/date_time.js" defer></script>
 
 </head>
 <body class="container-fluid">
