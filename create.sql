@@ -15,7 +15,7 @@ CREATE TABLE employee(
     password VARCHAR(30) NOT NULL,
     full_name VARCHAR(30) NOT NULL,
     contract VARCHAR(50) NOT NULL,
-    shift VARCHAR(25)NOT NULL,
+    shift VARCHAR(25)NOT NULL
     );
 
 CREATE TABLE atlog(
@@ -30,6 +30,7 @@ CREATE TABLE atlog(
     am_underTIME INTEGER,
     pm_late INTEGER,
     pm_underTIME INTEGER,
+    night_differential DECIMAL (3,2),
     /*night differential*/
     PRIMARY KEY(atlog_id)
 );
@@ -58,3 +59,4 @@ UPDATE atlog SET am_late = IF(TIMEDIFF(am_in, '8:30:00') > '00:30:00', 1, 0);
 UPDATE atlog SET am_underTIME = IF(TIMEDIFF(am_out,'11:30:00') > '00:30:00', 1, 0);
 UPDATE atlog SET pm_late = IF(TIMEDIFF(pm_in, '13:30:00') > '00:30:00', 1, 0);
 UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out,'4:59:00') > '00:30:00', 1, 0);
+UPDATE atlog SET night_differential = IF(pm_out < '22:00:00', 0, TIME_TO_SEC(TIMEDIFF(pm_out, '6:00:00')) * 0.10 / 3600);
