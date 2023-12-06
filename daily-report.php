@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Reports</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">    
     <link rel="stylesheet" href="css/daily-report.css">
     <link rel="stylesheet" href="css/nav_bar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
@@ -37,17 +38,17 @@
                 <div class="col col-7 p-0">
                     <!-- Display the date chosen by user -->
                     <div class="row m-0 p-0 gap-3">
-                        <div class="date_container card px-4 py-2 col col-8">
+                        <div class="date_container card px-4 py-2 col col-6">
                             <p class="date_subtitle">Viewing log in reports during</p>
-                            <p class="date_title">DATE HERE</p>
+                            <p class="date_title" id="pick_date2">NOVEMBER 15, 2023</p>
                         </div>
-                        <div class="card col col-2 p-0">
-                            calendar
+                        <div class="card col col-2 p-0 align-items-center justify-content-center">
+                           <div class="calendar_icon "><a onclick="calendar()"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
                         </div>
                     </div>
                 </div>
                 <!-- Display real-time clock -->
-                <div class="clock_container grey_container col col-4-sm m-0 p-0">
+                <div class="clock_container grey_container col col-4 m-0 p-0">
                     <div class="clock_elements">
                         <span id="hour"></span>
                         <span id="point">:</span>
@@ -77,7 +78,7 @@
                         </tr>
                     </thead>
 
-                    <tbody class="">
+                    <tbody>
                         <tr>
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
@@ -107,19 +108,23 @@
                             <td>Mark Otto</td>
                             <td>Part-time</td>
                             <td>Morning</td>
-                            <td>-</td>
-                            <td>-</td>
                             <td>9:00</td>
                             <td>12:51</td>
+                            <td>-</td>
+                            <td>-</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     </div>
+
+    <script>
+        function calendar() {
+            alert('can u blow my whistle babeh whistle babeh let me know');
+        }
+    </script>
 </body>
 </html>
