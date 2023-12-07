@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/nav_bar.css">
     <link rel="stylesheet" href="css/login-report.css">
-    <script src="js/nav_bar.js" defer></script>
-    <script src="js/date_time.js" defer></script>
+    <script src="js/nav-bar.js" defer></script>
+    <script src="js/date-time.js" defer></script>
 
 </head>
 <body class="container-fluid">

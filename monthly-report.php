@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/monthly-report.css">
     <link rel="stylesheet" href="css/nav_bar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
-    <script src="js/nav_bar.js" defer></script>
+    <script src="js/nav-bar.js" defer></script>
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
