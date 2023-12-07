@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="css/daily-report.css">
     <link rel="stylesheet" href="css/nav_bar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/nav_bar.js" defer></script>
     <script src="js/date_time.js" defer></script>
+    <script src="js/full-calendar.js" defer></script>
+
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
@@ -30,20 +33,45 @@
             </nav>
         </div>
 
+        <!-- Calendar modal -->
+        <div class="modal fade" id="calendar_modal" tabindex="-1" aria-labelledby="calendar_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="calendar_label">Calendar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <input type="date" name="date_picker" id="picked_date">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="search_button btn btn-primary" id="search_button">Search</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
         <!-- Main contents -->
-        <div class="right_panel container p-5">    
+        <div class="right_panel container p-5">
             <p class="header_title"><span class="bold_title">Daily Log in</span> Report</p>
             <!-- First row -->
             <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between">
                 <div class="col col-7 p-0">
                     <!-- Display the date chosen by user -->
                     <div class="row m-0 p-0 gap-3">
-                        <div class="date_container card px-4 py-2 col col-6">
+                        <!-- hidden by default -->
+                        <div class="date_container card px-4 py-2 col col-6" style="display: none;" id="date_picked">
                             <p class="date_subtitle">Viewing log in reports during</p>
-                            <p class="date_title" id="pick_date2">NOVEMBER 15, 2023</p>
+                            <p class="date_title" id="selected_date"></p>
+                        </div>
+                        <div class="date_container card px-4 py-2 col col-6" id="current_date">
+                            <p class="date_subtitle">Viewing log in reports today</p>
+                            <span class="day_title" id="day_today" hidden></span>
+                            <p class="date_title" id="full_date"></p>
                         </div>
                         <div class="card col col-2 p-0 align-items-center justify-content-center">
-                           <div class="calendar_icon "><a onclick="calendar()"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
+                           <div class="calendar_icon"><a type="button" data-bs-toggle="modal" data-bs-target="#calendar_modal"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -59,9 +87,8 @@
                     </div>
                 </div>
             </div>
-
             <!-- Reports -->
-            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
+            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_container">
                 <table class="employee_table table">
                     <thead class="table_header">
                         <tr>
@@ -120,11 +147,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function calendar() {
-            alert('can u blow my whistle babeh whistle babeh let me know');
-        }
-    </script>
 </body>
 </html>
