@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/nav_bar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/nav_bar.js" defer></script>
-    <script src="js/date_time.js" defer></script>
+    <script src="js/nav-bar.js" defer></script>
+    <script src="js/date-time.js" defer></script>
     <script src="js/full-calendar.js" defer></script>
 
 </head>
@@ -38,14 +38,15 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="calendar_label">Calendar</h1>
+                <h1 class="modal-title fs-5" id="calendar_label">Date picker</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-               <input type="date" name="date_picker" id="picked_date">
+                <p>Select a date</p>
+               <input class="form-control" type="date" name="date_picker" id="picked_date">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="search_button btn btn-primary" id="search_button">Search</button>
             </div>
             </div>
