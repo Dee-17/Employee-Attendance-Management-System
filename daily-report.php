@@ -47,7 +47,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="search_button btn btn-primary" id="search_button">Search</button>
+                <div class="search_button"><button type="button" class="btn btn-primary" id="search_button">Search</button></div>
             </div>
             </div>
         </div>
