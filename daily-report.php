@@ -68,7 +68,6 @@
                         </div>
                         <div class="date_container card px-4 py-2 col col-6" id="current_date">
                             <p class="date_subtitle">Viewing log in reports today</p>
-                            <span class="day_title" id="day_today" hidden></span>
                             <p class="date_title" id="full_date"></p>
                         </div>
                         <div class="card col col-2 p-0 align-items-center justify-content-center">

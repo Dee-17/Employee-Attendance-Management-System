@@ -6,14 +6,11 @@ function date_time() {
         // sets date if an id exists
         if (does_Id_Exist('day_today')) {
             document.getElementById('day_today').innerHTML = (day_name[today.getDay()]);
-            console.log('The id exists.');
         } 
         if (does_Id_Exist('full_date')) {
             document.getElementById('full_date').innerHTML = (month_name[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear()).toUpperCase();
-            console.log('The id exists.');
         }
         if (does_Id_Exist('month_year')) {
-            console.log('The id exists.');
             document.getElementById('month_year').innerHTML = (month_name[today.getMonth()] + ' ' + today.getFullYear()).toUpperCase();
         }  
     } catch (error) {
