@@ -67,8 +67,6 @@
                         </div>
                         <div class="date_container card px-4 py-2 col col-6" id="current_date">
                             <p class="date_subtitle">Viewing log in reports today</p>
-                            <span class="day_title" id="day_today" hidden></span>
-                            <span class="day_title" id="full_date" hidden></span>
                             <p class="date_title" id="month_year"></p>
                         </div>
                         <div class="card col col-2 p-0 align-items-center justify-content-center">
@@ -88,15 +86,38 @@
                     </div>
                 </div>
             </div>
+            <!-- Employee search and info -->
+            <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between gap-2">
+                <!-- Employee information -->
+                <div class="col col-7-sm p-0">
+                    <div class="row m-0 p-0 gap-3">
+                        <div class="card px-4 py-2 col">
+                            info employee 
+                        </div>
+                    </div>
+                </div>
+                <!-- Employee search -->
+                <div class="col col-4 p-0">
+                    <div class="row m-0 p-0 gap-3">
+                        <div class="card px-3 py-2 col m-0">
+                            <form action="" class="d-flex gap-2">
+                                <div class="col col-9 m-0">
+                                    <input type="text" id="emp_search" class="form-control" placeholder="Enter employee name or id">
+                                </div>
+                                <div class="employee_search col col-2-sm m-0">
+                                    <button class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Reports -->
-            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_container">
+            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
                 <table class="employee_table table">
                     <thead class="table_header">
                         <tr>
-                            <th scope="col">Emp ID</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">Contract</th>
-                            <th scope="col">Shift</th>
+                            <th scope="col">Date</th>
                             <th scope="col">AM IN</th>
                             <th scope="col">AM OUT</th>
                             <th scope="col">PM IN</th>
@@ -108,10 +129,7 @@
 
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark Otto</td>
-                            <td>Full-time</td>
-                            <td>Whole Day</td>
+                            <th scope="row">November 20, 2023</th>
                             <td>8:00</td>
                             <td>12:01</td>
                             <td>1:00</td>
@@ -120,10 +138,7 @@
                             <td>0</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Mark Otto</td>
-                            <td>Part-time</td>
-                            <td>Afternoon</td>
+                            <th scope="row">November 22, 2023</th>
                             <td>-</td>
                             <td>-</td>
                             <td>1:00</td>
@@ -132,10 +147,7 @@
                             <td>0</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Mark Otto</td>
-                            <td>Part-time</td>
-                            <td>Morning</td>
+                            <th scope="row">November 23, 2023</th>
                             <td>9:00</td>
                             <td>12:51</td>
                             <td>-</td>

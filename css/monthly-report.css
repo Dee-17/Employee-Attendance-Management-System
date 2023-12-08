@@ -50,6 +50,10 @@ body {
     margin-top: -3px;
     font-style: normal;
 }
+.employee_search button, .employee_search button:hover {
+    background-color: #072560;
+    color: red;
+}
 .employee_table table {
     color: #7e7e7e;
 }
