@@ -91,15 +91,33 @@
                 <!-- Employee information -->
                 <div class="col col-7-sm p-0">
                     <div class="row m-0 p-0 gap-3">
-                        <div class="card px-4 py-2 col">
-                            info employee 
+                        <div class="card px-3 py-3 col">
+                            <form action="" class="d-flex gap-2 employee_info justify-content-between">
+                                <div class="col col-1">
+                                    <label for="emp_id" class="form-label m-0">Emp ID</label>
+                                    <input class="form-control" type="text" value="1" name="emp_id" disabled readonly>
+                                </div>
+                                <div class="col col-6-sm">
+                                    <label for="emp_name" class="form-label m-0">Full name</label>
+                                    <input class="form-control" type="text" value="MARK OTTO" name="emp_name" disabled readonly>
+                                </div>
+                                <div class="col col-3-sm">
+                                    <label for="emp_contract" class="form-label m-0">Contract</label>
+                                    <input class="form-control" type="text" value="Part Time" name="emp_contract" disabled readonly>
+                                </div>
+                                <div class="col col-2-sm">
+                                    <label for="emp_shift" class="form-label m-0">Shift</label>
+                                    <input class="form-control" type="text" value="Morning" name="emp_shift" disabled readonly>
+                                </div>
+                                <!-- full name, shift, contract, emp number -->
+                            </form>
                         </div>
                     </div>
                 </div>
                 <!-- Employee search -->
                 <div class="col col-4 p-0">
                     <div class="row m-0 p-0 gap-3">
-                        <div class="card px-3 py-2 col m-0">
+                        <div class="card px-3 py-3 col m-0">
                             <form action="" class="d-flex gap-2">
                                 <div class="col col-9 m-0">
                                     <input type="text" id="emp_search" class="form-control" placeholder="Enter employee name or id">

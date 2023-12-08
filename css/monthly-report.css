@@ -50,9 +50,15 @@ body {
     margin-top: -3px;
     font-style: normal;
 }
+.employee_info label {
+    font-size: 12px;
+    color: #7e7e7e;
+    font-weight: bold;
+    font-style: italic;
+}
 .employee_search button, .employee_search button:hover {
     background-color: #072560;
-    color: red;
+    border: none;
 }
 .employee_table table {
     color: #7e7e7e;
