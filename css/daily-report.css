@@ -28,6 +28,9 @@ body {
     font-size: 35px;
     font-weight: bold;
 }
+.close_button {
+    background-color: #989898;
+}
 .date_container {
     background-color: #A4C3FF;
     box-shadow: 0 0 15px 1px #A4C3FF;
@@ -56,6 +59,15 @@ body {
 }
 .header_title {
     font-size: 2rem;
+}
+.modal-content {
+    background-color: #F7F7F7;
+}
+.modal-footer button {
+    border: none;
+}
+.search_button button, .search_button button:hover {
+    background-color: #072560;
 }
 .table_header th {
     color: #989898;
