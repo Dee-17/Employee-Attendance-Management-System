@@ -6,14 +6,13 @@
     <title>Monthly Reports</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">    
-    <link rel="stylesheet" href="css/month-report.css">
+    <link rel="stylesheet" href="css/monthly-report.css">
     <link rel="stylesheet" href="css/nav-bar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
     <script src="js/month-year-calendar.js" defer></script>
-
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
@@ -42,8 +41,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Select a date</p>
-               <input class="form-control" type="date" name="date_picker" id="picked_date">
+                <p>Select the month and year</p>
+               <input class="form-control" type="month" name="date_picker" id="picked_date">
             </div>
             <div class="modal-footer">
                 <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -69,7 +68,8 @@
                         <div class="date_container card px-4 py-2 col col-6" id="current_date">
                             <p class="date_subtitle">Viewing log in reports today</p>
                             <span class="day_title" id="day_today" hidden></span>
-                            <p class="date_title" id="full_date"></p>
+                            <span class="day_title" id="full_date" hidden></span>
+                            <p class="date_title" id="month_year"></p>
                         </div>
                         <div class="card col col-2 p-0 align-items-center justify-content-center">
                            <div class="calendar_icon"><a type="button" data-bs-toggle="modal" data-bs-target="#calendar_modal"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
