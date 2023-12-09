@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Attendance System</title>
+    <title>Log in Reports</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/nav_bar.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/login-report.css">
-    <script src="js/nav_bar.js" defer></script>
-    <script src="js/employee-attendance-system.js" defer></script>
+    <script src="js/nav-bar.js" defer></script>
+    <script src="js/date-time.js" defer></script>
 
 </head>
 <body class="container-fluid">
@@ -30,7 +30,7 @@
         </div>
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <!-- Name must be according to id inputted by employee -->
+            <!-- Name must be according to id inputted by admin -->
             <p class="title_2">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">
