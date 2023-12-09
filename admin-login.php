@@ -12,6 +12,79 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
+    if (isset($_POST['form_id'])) {
+        $form_id = $_POST['form_id'];
+        //if post data is from form 1
+        if ($form_id == 1) {
+            
+            // prepare and bind
+            $stmt = $conn->prepare("SELECT username, password FROM admin WHERE username = ? AND password = ?");
+            $stmt->bind_param("ss", $username, $password);
+
+            // set parameters and execute
+            $username = $_POST['sn-username'];
+            $password = $_POST['sn-password'];
+            $stmt->execute();
+
+            // get the result
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                // redirect
+                header("Location:login-report.php");
+                
+            } else {
+                // output a warning saying incorrect details
+                $sn_error = true;
+            }
+
+            $stmt->close();
+            $conn->close();
+        }
+        //if post data from form 2    
+        elseif ($form_id == 2) {
+                // prepare and bind
+                $stmt = $conn->prepare("SELECT full_name,username, password FROM admin WHERE full_name = ? AND username = ? AND password = ?");
+                $stmt->bind_param("sss",$full_name, $username, $password);
+       
+                // set parameters and execute
+                $username = $_POST['cr-username'];
+                $password = $_POST['cr-password'];
+                $full_name = $_POST['cr-name'];
+                $stmt->execute();
+
+            // get the result
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                $cr_exist = true;
+                echo "User Already Exists";
+                }
+            } 
+            else {
+                if(empty($username) || empty($password) || empty($full_name)) {
+                    $cr_error = true;
+                } else {
+                    // if user not found, insert user into user table
+                    $stmt = $conn->prepare("INSERT INTO admin (username, password,full_name) VALUES (?,?,?)");
+                    $stmt->bind_param("sss", $username, $password,$full_name);
+
+                    // set parameters and execute
+                    $username = $_POST['cr-username'];
+                    $password = $_POST['cr-password'];
+                    $full_name = $_POST['cr-name'];
+                    $stmt->execute();
+
+                    echo "New User Created";
+                }
+            }
+            $stmt->close();
+            $conn->close();
+        }
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -41,41 +114,14 @@
                 </div>
                 <input type="hidden" name="form_id" value="1">
                 <button type="submit">Sign In</button>
+
+                <?php if (isset($sn_error)): ?>
+                    <p class="error">Incorrect username or password!</p>
+                <?php endif; ?>
+
             </form>
         </div>
-        <?php
-            if (isset($_POST['form_id'])) {
-                $form_id = $_POST['form_id'];
-                //if post data is from form 1
-                if ($form_id == 1) {
-                    
-                    // prepare and bind
-                    $stmt = $conn->prepare("SELECT username, password FROM admin WHERE username = ? AND password = ?");
-                    $stmt->bind_param("ss", $username, $password);
-        
-                    // set parameters and execute
-                    $username = $_POST['sn-username'];
-                    $password = $_POST['sn-password'];
-                    $stmt->execute();
-        
-                    // get the result
-                    $result = $stmt->get_result();
-        
-                    if ($result->num_rows > 0) {
-                        // output data of each row
-                        while($row = $result->fetch_assoc()) {
-                        echo "Username: " . $row["username"]. " - Password: " . $row["password"]. "<br>";
-                        }
-                    } else {
-                        // output a warning saying incorrect details
-                        echo "<div>Incorrect Details</div>";
-                    }
-        
-                    $stmt->close();
-                    $conn->close();
-                }
-            } 
-        ?>
+
         <!-- create-acc-form -->
         <div class="form-container sign-up-container">
             <form action="" method="post">
@@ -94,6 +140,15 @@
                 </div>
                 <input type="hidden" name="form_id" value="2">
                 <button type="submit">Sign Up</button>
+
+                <?php if (isset($cr_error)): ?>
+                    <p class="error">Fill in the missing fields</p>
+                <?php endif; ?>
+
+                <?php if (isset($cr_exist)): ?>
+                    <p class="error">User Already Exists</p>
+                <?php endif; ?>
+                
             </form>
         </div>
         <!-- welcome message -->
@@ -111,49 +166,8 @@
                 </div>
             </div>
             <?php
-     if (isset($_POST['form_id'])) {
-        $form_id = $_POST['form_id'];
-        //if post data from form 2    
-        if ($form_id == 2) {
-            echo "this is form 2";
 
-                // prepare and bind
-                $stmt = $conn->prepare("SELECT full_name,username, password FROM admin WHERE full_name = ? AND username = ? AND password = ?");
-                $stmt->bind_param("sss",$full_name, $username, $password);
-       
-                // set parameters and execute
-                $username = $_POST['cr-username'];
-                $password = $_POST['cr-password'];
-                $full_name = $_POST['cr-name'];
-                $stmt->execute();
-
-            // get the result
-            $result = $stmt->get_result();
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                echo "User Already Exists";
-                }
-            } 
-            else {
-                // if user not found, insert user into user table
-                $stmt = $conn->prepare("INSERT INTO admin (username, password,full_name) VALUES (?,?,?)");
-                $stmt->bind_param("sss", $username, $password,$full_name);
-
-                // set parameters and execute
-                $username = $_POST['cr-username'];
-                $password = $_POST['cr-password'];
-                $full_name = $_POST['cr-name'];
-                $stmt->execute();
-
-                echo "New User Created";
-            }
-            $stmt->close();
-            $conn->close();
-        }
-    } 
-    ?>
+    ?> 
 
             <button id="overlayBtn"></button>
         </div>
