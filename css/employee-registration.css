@@ -20,15 +20,9 @@ body {
     min-height: 100vh;
 }
 
-
-.admin_name {
-    font-weight: bold;
-    color: #072560;
-}
-
-
 .title_2 {
     font-size: 2rem;
+    font-weight: bold;
 }
 
 .card {
@@ -65,4 +59,30 @@ a {
 
 .search_button {
     width: 20%;
+}
+
+.pop_out_text {
+    font-size: 14px;
+    color: #072560;
+    font-style: italic;
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+
+.header {
+    display: flex;
+}
+
+.exit_button {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #072560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
 }

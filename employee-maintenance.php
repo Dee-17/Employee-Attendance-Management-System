@@ -37,12 +37,12 @@
                         <div class="grey_container col col-12-sm p-0 mx-0 text-center justify-content-evenly">
                             <div class="col col-12 card p-3">
                                 <form class="d-flex" role="search">
-                                    <button type="button" class="register_button btn me-3 btn-outline-primary">Register Employee</button>
+                                    <button type="button" class="register_button btn me-3 btn-outline-primary"><a class="nav-link" href="employee-registration.html">Register Employee</a></button>
                                     <input class="form-control me-3" type="search" placeholder="Enter employee name or id" aria-label="Search">
                                     <button class="search_button btn btn-outline-success" type="submit">Search</button>
                                 </form>
-                            </div>
-                        </div>
+                              </div>
+                         </div>
 
                     <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
                         <table class="table">
