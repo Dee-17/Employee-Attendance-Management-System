@@ -1,18 +1,6 @@
 <?php
-    //database configuration
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "employee_db";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
+    include "connection.php";
+    
     if (isset($_POST['form_id'])) {
         $form_id = $_POST['form_id'];
         //if post data is from form 1
@@ -124,7 +112,7 @@
 
         <!-- create-acc-form -->
         <div class="form-container sign-up-container">
-            <form action="" method="post">
+            <form action="" method="post" id="form2">
                 <h1>Create Account</h1>
                 <div class="infield">
                     <input type="text" placeholder="Name" name="cr-name" id="cr-name"/>
@@ -165,10 +153,6 @@
                     <button>Sign In</button>
                 </div>
             </div>
-            <?php
-
-    ?> 
-
             <button id="overlayBtn"></button>
         </div>
     </div>
