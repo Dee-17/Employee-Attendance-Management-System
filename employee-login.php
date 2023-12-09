@@ -63,7 +63,7 @@
                     <button type="submit" name="signin">Sign In</button>
 
                     <?php if (isset($em_sn_error)): ?>
-                    <p class="error">Incorrect username or password!</p>
+                    <p class="error" style="color:red">Incorrect username or password!</p>
                     <?php endif; ?>
 
                 </form>
