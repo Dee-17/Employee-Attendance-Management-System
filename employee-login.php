@@ -8,19 +8,19 @@
         if (empty($id) || empty($password)) {
             echo "Warning: Please fill all the fields";
         } else {
-            $query = "SELECT * FROM employee WHERE id = '$id'";
+            $query = "SELECT * FROM employee WHERE emp_id = '$id'";
             $result = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
 
                 if ($password == $row['password']) {
-                    header("Location: employee-dashboard.php");
+                    header("Location: employee-attendance-system.php");
                 } else {
-                    echo "Warning: Incorrect password";
+                    $em_sn_error = true;
                 }
             } else {
-                echo "Warning: No user found with this ID";
+                $em_sn_error = true;
             }
         }
     }
@@ -61,6 +61,11 @@
                         <label></label>
                     </div>
                     <button type="submit" name="signin">Sign In</button>
+
+                    <?php if (isset($em_sn_error)): ?>
+                    <p class="error">Incorrect username or password!</p>
+                    <?php endif; ?>
+
                 </form>
             </div>
         </div>
