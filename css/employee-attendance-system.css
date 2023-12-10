@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 body {
-    padding: 0px;
-    margin: 0px;
     font-family: 'Inter', sans-serif;
-    background: #f7f7f7;
 }
 /* ============================================= */
 
@@ -90,7 +87,7 @@ body {
     color: white;
     position: fixed;
     overflow: auto;
-    width: 15%;
+    width: 20%;
     height: 100%;
     bottom: 0;
 }
@@ -135,8 +132,8 @@ body {
 	color: #072560;
 }
 .right_panel {
-    width: 85%;
-    margin-left: 15%;
+    width: 80%;
+    margin-left: 20%;
     display: inline-block;
     background-color: #F7F7F7;
     color: black;
