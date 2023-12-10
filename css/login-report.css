@@ -82,3 +82,13 @@
     border-radius: 10px;
     padding: 10px;
 }
+
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
+}
