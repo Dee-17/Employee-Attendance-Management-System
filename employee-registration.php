@@ -19,18 +19,18 @@
 
             <!-- Links / buttons -->
             <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
-                <a class="nav_button nav-link" href="login-report.html">Log in Report</a>
-                <a class="nav_button nav-link" href="employee-maintenance.html">Employee Maintenance</a>
-                <a class="nav_button nav-link" href="daily-report.html">Daily Report</a>
-                <a class="nav_button nav-link" href="monthly-report.html">Monthly Report</a>
-                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
+                <a class="nav_button nav-link" href="login-report.php">Log in Report</a>
+                <a class="nav_button nav-link" href="employee-maintenance.php">Employee Maintenance</a>
+                <a class="nav_button nav-link" href="daily-report.php">Daily Report</a>
+                <a class="nav_button nav-link" href="monthly-report.php">Monthly Report</a>
+                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.php">Log out</a></span>
             </nav>
         </div>
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <div class="header col col-12">
               <p class="title_2 col col-11">Employee Registration</p>
-              <button type="button" class="exit_button col col-1 btn btn-secondary p-2 mx-0"><a href="employee-maintenance.html" class="nav-link">Go Back</a></button>            
+              <button type="button" class="exit_button col col-1 btn btn-secondary p-2 mx-0"><a href="employee-maintenance.php" class="nav-link">Go Back</a></button>            
             </div>                           
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">

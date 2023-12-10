@@ -58,5 +58,5 @@ VALUES ('1', CURDATE(), '08:30:00', '11:30:00', '13:30:00', '4:59:00'),
 UPDATE atlog SET am_late = IF(TIMEDIFF(am_in, '8:30:00') > '00:30:00', 1, 0);
 UPDATE atlog SET am_underTIME = IF(TIMEDIFF(am_out,'11:30:00') > '00:30:00', 1, 0);
 UPDATE atlog SET pm_late = IF(TIMEDIFF(pm_in, '13:30:00') > '00:30:00', 1, 0);
-UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out,'4:59:00') > '00:30:00', 1, 0);
+UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out,'17:59:00') > '00:30:00', 1, 0);
 UPDATE atlog SET night_differential = IF(pm_out < '22:00:00', 0, TIME_TO_SEC(TIMEDIFF(pm_out, '6:00:00')) * 0.10 / 3600);
