@@ -1,7 +1,5 @@
 <?php
-    include "connection.php";
-
-
+    include "update.php";
     $sql = "SELECT * FROM atlog INNER JOIN employee ON atlog.emp_id = employee.emp_id WHERE atlog.atlog_DATE = CURDATE()";
 ?>
 <!DOCTYPE html>
@@ -15,7 +13,6 @@
     <link rel="stylesheet" href="css/login-report.css">
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
-
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
