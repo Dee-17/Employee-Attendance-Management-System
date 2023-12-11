@@ -1,3 +1,6 @@
+<?php
+    include "update.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +31,16 @@
                 <h1 class="modal-title fs-5" id="calendar_label">Date picker</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <p>Select a date</p>
-               <input class="form-control" type="date" name="date_picker" id="picked_date">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <div class="search_button"><button type="button" class="btn btn-primary" id="search_button">Search</button></div>
-            </div>
+            <form target="ifrm" method="POST"> 
+                <div class="modal-body">
+                    <p>Select a date</p>
+                <input class="form-control" type="date" name="date_picker" id="picked_date">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="search_button"><button type="submit" class="btn btn-primary" id="search_button">Search</button></div>
+                </div>
+            </form>
             </div>
         </div>
         </div>
@@ -93,6 +98,25 @@
                     </thead>
 
                     <tbody>
+                        <?php
+                            if (isset($_POST['date_picker'])) {
+                                $selected_date = $_POST['date_picker'];
+                                $sql = "SELECT * FROM atlog INNER JOIN employee ON atlog.emp_id = employee.emp_id where atlog.atlog_DATE = '$selected_date'";
+                                
+                                 // Execute the SQL query
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row["emp_id"] . "</td>";
+                                        echo "<td>" . $row["full_name"]  . "</td>";
+                                        // ... other fields ...
+                                        echo "</tr>";
+                                    }
+                                }
+                            }
+                        ?>
                         <tr>
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
@@ -102,30 +126,6 @@
                             <td>12:01</td>
                             <td>1:00</td>
                             <td>5:01</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark Otto</td>
-                            <td>Part-time</td>
-                            <td>Afternoon</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>1:00</td>
-                            <td>4:51</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark Otto</td>
-                            <td>Part-time</td>
-                            <td>Morning</td>
-                            <td>9:00</td>
-                            <td>12:51</td>
-                            <td>-</td>
-                            <td>-</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
