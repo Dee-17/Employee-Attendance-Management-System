@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Maintenace</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/nav_bar.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/employee-maintenance.css">
-    <script src="js/nav_bar.js" defer></script>
+    <script src="js/nav-bar.js" defer></script>
 
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
-        <!-- Navigation Bar -->
-        <div class="left_panel sticky-top container text-center pt-3">
-            <img class="mt-3" src="images/company-logo.png" alt="C597 Corporation Logo">
-            <p class="company_name mt-2 mb-0">C597 Corporation</p>
-            <p class="system_name">Employee Attendance System</p>
-
-            <!-- Links / buttons -->
-            <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
-                <a class="nav_button nav-link" href="login-report.html">Log in Report</a>
-                <a class="nav_button nav-link" href="employee-maintenance.html">Employee Maintenance</a>
-                <a class="nav_button nav-link" href="daily-report.html">Daily Report</a>
-                <a class="nav_button nav-link" href="monthly-report.html">Monthly Report</a>
-                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
-            </nav>
-        </div>
+        <?php 
+            include('nav-bar.php');
+        ?>
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <!-- Name must be according to id inputted by employee -->
+            <!-- Name must be according to id inputted by admin -->
             <p class="title_2">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">
@@ -37,7 +25,7 @@
                         <div class="grey_container col col-12-sm p-0 mx-0 text-center justify-content-evenly">
                             <div class="col col-12 card p-3">
                                 <form class="d-flex" role="search">
-                                    <button type="button" class="register_button btn me-3 btn-outline-primary"><a class="nav-link" href="employee-registration.html">Register Employee</a></button>
+                                    <button type="button" class="register_button btn me-3 btn-outline-primary"><a class="nav-link" href="employee-registration.php">Register Employee</a></button>
                                     <input class="form-control me-3" type="search" placeholder="Enter employee name or id" aria-label="Search">
                                     <button class="search_button btn btn-outline-success" type="submit">Search</button>
                                 </form>
@@ -67,7 +55,7 @@
                                     <td>Full Time</td>
                                     <td>
                                         <div class="btn_container me-0">
-                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.html" class="nav-link">Edit</a></button>
+                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.php" class="nav-link">Edit</a></button>
                                             <button type="button" class="btn btn-outline-danger">Delete</button>
                                         </div>
                                     </td>
@@ -81,7 +69,7 @@
                                     <td>Full Time</td>
                                     <td>
                                         <div class="btn_container me-0">
-                                            <button type="button" class="btn btn-outline-dark">Edit</button>
+                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.php" class="nav-link">Edit</a></button>
                                             <button type="button" class="btn btn-outline-danger">Delete</button>
                                         </div>
                                     </td>
@@ -95,7 +83,7 @@
                                     <td>Full Time</td>
                                     <td>
                                         <div class="btn_container me-0">
-                                            <button type="button" class="btn btn-outline-dark">Edit</button>
+                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.php" class="nav-link">Edit</a></button>
                                             <button type="button" class="btn btn-outline-danger">Delete</button>
                                         </div>
                                     </td>
@@ -108,7 +96,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
 </body>
 </html>

@@ -32,8 +32,8 @@
                         <h3>Please select an option below.</h3>
                     </div>
                     <div class="button-container">
-                        <a href="admin-login.html"><button class="button" id="admin-button">I am an <span>Admin</span></button></a>
-                        <a href="employee-login.html"><button class="button" id="employee-button">I am an <span>Employee</span></button></a>
+                        <a href="admin-login.php"><button class="button" id="admin-button">I am an <span>Admin</span></button></a>
+                        <a href="employee-login.php"><button class="button" id="employee-button">I am an <span>Employee</span></button></a>
                     </div>
                 </center>
             </div>
