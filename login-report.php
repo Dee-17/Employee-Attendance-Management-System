@@ -1,7 +1,7 @@
 <?php
-    include "update.php";
-    $sql = "SELECT * FROM atlog INNER JOIN employee ON atlog.emp_id = employee.emp_id WHERE atlog.atlog_DATE = CURDATE()";
-?>
+    // include "update.php";
+    // $sql = "SELECT * FROM atlog INNER JOIN employee ON atlog.emp_id = employee.emp_id WHERE atlog.atlog_DATE = CURDATE()";
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +31,14 @@
                             <!-- Date today -->
                             <span class="date_title"><p class="mb-0 p-0" id="full_date"></p></span>
                         </div>                       
-                        <div class="am_pm_container grey_container col col-8-sm p-0 mx-0 text-center justify-content-evenly">
-                            <div class="col col-12 card p-3">
-                                <form class="am_pm_button row gap-2 m-0 p-0 justify-content-center" action="" method="post">
-                                    <button type="submit" class="btn am_button col col-auto" name="am" value="am" onclick="" <?php if(isset($_POST['am'])) echo 'disabled'; ?>>AM</button>
-                                    <button type="submit" class="btn pm_button col col-auto" name="pm" value="pm" onclick="" <?php if(isset($_POST['pm'])) echo 'disabled'; ?>>PM</button>
-                                </form>
+                        <div class="clock_container grey_container col col-7-sm m-0 p-0">
+                            <div class="clock_elements">
+                                <span id="hour"></span>
+                                <span id="point">:</span>
+                                <span id="minute"></span>
+                                <span id="point">:</span>
+                                <span id="second"></span>
+                                <span id="am_pm"></span>
                             </div>
                         </div>
                     </div>
@@ -45,46 +47,50 @@
                         <table class="table">
                             <thead>
                               <tr>
-                                <th scope="col">Emp ID</th>
+                              <th scope="col">Emp ID</th>
                                 <th scope="col">Full Name</th>
-                                <th scope="col">IN</th>
-                                <th scope="col">OUT</th>
-                                <th scope="col">Late</th>
-                                <th scope="col">Undertime</th>
-                                
+                                <th scope="col">AM IN</th>
+                                <th scope="col">AM OUT</th>
+                                <th scope="col">PM IN</th>
+                                <th scope="col">PM OUT</th>
+                                <th scope="col">AM Late</th>
+                                <th scope="col">PM Late</th>
+                                <th scope="col">AM Undertime</th>
+                                <th scope="col">PM Undertime</th>
+                                <th scope="col">Night Differential</th>
                               </tr>
                             </thead>
                             <tbody class="">
                             <?php
-                                function checkButton() {
-                                    global $conn, $sql;
-                                    if (isset($_POST['am'])) {
-                                        $result = $conn->query($sql);
+                                include "connection.php";
 
-                                        if ($result->num_rows > 0) {
-                                            // output data of each row
-                                            while($row = $result->fetch_assoc()) {
-                                                echo "<tr><td>". $row["emp_id"] . "</td><td>" . $row["first_name"] . "</td><td>" . $row["am_in"] . "</td><td>". $row["am_out"] ."</td><td>". $row["am_late"] ."</td><td>". $row["am_under"] ."</td></tr>";
-                                            }
-                                        } else {
-                                            echo "0 results";
-                                        }
-                                    } else if (isset($_POST['pm'])) {
-                                        $result = $conn->query($sql);
-
-                                        if ($result->num_rows > 0) {
-                                            // output data of each row
-                                            while($row = $result->fetch_assoc()) {
-                                                echo "<tr><td>". $row["emp_id"] . "</td><td>" . $row["first_name"] . "</td><td>" . $row["pm_in"] . "</td><td>". $row["pm_out"] ."</td><td>". $row["pm_late"] ."</td><td>". $row["pm_under"] ."</td></tr>";
-                                            }
-                                        } else {
-                                            echo "0 results";
-                                        }
-                                    } else {
-                                        echo "No button is selected yet";
+                                $sql = "SELECT atlog.emp_id, employee.full_name, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
+                                FROM atlog
+                                JOIN employee ON atlog.emp_id = employee.emp_id;
+                                ";
+                                $result = $conn->query($sql);
+                                
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row["emp_id"] . "</td>";
+                                        echo "<td>" . $row["full_name"]  . "</td>";
+                                        echo "<td>" . $row["am_in"] . "</td>";
+                                        echo "<td>" . $row["am_out"] . "</td>";
+                                        echo "<td>" . $row["pm_in"] . "</td>";
+                                        echo "<td>" . $row["pm_out"] . "</td>";
+                                        echo "<td>" . $row["am_late"] . "</td>";
+                                        echo "<td>" . $row["pm_late"] . "</td>";
+                                        echo "<td>" . $row["am_underTIME"] . "</td>";
+                                        echo "<td>" . $row["pm_underTIME"] . "</td>";
+                                        echo "<td>" . $row["night_differential"] . "</td>";
+                                        echo "</tr>";
                                     }
                                 }
-                                checkButton();
+                                else {
+                                    echo "No employees found.";
+                                }
+
                                 $conn->close();
                             ?>
                             </tbody>
