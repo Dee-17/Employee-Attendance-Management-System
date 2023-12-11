@@ -30,66 +30,68 @@
                                     <button class="search_button btn btn-outline-success" type="submit">Search</button>
                                 </form>
                               </div>
-                         </div>
+                        </div>
 
-                    <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">Emp ID</th>
-                                <th scope="col">Full Name</th>
-                                <th scope="col">Contact Number</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Contract</th>
-                                <th scope="col">Options</th>
-                              </tr>
-                            </thead>
-                            <tbody class="">
-                              <tr>
-                                <th scope="row">01</th>
-                                <td>Mark Otto</td>
-                                <td>0912345678</td>
-                                <td>markotto@gmail.com</td>
-                                <td>Zone 10 Legazpi City</td>
-                                <td>Full Time</td>
-                                <td>
-                                    <div class="btn_container me-0">
-                                        <button type="button" class="btn btn-outline-dark">Edit</button>
-                                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <th scope="row">02</th>
-                                <td>Mark Otto</td>
-                                <td>0912345678</td>
-                                <td>markotto@gmail.com</td>
-                                <td>Zone 10 Legazpi City</td>
-                                <td>Full Time</td>
-                                <td>
-                                    <div class="btn_container me-0">
-                                        <button type="button" class="btn btn-outline-dark">Edit</button>
-                                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <th scope="row">03</th>
-                                <td>Mark Otto</td>
-                                <td>0912345678</td>
-                                <td>markotto@gmail.com</td>
-                                <td>Zone 10 Legazpi City, Albay</td>
-                                <td>Full Time</td>
-                                <td>
-                                    <div class="btn_container me-0">
-                                        <button type="button" class="btn btn-outline-dark">Edit</button>
-                                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                                    </div>
-                                </td>
-                              </tr>
-                        </tbody>
-                    </table>
+                        <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Emp ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Contact Number</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Contract</th>
+                                    <th scope="col">Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="">
+                                    <tr>
+                                    <th scope="row">01</th>
+                                    <td>Mark Otto</td>
+                                    <td>0912345678</td>
+                                    <td>markotto@gmail.com</td>
+                                    <td>Zone 10 Legazpi City</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        <div class="btn_container me-0">
+                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.html" class="nav-link">Edit</a></button>
+                                            <button type="button" class="btn btn-outline-danger">Delete</button>
+                                        </div>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">02</th>
+                                    <td>Mark Otto</td>
+                                    <td>0912345678</td>
+                                    <td>markotto@gmail.com</td>
+                                    <td>Zone 10 Legazpi City</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        <div class="btn_container me-0">
+                                            <button type="button" class="btn btn-outline-dark">Edit</button>
+                                            <button type="button" class="btn btn-outline-danger">Delete</button>
+                                        </div>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">03</th>
+                                    <td>Mark Otto</td>
+                                    <td>0912345678</td>
+                                    <td>markotto@gmail.com</td>
+                                    <td>Zone 10 Legazpi City, Albay</td>
+                                    <td>Full Time</td>
+                                    <td>
+                                        <div class="btn_container me-0">
+                                            <button type="button" class="btn btn-outline-dark">Edit</button>
+                                            <button type="button" class="btn btn-outline-danger">Delete</button>
+                                        </div>
+                                    </td>
+                                    </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
