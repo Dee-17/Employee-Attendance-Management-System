@@ -32,7 +32,8 @@ CREATE TABLE atlog(
     pm_underTIME INTEGER,
     night_differential DECIMAL (3,2),
     /*night differential*/
-    PRIMARY KEY(atlog_id)
+    PRIMARY KEY(atlog_id),
+    FOREIGN KEY (emp_id) REFERENCES employee(emp_id)
 );
 
 ALTER TABLE `atlog` ADD CONSTRAINT `fk_atlog_employee` FOREIGN KEY (`emp_id`) REFERENCES `employee`(`emp_id`);
