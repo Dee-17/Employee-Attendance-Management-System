@@ -12,25 +12,14 @@
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
         <!-- Navigation Bar -->
-        <div class="left_panel sticky-top container text-center pt-3">
-            <img class="mt-3" src="images/company-logo.png" alt="C597 Corporation Logo">
-            <p class="company_name mt-2 mb-0">C597 Corporation</p>
-            <p class="system_name">Employee Attendance System</p>
-
-            <!-- Links / buttons -->
-            <nav class="nav flex-column nav-pills mt-4 p-2 gap-2">
-                <a class="nav_button nav-link" href="login-report.html">Log in Report</a>
-                <a class="nav_button nav-link" href="employee-maintenance.html">Employee Maintenance</a>
-                <a class="nav_button nav-link" href="daily-report.html">Daily Report</a>
-                <a class="nav_button nav-link" href="monthly-report.html">Monthly Report</a>
-                <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.html">Log out</a></span>
-            </nav>
-        </div>
+        <?php 
+            include('nav-bar.php');
+        ?>
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <div class="header col col-12">
               <p class="title_2 col col-11">Edit Employee Details</p>
-              <button type="button" class="exit_button col col-1 btn btn-secondary p-2 mx-0"><a href="employee-maintenance.html" class="nav-link">Go Back</a></button>            
+              <button type="button" class="exit_button col col-1 btn btn-secondary p-2 mx-0"><a href="employee-maintenance.php" class="nav-link">Go Back</a></button>            
             </div>                           
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">
