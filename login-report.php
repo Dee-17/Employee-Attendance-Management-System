@@ -1,6 +1,9 @@
 <?php
-    // include "update.php";
-    // $sql = "SELECT * FROM atlog INNER JOIN employee ON atlog.emp_id = employee.emp_id WHERE atlog.atlog_DATE = CURDATE()";
+    include "update.php";
+    $sql = "SELECT atlog.emp_id, employee.full_name, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
+    FROM atlog
+    JOIN employee ON atlog.emp_id = employee.emp_id
+    WHERE atlog.atlog_DATE = CURDATE();";
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,11 +67,6 @@
                             <?php
                                 include "connection.php";
 
-                                $sql = "SELECT atlog.emp_id, employee.full_name, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
-                                FROM atlog
-                                JOIN employee ON atlog.emp_id = employee.emp_id
-                                WHERE atlog.atlog_DATE = CURDATE();
-                                ";
                                 $result = $conn->query($sql);
                                 
                                 if (mysqli_num_rows($result) > 0) {
