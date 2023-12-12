@@ -19,8 +19,8 @@
 		<div class="right_panel container p-5">
 			<div class="header row container-fluid align-items-top">
 				<div class="col col-10 m-0 p-0"><p class="header_title"><span class="blue_title">Edit</span> Employee Information</p></div>
-				<div class="col col-auto m-0 p-0 ms-auto">
-					<a href="employee-maintenance.php" class="nav-link"><button type="button" class="exit_button btn btn-secondary py-2 px-3">Go Back</button></a>
+				<div class="col col-auto m-0 p-0 ms-auto exit_button">
+					<a href="employee-maintenance.php" class="nav-link"><button type="button" class="btn btn-secondary py-2 px-3">Go Back</button></a>
 				</div>
 			</div>
 			<div class="container-fluid gap-3">
@@ -78,12 +78,12 @@
 				<div class="card white_container container-fluid row mt-3 text-center">
 					<form class="d-flex register_button m-0 p-2 justify-content-between">
 						<!-- Reply to user after submitting forms -->
-						<div class="grey_container col col-10 d-flex align-items-center justify-content-center m-0 p-0">
+						<div class="grey_container col col-9 d-flex align-items-center justify-content-center m-0 p-0">
 							<p class="pop_out_text m-0">Fill out the required fields before you submit.</p>
 						</div>
 						<!-- Submit button -->
 						<div class="col col-auto p-0">
-							<button type="submit" class="btn btn-outline-primary px-5 py-2">Submit</button>
+							<button type="submit" class="btn btn-outline-primary px-5 py-2">Edit Information</button>
 						</div>
 					</form>
 				</div>
