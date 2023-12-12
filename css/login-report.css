@@ -1,5 +1,4 @@
 .admin_name {
-    font-weight: bold;
     color: #072560;
 }
 .card {
@@ -43,6 +42,7 @@
 }
 .header_title {
     font-size: 2rem;
+    font-weight: bold;
 }
 .grey_container {
     background-color: #efefefa5;

@@ -3,8 +3,7 @@
 body {
     font-family: 'Inter', sans-serif;
 }
-.bold_title {
-    font-weight: bold;
+.blue_title {
     color: #072560;
 }
 .card {
@@ -72,6 +71,7 @@ body {
 }
 .header_title {
     font-size: 2rem;
+    font-weight: bold;
 }
 .legend_blue, .legend_red {
     font-style: italic;

@@ -41,7 +41,7 @@
 
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <p class="header_title"><span class="bold_title">Monthly Log in</span> Report</p>
+            <p class="header_title"><span class="blue_title">Monthly Log in</span> Report</p>
             <!-- First row -->
             <div class="row container-fluid mt-4 gap-3 d-flex">
                 <!-- Display the date chosen by user -->
