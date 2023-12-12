@@ -10,19 +10,26 @@
     $shift = $_POST['input-shift'];
 
     if ((!$full_name) || (!$address) || (!$zip) || (!$contact_number) || (!$email_address) || (!$contract) || (!$shift)) {
-            echo "Error";
+            echo "<script>console.log('Please fill out all the required fields!');</script>";
     } else {
         // Insert the new employee with the calculated ID
         $sql = "INSERT INTO employee (full_name, address, zip, contact_number, email_address, contract, shift) 
         VALUES ('$full_name', '$address', '$zip', '$contact_number', '$email_address', '$contract', '$shift')";
         $result = mysqli_query($conn, $sql);
+        
         if ($result) {
-            echo "<div class='success-message'>Employee added successfully!</div>";
+            echo "<script>console.log('Employee added successfully!');</script>";
+            
+                
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            echo "<script>console.log('ERROR!');</script>";
         }
-    }
-
+    }      
+    
     mysqli_close($conn);
 
+    header('Location: employee-registration.php');
+    exit;
 ?>
+
+
