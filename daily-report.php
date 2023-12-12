@@ -1,3 +1,7 @@
+<?php
+    include "update.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +17,18 @@
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
     <script src="js/full-calendar.js" defer></script>
+    <script>
+        $(document).ready(function(){
+            $("#search_button").click(function(){
+                var date_picked = document.getElementById('picked_date').value;
+                
+                $("#table_body").load("load-rows.php",{
+                    table_date:date_picked
+                });
+                console.log(date_picked);
+            });
+        });
+    </script>
 
 </head>
 <body class="container-fluid">
@@ -93,7 +109,7 @@
                         </tr>
                     </thead>
 
-                    <tbody class="table_body">
+                    <tbody class="table_body" id="table_body">
                         <tr>
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
