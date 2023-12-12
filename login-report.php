@@ -89,7 +89,11 @@
                         }
                         else {
                             echo "</tbody></table>";
-                            echo "No Employees Found";
+                            echo "
+                                <div class='alert alert-danger m-0 p-3' role='alert'>
+                                No Records Found
+                                </div>
+                            ";
                         }
                         $conn->close();
                     ?>
