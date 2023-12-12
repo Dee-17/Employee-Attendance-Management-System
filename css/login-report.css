@@ -45,6 +45,16 @@
     background-color: #efefefa5;
     border-radius: 10px;
 }
+.legend_blue, .legend_red {
+    font-style: italic;
+    font-size: 12px;
+}
+.legend_blue {
+    color: #6195ff;
+}
+.legend_red {
+    color: red;
+}
 .right_panel {
     width: 80%;
     margin-left: 20%;
@@ -56,11 +66,17 @@
 .table th {
     color: #989898;
 }
-.table th, .table_body {
-    font-size: 15px;
+.table th, .table_body td {
+    font-size: 14px;
+}
+.title_1 {
+    font-size: 2rem;
 }
 .title_2 {
-    font-size: 2rem;
+    font-size: 13px;
+    font-weight: bold;
+    color: #5f5f5f;
+    margin-bottom: 2px;
 }
 .white_container {
     background-color: #fff;
