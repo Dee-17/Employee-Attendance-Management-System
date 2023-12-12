@@ -24,11 +24,17 @@
                     <div class="row m-0 gap-3">  
                         <div class="grey_container col col-12-sm p-0 mx-0 text-center justify-content-evenly">
                             <div class="col col-12 card p-3">
-                                <form class="d-flex" role="search">
-                                    <button type="button" class="register_button btn me-3 btn-outline-primary"><a class="nav-link" href="employee-registration.php">Register Employee</a></button>
-                                    <input class="form-control me-3" type="search" placeholder="Enter employee name or id" aria-label="Search">
-                                    <button class="search_button btn btn-outline-success" type="submit">Search</button>
+                                <button type="button" class="register_button btn me-3 btn-outline-primary"><a class="nav-link" href="employee-registration.php">Register Employee</a></button>
+
+                                <?php 
+                                    // include('employee-search.php');
+                                ?>
+                                <form class="d-flex" method="get" action="employee-search.php">
+                                    <input class="form-control me-3" type="text" placeholder="Enter employee name or id" name="emp_id">
+                                    <input class="search_button btn btn-outline-success" type="submit" value="Search">
                                 </form>
+
+
                               </div>
                         </div>
 
@@ -90,3 +96,5 @@
     </div>
 </body>
 </html>
+
+
