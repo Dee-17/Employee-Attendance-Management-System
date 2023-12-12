@@ -41,53 +41,45 @@
                                     <th scope="col">Contact Number</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Address</th>
+                                    <th scope="col">ZIP</th>
                                     <th scope="col">Contract</th>
+                                    <th scope="col">Shift</th>
                                     <th scope="col">Options</th>
                                     </tr>
                                 </thead>
                                 <tbody class="">
-                                    <tr>
-                                    <th scope="row">01</th>
-                                    <td>Mark Otto</td>
-                                    <td>0912345678</td>
-                                    <td>markotto@gmail.com</td>
-                                    <td>Zone 10 Legazpi City</td>
-                                    <td>Full Time</td>
-                                    <td>
-                                        <div class="btn_container me-0">
-                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.php" class="nav-link">Edit</a></button>
-                                            <button type="button" class="btn btn-outline-danger">Delete</button>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">02</th>
-                                    <td>Mark Otto</td>
-                                    <td>0912345678</td>
-                                    <td>markotto@gmail.com</td>
-                                    <td>Zone 10 Legazpi City</td>
-                                    <td>Full Time</td>
-                                    <td>
-                                        <div class="btn_container me-0">
-                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.php" class="nav-link">Edit</a></button>
-                                            <button type="button" class="btn btn-outline-danger">Delete</button>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">03</th>
-                                    <td>Mark Otto</td>
-                                    <td>0912345678</td>
-                                    <td>markotto@gmail.com</td>
-                                    <td>Zone 10 Legazpi City, Albay</td>
-                                    <td>Full Time</td>
-                                    <td>
-                                        <div class="btn_container me-0">
-                                            <button type="button" class="btn btn-outline-dark"><a href="employee-edit.php" class="nav-link">Edit</a></button>
-                                            <button type="button" class="btn btn-outline-danger">Delete</button>
-                                        </div>
-                                    </td>
-                                    </tr>
+                                <?php
+                                    include "connection.php";
+                                    
+                                    $sql = "SELECT * FROM employee";
+                                    $result = mysqli_query($conn, $sql);
+                                    
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            echo "<tr>";
+                                            echo "<td>" . $row["emp_id"] . "</td>";
+                                            echo "<td>" . $row["full_name"] . "</td>";
+                                            echo "<td>" . $row["contact_number"] . "</td>";
+                                            echo "<td>" . $row["email_address"] . "</td>";
+                                            echo "<td>" . $row["address"] . "</td>";
+                                            echo "<td>" . $row["zip"] . "</td>";
+                                            echo "<td>" . $row["contract"] . "</td>";
+                                            echo "<td>" . $row["shift"] . "</td>";
+                                            echo "<td>
+                                                    <div class='btn_container me-0'>
+                                                        <button class='btn btn-outline-dark'><a href='employee-edit.php?id=" . $row["emp_id"] . "' class='nav-link'>Edit</a></button>
+                                                        <button class='btn btn-outline-danger'><a href='delete_employee.php?id=" . $row["emp_id"] . "' class='nav-link'>Delete</a></button>
+                                                    </div>
+                                                </td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "No employees found.";
+                                    }
+
+                                    $conn->close();
+
+                                ?>
                             </tbody>
                             </table>
                         </div>
