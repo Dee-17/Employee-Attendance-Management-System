@@ -44,26 +44,21 @@
         <div class="right_panel container p-5">
             <p class="header_title"><span class="bold_title">Daily Log in</span> Report</p>
             <!-- First row -->
-            <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between">
-                <div class="col col-7 p-0">
-                    <!-- Display the date chosen by user -->
-                    <div class="row m-0 p-0 gap-3">
-                        <!-- hidden by default -->
-                        <div class="date_container card px-4 py-2 col col-6" style="display: none;" id="date_picked">
-                            <p class="date_subtitle">Viewing log in reports during</p>
-                            <p class="date_title" id="selected_date"></p>
-                        </div>
-                        <div class="date_container card px-4 py-2 col col-6" id="current_date">
-                            <p class="date_subtitle">Viewing log in reports today</p>
-                            <p class="date_title" id="full_date"></p>
-                        </div>
-                        <div class="card col col-2 p-0 align-items-center justify-content-center">
-                           <div class="calendar_icon"><a type="button" data-bs-toggle="modal" data-bs-target="#calendar_modal"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
-                        </div>
-                    </div>
+            <div class="row container-fluid mt-4 gap-3 d-flex">
+                <!-- Display the date chosen by user -->
+                <div class="date_container card px-4 py-2 col col-4 justify-content-center" style="display: none;" id="date_picked">
+                    <p class="date_subtitle">Viewing log in reports during</p>
+                    <p class="date_title" id="selected_date"></p>
+                </div>
+                <div class="date_container card px-4 py-2 col col-4 justify-content-center" id="current_date">
+                    <p class="date_subtitle">Viewing log in reports today</p>
+                    <p class="date_title" id="full_date"></p>
+                </div>
+                <div class="card col col-1 p-0 align-items-center justify-content-center">
+                    <div class="calendar_icon"><a type="button" data-bs-toggle="modal" data-bs-target="#calendar_modal"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
                 </div>
                 <!-- Display real-time clock -->
-                <div class="clock_container grey_container col col-4 m-0 p-0">
+                <div class="clock_container grey_container col col-3 m-0 p-0 ms-auto">
                     <div class="clock_elements">
                         <span id="hour"></span>
                         <span id="point">:</span>
@@ -73,11 +68,17 @@
                         <span id="am_pm"></span>
                     </div>
                 </div>
+                <!-- Table legend -->
+                <div class="white_container col col-2 m-0 py-3 px-4">
+                    <p class="legend_title text-center">Table legend</p>
+                    <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
+                    <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
+                </div>
             </div>
             <!-- Reports -->
             <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_container">
-                <table class="employee_table table">
-                    <thead class="table_header">
+                <table class="table">
+                    <thead>
                         <tr>
                             <th scope="col">Emp ID</th>
                             <th scope="col">Full Name</th>
@@ -87,12 +88,12 @@
                             <th scope="col">AM OUT</th>
                             <th scope="col">PM IN</th>
                             <th scope="col">PM OUT</th>
-                            <th scope="col">Late</th>
-                            <th scope="col">Undertime</th>
+                            <th scope="col">Overtime</th>
+                            <th scope="col">Night Differential</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="table_body">
                         <tr>
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
