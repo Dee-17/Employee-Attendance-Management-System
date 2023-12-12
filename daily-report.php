@@ -25,7 +25,6 @@
                 $("#table_body").load("load-rows.php",{
                     table_date:date_picked
                 });
-                console.log(date_picked);
             });
         });
     </script>
