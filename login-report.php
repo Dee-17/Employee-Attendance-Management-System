@@ -21,7 +21,7 @@
     <div class="container-fluid row gap-0">
         <?php 
             include('nav-bar.php');
-        ?>
+        ?> 
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <!-- Name must be according to id inputted by admin -->
@@ -29,12 +29,13 @@
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">
                     <div class="row m-0 gap-3">
-                        <div class="date_container card px-4 py-2 col col-4">
+                        <!-- Date today -->
+                        <div class="date_container card px-4 py-2 col col-5">
                             <p class="date_subtitle m-0 p-0">Today is <span class="day_title" id="day_today"></span></p>
-                            <!-- Date today -->
                             <span class="date_title"><p class="mb-0 p-0" id="full_date"></p></span>
-                        </div>                       
-                        <div class="clock_container grey_container col col-7-sm m-0 p-0">
+                        </div>
+                        <!-- Real-time clock -->
+                        <div class="clock_container grey_container col col-4 m-0 p-0 ms-auto">
                             <div class="clock_elements">
                                 <span id="hour"></span>
                                 <span id="point">:</span>
@@ -52,18 +53,14 @@
                               <tr>
                               <th scope="col">Emp ID</th>
                                 <th scope="col">Full Name</th>
-                                <th scope="col">AM IN</th>
-                                <th scope="col">AM OUT</th>
-                                <th scope="col">PM IN</th>
-                                <th scope="col">PM OUT</th>
-                                <th scope="col">AM Late</th>
-                                <th scope="col">PM Late</th>
-                                <th scope="col">AM Undertime</th>
-                                <th scope="col">PM Undertime</th>
+                                <th scope="col">AM In</th>
+                                <th scope="col">AM Out</th>
+                                <th scope="col">PM In</th>
+                                <th scope="col">PM Out</th>
                                 <th scope="col">Night Differential</th>
                               </tr>
                             </thead>
-                            <tbody class="">
+                            <tbody class="table_body">
                             <?php
                                 include "connection.php";
 
@@ -78,10 +75,6 @@
                                         echo "<td>" . $row["am_out"] . "</td>";
                                         echo "<td>" . $row["pm_in"] . "</td>";
                                         echo "<td>" . $row["pm_out"] . "</td>";
-                                        echo "<td>" . $row["am_late"] . "</td>";
-                                        echo "<td>" . $row["pm_late"] . "</td>";
-                                        echo "<td>" . $row["am_underTIME"] . "</td>";
-                                        echo "<td>" . $row["pm_underTIME"] . "</td>";
                                         echo "<td>" . $row["night_differential"] . "</td>";
                                         echo "</tr>";
                                     }
@@ -93,7 +86,7 @@
                                 $conn->close();
                             ?>
                             </tbody>
-                          </table>
+                        </table>
                 </div>
             </div>
         </div>
