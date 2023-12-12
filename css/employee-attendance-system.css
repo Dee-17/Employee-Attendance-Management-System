@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* ============================================= */
+
+/* .alert_container {
+
+}
+.alert_message {
+
+} */
+.am_title, .pm_title {
+    background-color: #072560;
+    color: #F7F7F7;
+    font-size: 20px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
+}
+.company_name {
+    font-size: large;
+    font-weight: bold;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+.date_container {
+    background-color: #A4C3FF;
+    box-shadow: 0 0 15px 1px #A4C3FF;
+}
+.date_title, .day_title {
+    color: #072560;
+    font-weight: bold;
+    margin-top: -3px;
+    font-style: normal;
+}
+.date_title {
+    font-size: 25px;
+    margin-top: -8px;
+}
+.day_title {
+    font-size: 20px;
+}
+.date_subtitle {
+    color: #072560;
+    font-style: italic;
+}
+.employee_name {
+    font-weight: bold;
+    color: #072560;
+}
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
+.header_title {
+    font-size: 2rem;
+}
+.in_button, .out_button {
+    background-color: #ededed9f;
+}
+.in_out_button button {
+    width: 45%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.in_out_button button:hover {
+    background-color: #d4d4d4;
+    /* color: white; */
+}
+.left_panel {
+    background-color: #072560;
+    color: white;
+    position: fixed;
+    overflow: auto;
+    width: 20%;
+    height: 100%;
+    bottom: 0;
+}
+.left_panel img {
+    width: 80px;
+    height: 80px;
+}
+.log_out_button {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    align-self: center;
+}
+.message {
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.message_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+    padding: 10px;
+}
+.nav {
+    font-size: 13px;
+    font-weight: bold;
+}
+.nav a:hover {
+    background: white;
+    color: #072560;
+}
+.nav a:active {
+    color: #072560;
+}
+.nav_button {
+    border: 1px solid #4C618D;
+    color: #F7F7F7;
+}
+.nav-link[aria-current="page"]{
+    background: white;
+	color: #072560;
+}
+.right_panel {
+    width: 80%;
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #F7F7F7;
+    color: black;
+    min-height: 100vh;
+}
+.system_name {
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+
+    font-family: 'Inter', sans-serif;
+    background: #f7f7f7;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.right_panel {
+    width: 80%;
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #F7F7F7;
+    color: black;
+    min-height: 100vh;
+}
+
+
+.admin_name {
+    font-weight: bold;
+    color: #072560;
+}
+
+
+.title_2 {
+    font-size: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
+
+.white_container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+}
+
+
+.register_button {
+    width: 40%;
+}
+
+.btn_container .btn {
+    font-size: 13px;
+    padding: 2.5px 7px;
+}
+
+.search_button {
+    width: 20%;
+}

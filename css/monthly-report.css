@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+.bold_title {
+    font-weight: bold;
+    color: #072560;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.calendar_icon {
+    cursor: pointer;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
+}
+.close_button {
+    background-color: #989898;
+}
+.date_container {
+    background-color: #A4C3FF;
+    box-shadow: 0 0 15px 1px #A4C3FF;
+}
+.date_container p {
+    margin-bottom: 0;
+}
+.date_subtitle {
+    color: #072560;
+    font-style: italic;
+}
+.date_title {
+    font-size: 25px;
+    margin-top: -8px;
+    color: #072560;
+    font-weight: bold;
+    margin-top: -3px;
+    font-style: normal;
+}
+.employee_info label {
+    font-size: 12px;
+    color: #7e7e7e;
+    font-weight: bold;
+    font-style: italic;
+}
+.employee_info input, .employee_search input, .employee_search button {
+    font-size: 14px;
+}
+.employee_name input {
+    font-weight: bold;
+}
+.employee_search button, .employee_search button:hover {
+    background-color: #072560;
+    border: none;
+}
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
+.header_title {
+    font-size: 2rem;
+}
+.legend_blue, .legend_red {
+    font-style: italic;
+    font-size: 12px;
+}
+.legend_blue {
+    color: #6195ff;
+}
+.legend_red {
+    color: red;
+}
+.legend_title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #5f5f5f;
+    margin-bottom: 2px;
+}
+.modal-content {
+    background-color: #F7F7F7;
+}
+.modal-footer button {
+    border: none;
+}
+.search_button button, .search_button button:hover {
+    background-color: #072560;
+}
+.table th {
+    color: #989898;
+}
+.table th, .table_body td {
+    font-size: 14px;
+}
+.right_panel {
+    width: 80%;
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #F7F7F7;
+    color: black;
+    min-height: 100vh;
+}
+.white_container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
