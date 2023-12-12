@@ -26,7 +26,7 @@
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <!-- Name must be according to id inputted by admin -->
-            <p class="title_1">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
+            <p class="header_title">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
             <div class="container mt-4 row gap-3">
                 <div class="col col-12 p-0">
                     <div class="row m-0 gap-3">
@@ -48,7 +48,7 @@
                         </div>
                         <!-- Table legend -->
                         <div class="white_container col col-2 m-0 py-3 px-4">
-                            <p class="title_2 text-center">Table legend</p>
+                            <p class="legend_title text-center">Table legend</p>
                             <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
                             <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
                         </div>
@@ -57,16 +57,16 @@
                     <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
                         <table class="table">
                             <thead>
-                              <tr>
-                              <th scope="col">Emp ID</th>
-                                <th scope="col">Full Name</th>
-                                <th scope="col">AM In</th>
-                                <th scope="col">AM Out</th>
-                                <th scope="col">PM In</th>
-                                <th scope="col">PM Out</th>
-                                <th scope="col">Overtime</th>
-                                <th scope="col">Night Differential</th>
-                              </tr>
+                                <tr>
+                                    <th scope="col">Emp ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">AM In</th>
+                                    <th scope="col">AM Out</th>
+                                    <th scope="col">PM In</th>
+                                    <th scope="col">PM Out</th>
+                                    <th scope="col">Overtime</th>
+                                    <th scope="col">Night Differential</th>
+                                </tr>
                             </thead>
                             <tbody class="table_body">
                             <?php
