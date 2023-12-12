@@ -30,7 +30,7 @@
                 <div class="col col-12 p-0">
                     <div class="row m-0 gap-3">
                         <!-- Date today -->
-                        <div class="date_container card px-4 py-2 col col-5">
+                        <div class="date_container card px-4 py-2 col col-4">
                             <p class="date_subtitle m-0 p-0">Today is <span class="day_title" id="day_today"></span></p>
                             <span class="date_title"><p class="mb-0 p-0" id="full_date"></p></span>
                         </div>
@@ -78,15 +78,14 @@
                                         echo "<td>" . $row["night_differential"] . "</td>";
                                         echo "</tr>";
                                     }
+                                    echo "</tbody></table>";
                                 }
                                 else {
-                                    echo "No employees found.";
+                                    echo "</tbody></table>No Employees Found";
                                 }
 
                                 $conn->close();
                             ?>
-                            </tbody>
-                        </table>
                 </div>
             </div>
         </div>
