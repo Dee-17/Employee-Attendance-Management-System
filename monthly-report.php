@@ -22,16 +22,19 @@
                 });
             //search
             $("#search_ID").click(function(){
-                var date_picked = document.getElementById('picked_date').value;
-
-                var employee_Id = document.getElementById('emp_search').value;
-                //send to monthly-load.php
-                //di pumapasa papuntang monthly load
-                $("#table_body").load("monthly-load.php",{
-                    table_date:JSON.stringify(date_picked),
-                    emp_id: employee_Id
-                });
-               
+            var employee_Id = document.getElementById('emp_search').value;
+            //send to monthly-load.php
+            $.ajax({
+                url: 'monthly-load.php',
+                type: 'post',
+                data: {emp_id: employee_Id},
+                success: function(response){
+                    var employee = JSON.parse(response);
+                    $('input[name="emp_id"]').val(employee.emp_id);
+                    $('input[name="emp_name"]').val(employee.first_name + ' ' + employee.middle_name + ' ' + employee.last_name);
+                    $('input[name="emp_contract"]').val(employee.contract);
+                    $('input[name="emp_shift"]').val(employee.shift);
+                }
             });
         });
     </script>
@@ -51,7 +54,7 @@
             </div>
             <div class="modal-body">
                 <p>Select the month and year</p>
-               <input class="form-control" type="date" name="date_picker" id="picked_date">
+               <input class="form-control" type="month" name="date_picker" id="picked_date">
             </div>
             <div class="modal-footer">
                 <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -128,12 +131,12 @@
                 <div class="col col-4 p-0">
                     <div class="row m-0 p-0 gap-3">
                         <div class="card px-3 py-3 col m-0">
-                            <form action="" class="employee_search d-flex gap-2">
+                            <form action="monthly-search.php" class="employee_search d-flex gap-2">
                                 <div class="col col-9 m-0 p-0">
-                                    <input type="text" id="emp_search" class="form-control" placeholder="Enter employee id">
+                                    <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
                                 <div class="col col-2 m-0 p-0">
-                                    <button class="btn btn-primary" id="search_ID">Search</button>
+                                    <input class="btn btn-primary" id="search_ID" type="submit" value="Search">
                                 </div>
                             </form>
                         </div>
@@ -150,8 +153,8 @@
                             <th scope="col">AM OUT</th>
                             <th scope="col">PM IN</th>
                             <th scope="col">PM OUT</th>
-                            <th scope="col">Late</th>
-                            <th scope="col">Undertime</th>
+                            <th scope="col">Overtime</th>
+                            <th scope="col">Night Differential</th>
                         </tr>
                     </thead>
 
