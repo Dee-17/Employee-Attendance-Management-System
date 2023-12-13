@@ -64,14 +64,14 @@
                                 }
                         
                                 // Modify the SQL query to search in both emp_id and full_name columns
-                                $sql = "SELECT * FROM employee WHERE emp_id = '" . $emp_id . "' OR full_name LIKE '%" . $emp_id . "%'";
+                                $sql = "SELECT * FROM employee WHERE emp_id = '" . $emp_id . "' OR CONCAT(first_name, ' ', middle_name, ' ', last_name) LIKE '%" . $emp_id . "%'";
                                 $result = mysqli_query($conn, $sql);
                         
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         echo "<tr>";
                                         echo "<td>" . $row["emp_id"] . "</td>";
-                                        echo "<td>" . $row["full_name"] . "</td>";
+                                        echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
                                         echo "<td>" . $row["contact_number"] . "</td>";
                                         echo "<td>" . $row["email_address"] . "</td>";
                                         echo "<td>" . $row["address"] . "</td>";
