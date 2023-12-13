@@ -1,6 +1,3 @@
-<?php
-  // include ('php/employee-add.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
