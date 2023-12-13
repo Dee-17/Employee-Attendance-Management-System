@@ -1,6 +1,9 @@
 <?php
     include "connection.php";
-
+    
+    $first_name = $_POST['input-first-name'];
+    $middle_name = $_POST['input-middle-name'];
+    $last_name = $_POST['input-last-name'];
     $emp_id = $_POST['emp-id']; 
     $full_name = $_POST['input-first-name'] . ' ' . $_POST['input-middle-name'] . ' ' . $_POST['input-last-name'];
     $address = $_POST['input-address'];
