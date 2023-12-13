@@ -5,6 +5,7 @@ a {
     padding: 0;
 }
 body {
+
     font-family: 'Inter', sans-serif;
     background: #f7f7f7;
 }
@@ -49,12 +50,10 @@ body {
 .right_panel {
     width: 80%;
     margin-left: 20%;
-    display: inline-block;
-    background-color: #F7F7F7;
     color: black;
     min-height: 100vh;
 }
-.search_button button, .search_button button:hover {
+.search_button input, .search_button input:hover {
     border: none;
     background-color: #072560;
     color: white;
