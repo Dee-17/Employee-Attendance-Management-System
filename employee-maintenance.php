@@ -62,7 +62,8 @@
                                             return;
                                         }
                                 
-                                        $sql = "SELECT * FROM employee WHERE emp_id = '" . $emp_id . "' ";
+                                        // Modify the SQL query to search in both emp_id and full_name columns
+                                        $sql = "SELECT * FROM employee WHERE emp_id = '" . $emp_id . "' OR full_name LIKE '%" . $emp_id . "%'";
                                         $result = mysqli_query($conn, $sql);
                                 
                                         if (!$result) {
