@@ -10,86 +10,87 @@
   <script src="js/nav-bar.js" defer></script>
 </head>
 <body class="container-fluid">
-  	<div class="container-fluid row gap-0">
-		<!-- Navigation Bar -->
-		<?php
-			include('nav-bar.php');
-		?>
-		<!-- Main contents -->
-		<div class="right_panel container p-5">
-			<div class="header row container-fluid align-items-top">
-				<div class="col col-10 m-0 p-0"><p class="header_title"><span class="blue_title">Edit</span> Employee Information</p></div>
-				<div class="col col-auto m-0 p-0 ms-auto exit_button">
-					<a href="employee-maintenance.php" class="nav-link"><button type="button" class="btn btn-secondary py-2 px-3">Go Back</button></a>
-				</div>
-			</div>
-			<div class="container-fluid gap-3">
-				<div class="row p-0 mx-0 justify-content-evenly">
-					<!-- Employee form -->
-					<div class="card py-5 px-4">
-						<form class="register_form row g-3">
-							<div class="col-md-4">
-								<label for="inputFirstName" class="form-label">First Name</label>
-								<input type="text" class="form-control" id="input-first-name" placeholder="Enter first name">
-							</div>
-							<div class="col-md-4">
-								<label for="inputMiddleName" class="form-label">Middle Name</label>
-								<input type="input-middle-name" class="form-control" id="input-middle-name" placeholder="Enter middle name">
-							</div>
-							<div class="col-md-4">
-								<label for="inputLastName" class="form-label">Last Name</label>
-								<input type="text" class="form-control" id="input-last-name" placeholder="Enter last name">
-							</div>
-							<div class="col-10">
-								<label for="inputAddress" class="form-label">Address</label>
-								<input type="text" class="form-control" id="input-address" placeholder="1234 Main St">
-							</div>
-							<div class="col-2">
-								<label for="inputZIP" class="form-label">ZIP Code</label>
-								<input type="text" class="form-control" id="input-zip" placeholder="1234">
-							</div>
-							<div class="col-4">
-								<label for="inputContactNumber" class="form-label">Contact Number</label>
-								<input type="text" class="form-control" id="input-contact-number" placeholder="0912345678">
-							</div>
-							<div class="col-md-8">
-								<label for="inputEmailAddress" class="form-label">Email Address</label>
-								<input type="text" class="form-control" id="input-email-address" placeholder="example123@email.com">
-							</div>
-							<div class="col-md-4">
-								<label for="inputEmployeeContract" class="form-label">Employee Contract</label>
-								<select id="input-employee-contract" class="form-select">
-									<option selected></option>
-									<option>Full Time</option>
-									<option>Part Time</option>
-								</select>
-							</div>
-							<div class="col-md-4">
-								<label for="inputShift" class="form-label">Shift</label>
-								<select id="input-shift" class="form-select">
-									<option selected></option>
-									<option>Day Shift</option>
-									<option>Night Shift</option>
-								</select>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="card white_container container-fluid row mt-3 text-center">
-					<form class="d-flex register_button m-0 p-2 justify-content-between">
-						<!-- Reply to user after submitting forms -->
-						<div class="grey_container col col-9 d-flex align-items-center justify-content-center m-0 p-0">
-							<p class="pop_out_text m-0">Fill out the required fields before you submit.</p>
-						</div>
-						<!-- Submit button -->
-						<div class="col col-auto p-0">
-							<button type="submit" class="btn btn-outline-primary px-5 py-2">Edit Information</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-		</div>
-  	</div>
+    <div class="container-fluid row gap-0">
+        <!-- Navigation Bar -->
+        <?php 
+            include('nav-bar.php');
+        ?>
+        <!-- Main contents -->
+        <div class="right_panel container p-5">
+            <div class="header col col-12">
+              <p class="title_2 col col-11">Edit Employee Details</p>
+              <button type="button" class="exit_button col col-1 btn btn-secondary p-2 mx-0"><a href="employee-maintenance.php" class="nav-link">Go Back</a></button>            
+            </div>                           
+            <div class="container mt-4 row gap-3">
+                <div class="col col-12 p-0">
+                    <div class="row m-0 gap-3">  
+                        <div class="grey_container col col-12-sm p-0 mx-0 justify-content-evenly">
+                            <div class="col col-12 card p-3">
+                            <form action="employee-edit-form.php" method="post" class="row g-3">
+                            <?php
+                                $emp_id = $_GET['emp_id'];
+                            ?>
+                              <input type="hidden" id="emp_id" name="emp-id" value="<?php echo $emp_id; ?>">
+                                    <div class="col-md-4">
+                                      <label for="inputFirstName" class="form-label">First Name</label>
+                                      <input type="text" class="form-control" id="input-first-name" name="input-first-name" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="inputMiddleName" class="form-label">Middle Name</label>
+                                      <input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="inputLastName" class="form-label">Last Name</label>
+                                      <input type="text" class="form-control" id="input-last-name" name="input-last-name" required>
+                                    </div>
+                                    <div class="col-10">
+                                      <label for="inputAddress" class="form-label">Address</label>
+                                      <input type="text" class="form-control" id="input-address" name="input-address" placeholder="1234 Main St" required>
+                                    </div>
+                                    <div class="col-2">
+                                      <label for="inputZIP" class="form-label">ZIP Code</label>
+                                      <input type="text" class="form-control" id="input-zip" name="input-zip" placeholder="1412" required>
+                                    </div>
+                                    <div class="col-4">
+                                      <label for="inputContactNumber" class="form-label">Contact Number</label>
+                                      <input type="text" class="form-control" id="input-contact-number" name="input-contact-number" placeholder="0912345678" required>
+                                    </div>
+                                    <div class="col-md-8">
+                                      <label for="inputEmailAddress" class="form-label">Email Address</label>
+                                      <input type="text" class="form-control" id="input-email-address" name="input-email-address" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="inputEmployeeContract" class="form-label">Employee Contract</label>
+                                      <select id="input-employee-contract" name="input-employee-contract" class="form-select" required>
+                                        <option>Full Time</option>
+                                        <option>Part Time</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="inputShift" class="form-label">Shift</label>
+                                      <select id="input-shift" name="input-shift" class="form-select" required>
+                                        <option>Day Shift</option>
+                                        <option>Night Shift</option>
+                                        <option>Morning Shift</option>
+                                        <option>Afternoon Shift</option>
+                                      </select>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card white_container row mt-3 mx-0 text-center justify-content-evenly">
+                          <div class="d-flex">
+                          <div class="grey_container col col-8 me-3">
+                                <p class="pop_out_text">Fill out the required fields.</p>
+                            </div>                           
+                            <button type="submit" class="register_button btn btn-outline-primary">Edit Information</button>    
+                          </div>
+                        </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
