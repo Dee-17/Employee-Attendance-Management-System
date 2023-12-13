@@ -1,0 +1,7 @@
+Employee Login 
+		ipapass ang ID employee-attendance-system
+		ichecheck kung may previous entry sa am/pm and if oo lockout
+		Pag click in ng AM take current time and gawa entry and then disable button
+		Pag click ng PM update yung row ng same day
+		 
+$sql = "SELECT * FROM atlog INNER JOIN employee ON atlog.emp_id = employee.emp_id WHERE atlog.atlog_DATE = '$day or currdate()'"; 
