@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 .admin_name {
     color: #072560;
+}
+body {
+    font-family: 'Inter', sans-serif;
 }
 .card {
     border: none;
