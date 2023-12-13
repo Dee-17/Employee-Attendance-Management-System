@@ -1,3 +1,7 @@
+<?php
+    include "update.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +17,21 @@
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
     <script src="js/full-calendar.js" defer></script>
+    <script>
+        $(document).ready(function(){
+            var today = new Date().toLocaleDateString();
+            $("#table_body").load("load-rows.php",{
+                    table_date:today
+                });
+            $("#search_button").click(function(){
+                var date_picked = document.getElementById('picked_date').value;
+                
+                $("#table_body").load("load-rows.php",{
+                    table_date:date_picked
+                });
+            });
+        });
+    </script>
 
 </head>
 <body class="container-fluid">
@@ -93,7 +112,7 @@
                         </tr>
                     </thead>
 
-                    <tbody class="table_body">
+                    <tbody class="table_body" id="table_body">
                         <tr>
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
@@ -103,30 +122,6 @@
                             <td>12:01</td>
                             <td>1:00</td>
                             <td>5:01</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark Otto</td>
-                            <td>Part-time</td>
-                            <td>Afternoon</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>1:00</td>
-                            <td>4:51</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark Otto</td>
-                            <td>Part-time</td>
-                            <td>Morning</td>
-                            <td>9:00</td>
-                            <td>12:51</td>
-                            <td>-</td>
-                            <td>-</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
