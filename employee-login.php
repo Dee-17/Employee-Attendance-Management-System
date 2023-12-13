@@ -1,6 +1,9 @@
 <?php
     include "connection.php";
 
+    // Start the session
+    session_start();
+
     if (isset($_POST['signin'])) {
         $id = $_POST['id-number'];
         $password = $_POST['password'];
@@ -15,7 +18,12 @@
                 $row = mysqli_fetch_assoc($result);
 
                 if ($password == $row['password']) {
+                    // Set the emp_id in the session
+                    $_SESSION['emp_id'] = $row['emp_id'];
+
+                    // Redirect to employee-attendance-system.php
                     header("Location: employee-attendance-system.php");
+                    exit();
                 } else {
                     $em_sn_error = true;
                 }
