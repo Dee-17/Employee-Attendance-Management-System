@@ -13,6 +13,28 @@
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
     <script src="js/month-year-calendar.js" defer></script>
+        <script>
+        $(document).ready(function(){
+            //On Load
+            var today = new Date().toLocaleDateString();
+            $("#table_body").load("monthly-load.php",{
+                table_onload: JSON.stringify(today),
+                });
+            //search
+            $("#search_ID").click(function(){
+                var date_picked = document.getElementById('picked_date').value;
+
+                var employee_Id = document.getElementById('emp_search').value;
+                //send to monthly-load.php
+                //di pumapasa papuntang monthly load
+                $("#table_body").load("monthly-load.php",{
+                    table_date:JSON.stringify(date_picked),
+                    emp_id: employee_Id
+                });
+               
+            });
+        });
+    </script>
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
@@ -29,7 +51,7 @@
             </div>
             <div class="modal-body">
                 <p>Select the month and year</p>
-               <input class="form-control" type="month" name="date_picker" id="picked_date">
+               <input class="form-control" type="date" name="date_picker" id="picked_date">
             </div>
             <div class="modal-footer">
                 <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -111,7 +133,7 @@
                                     <input type="text" id="emp_search" class="form-control" placeholder="Enter employee id">
                                 </div>
                                 <div class="col col-2 m-0 p-0">
-                                    <button class="btn btn-primary">Search</button>
+                                    <button class="btn btn-primary" id="search_ID">Search</button>
                                 </div>
                             </form>
                         </div>
@@ -133,34 +155,8 @@
                         </tr>
                     </thead>
 
-                    <tbody class="table_body">
-                        <tr>
-                            <th scope="row">November 20, 2023</th>
-                            <td>8:00</td>
-                            <td>12:01</td>
-                            <td>1:00</td>
-                            <td>5:01</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">November 22, 2023</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>1:00</td>
-                            <td>4:51</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">November 23, 2023</th>
-                            <td>9:00</td>
-                            <td>12:51</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                    <tbody class="table_body" id="table_body">
+                  
                     </tbody>
                 </table>
             </div>
