@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 03:40 PM
+-- Generation Time: Dec 13, 2023 at 05:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -61,20 +61,18 @@ CREATE TABLE `atlog` (
   `am_underTIME` int(11) DEFAULT NULL,
   `pm_late` int(11) DEFAULT NULL,
   `pm_underTIME` int(11) DEFAULT NULL,
-  `night_differential` decimal(3,2) DEFAULT NULL
+  `night_differential` decimal(3,2) DEFAULT NULL,
+  `overtime` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `atlog`
 --
 
-INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_in`, `pm_out`, `am_late`, `am_underTIME`, `pm_late`, `pm_underTIME`, `night_differential`) VALUES
-(1, 4, '2023-12-13', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00),
-(2, 2, '2023-12-13', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00),
-(3, 3, '2023-12-13', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00),
-(7, 1, '2023-12-13', '10:30:00', '11:30:00', '13:30:00', '14:59:00', 0, 0, 0, 0, 0.00),
-(8, 2, '2023-12-13', '09:30:00', '11:30:00', '15:30:00', '20:59:00', 0, 0, 0, 0, 0.00),
-(9, 3, '2023-12-13', '08:30:00', '11:30:00', '13:30:00', '16:59:00', 0, 0, 0, 0, 0.00);
+INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_in`, `pm_out`, `am_late`, `am_underTIME`, `pm_late`, `pm_underTIME`, `night_differential`, `overtime`) VALUES
+(10, 8, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00, 0),
+(11, 9, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00, 0),
+(12, 12, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00, 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +83,6 @@ INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_
 CREATE TABLE `employee` (
   `emp_id` int(11) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `full_name` varchar(30) NOT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `middle_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
@@ -101,12 +98,12 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_id`, `password`, `full_name`, `first_name`, `middle_name`, `last_name`, `address`, `zip`, `contact_number`, `email_address`, `contract`, `shift`) VALUES
-(1, 'emp123', 'Alex Scenariosa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', ''),
-(2, 'powwwy', 'Powwwy March', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', ''),
-(3, 'agedwine', 'Charles Baclao', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', ''),
-(4, 'daniela', 'Daniela M. Cantillo', NULL, NULL, NULL, 'Labnig, Malinao, Albay', '2311', '09669517555', 'danielamarzan.cantillo@bicol-u.edu.ph', 'Part Time', 'Night Shift'),
-(5, '', 'Daniela M. Cantillo', NULL, NULL, NULL, 'Labnig, Malinao, Albay', '2311', '09669517555', 'danielamarzan.cantillo@bicol-u.edu.ph', 'Part Time', 'Morning Shift');
+INSERT INTO `employee` (`emp_id`, `password`, `first_name`, `middle_name`, `last_name`, `address`, `zip`, `contact_number`, `email_address`, `contract`, `shift`) VALUES
+(8, '', 'Daniela', 'M.', 'Cantillo', 'Labnig, Malinao, Albay', '2311', '09669517555', 'danielamarzan.cantillo@bicol-u.edu.ph', 'Part Time', 'Afternoon Shift'),
+(9, '', 'Dee', 'Monde', 'Razon', 'Sagpon, Daraga, Albay', '3434', '09468381717', 'dee@outlook.com', 'Full Time', 'Night Shift'),
+(10, '', 'Minzy', 'Grado', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Part Time', 'Morning Shift'),
+(11, '', 'Alex', 'MIddle', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Full Time', 'Night Shift'),
+(12, '', 'Dawn', 'Cruz', 'Bande', '1231 Harong Pagkamoot, Magapo, Albay', '1234', '09562849189', 'dawnbc@gmail.com', 'Full Time', 'Day Shift');
 
 --
 -- Indexes for dumped tables
@@ -145,13 +142,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `atlog`
 --
 ALTER TABLE `atlog`
-  MODIFY `atlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `atlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
