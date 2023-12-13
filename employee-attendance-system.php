@@ -3,7 +3,7 @@
     include "connection.php"; 
     $empId = $_SESSION['emp_id']; 
 
-    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.emp_id, employee.full_name 
+    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.emp_id, employee.first_name, employee.middle_name, employee.last_name
                                 FROM atlog 
                                 JOIN employee ON atlog.emp_id = employee.emp_id
                                 WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
@@ -12,7 +12,7 @@
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $employeeFullName = $row['full_name'];
+        $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
     } else {
         echo '<p>No previous entry found</p>';
     }
@@ -49,7 +49,7 @@
             <!-- Main contents -->
             <div class="right_panel container p-5">
                 <?php
-                $employeeFullName = $row['full_name'];
+                $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
                 ?>
                 <p class="header_title">Welcome <span class="employee_name" id="employee_name"><?php echo $employeeFullName; ?></span>!</p>
                 <div class="container mt-4 row gap-3">
