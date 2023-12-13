@@ -1,3 +1,7 @@
+<?php
+  include "employee-edit-form.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,61 +30,66 @@
                     <div class="row m-0 gap-3">  
                         <div class="grey_container col col-12-sm p-0 mx-0 justify-content-evenly">
                             <div class="col col-12 card p-3">
-                                <form class="row g-3">
+                            <form action="" method="post" class="row g-3">
+                            <?php
+                                $emp_id = $_GET['emp_id'];
+                            ?>
+                              <input type="hidden" id="emp_id" name="emp-id" value="<?php echo $emp_id; ?>">
                                     <div class="col-md-4">
                                       <label for="inputFirstName" class="form-label">First Name</label>
-                                      <input type="text" class="form-control" id="input-first-name">
+                                      <input type="text" class="form-control" id="input-first-name" name="input-first-name" required>
                                     </div>
                                     <div class="col-md-4">
                                       <label for="inputMiddleName" class="form-label">Middle Name</label>
-                                      <input type="input-middle-name" class="form-control" id="input-middle-name">
+                                      <input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" required>
                                     </div>
                                     <div class="col-md-4">
-                                      <label for="inputLastName" class="form-label">Password</label>
-                                      <input type="text" class="form-control" id="input-last-name">
+                                      <label for="inputLastName" class="form-label">Last Name</label>
+                                      <input type="text" class="form-control" id="input-last-name" name="input-last-name" required>
                                     </div>
                                     <div class="col-10">
                                       <label for="inputAddress" class="form-label">Address</label>
-                                      <input type="text" class="form-control" id="input-address" placeholder="1234 Main St">
+                                      <input type="text" class="form-control" id="input-address" name="input-address" placeholder="1234 Main St" required>
                                     </div>
                                     <div class="col-2">
                                       <label for="inputZIP" class="form-label">ZIP Code</label>
-                                      <input type="text" class="form-control" id="input-zip" placeholder="1412">
+                                      <input type="text" class="form-control" id="input-zip" name="input-zip" placeholder="1412" required>
                                     </div>
                                     <div class="col-4">
                                       <label for="inputContactNumber" class="form-label">Contact Number</label>
-                                      <input type="text" class="form-control" id="input-contact-number" placeholder="0912345678">
+                                      <input type="text" class="form-control" id="input-contact-number" name="input-contact-number" placeholder="0912345678" required>
                                     </div>
                                     <div class="col-md-8">
                                       <label for="inputEmailAddress" class="form-label">Email Address</label>
-                                      <input type="text" class="form-control" id="input-email-address">
+                                      <input type="text" class="form-control" id="input-email-address" name="input-email-address" required>
                                     </div>
                                     <div class="col-md-4">
                                       <label for="inputEmployeeContract" class="form-label">Employee Contract</label>
-                                      <select id="input-employee-contract" class="form-select">
-                                        <option selected></option>
+                                      <select id="input-employee-contract" name="input-employee-contract" class="form-select" required>
                                         <option>Full Time</option>
                                         <option>Part Time</option>
                                       </select>
                                     </div>
                                     <div class="col-md-4">
                                       <label for="inputShift" class="form-label">Shift</label>
-                                      <select id="input-shift" class="form-select">
-                                        <option selected></option>
+                                      <select id="input-shift" name="input-shift" class="form-select" required>
                                         <option>Day Shift</option>
                                         <option>Night Shift</option>
+                                        <option>Morning Shift</option>
+                                        <option>Afternoon Shift</option>
                                       </select>
                                     </div>
-                                  </form>
                             </div>
                         </div>
                         <div class="card white_container row mt-3 mx-0 text-center justify-content-evenly">
-                          <form class="d-flex">
-                            <div class="grey_container col col-8 me-3">
+                          <div class="d-flex">
+                          <div class="grey_container col col-8 me-3">
                                 <p class="pop_out_text">Fill out the required fields.</p>
                             </div>                           
-                            <button type="button" class="register_button btn btn-outline-primary">Edit Information</button>                            
-                          </form>
+                            <button type="submit" class="register_button btn btn-outline-primary">Edit Information</button>    
+                          </div>
+                        </div>
+                        </form>
                         </div>
                     </div>
                 </div>
