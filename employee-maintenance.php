@@ -83,8 +83,8 @@
                                                 echo "<td>" . $row["shift"] . "</td>";
                                                 echo "<td>
                                                         <div class='btn_container me-0'>
-                                                            <button class='btn btn-outline-dark'><a href='employee-edit.php?id=" . $row["emp_id"] . "' class='nav-link'>Edit</a></button>
-                                                            <button class='btn btn-outline-danger'><a href='delete_employee.php?emp_id=" . $row["emp_id"] . "' class='nav-link'>Delete</a></button>
+                                                            <button class='btn btn-outline-dark'><a href='employee-edit.php?emp_id=" . $row["emp_id"] . "' class='nav-link'>Edit</a></button>
+                                                            <button class='btn btn-outline-danger'><a href='employee-delete.php?emp_id=" . $row["emp_id"] . "' class='nav-link'>Delete</a></button>
                                                         </div>
                                                     </td>";
                                                 echo "</tr>";
@@ -110,7 +110,7 @@
                                                 echo "<td>
                                                         <div class='btn_container me-0'>
                                                             <button class='btn btn-outline-dark'><a href='employee-edit.php?emp_id=" . $row["emp_id"] . "' class='nav-link'>Edit</a></button>
-                                                            <button class='btn btn-outline-danger'><a href='delete_employee.php?id=" . $row["emp_id"] . "' class='nav-link'>Delete</a></button>
+                                                            <button class='btn btn-outline-danger'><a href='employee-delete.php?emp_id=" . $row["emp_id"] . "' class='nav-link'>Delete</a></button>
                                                         </div>
                                                     </td>";
                                                 echo "</tr>";
