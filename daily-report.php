@@ -19,13 +19,13 @@
     <script src="js/full-calendar.js" defer></script>
     <script>
         $(document).ready(function(){
-            var today = new Date().toLocaleDateString();
+            var today = new Date().toISOString().slice(0,10);
             $("#table_body").load("load-rows.php",{
-                    table_date:today
-                });
+                table_date:today
+            });
+
             $("#search_button").click(function(){
                 var date_picked = document.getElementById('picked_date').value;
-                
                 $("#table_body").load("load-rows.php",{
                     table_date:date_picked
                 });
@@ -113,18 +113,6 @@
                     </thead>
 
                     <tbody class="table_body" id="table_body">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark Otto</td>
-                            <td>Full-time</td>
-                            <td>Whole Day</td>
-                            <td>8:00</td>
-                            <td>12:01</td>
-                            <td>1:00</td>
-                            <td>5:01</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
