@@ -22,4 +22,7 @@
 
     mysqli_close($conn);
 
+    header('Location: employee-edit.php?emp_id=' . $emp_id);
+    exit;
+
 ?>

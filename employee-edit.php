@@ -1,6 +1,4 @@
-<?php
-  include "employee-edit-form.php";
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +28,7 @@
                     <div class="row m-0 gap-3">  
                         <div class="grey_container col col-12-sm p-0 mx-0 justify-content-evenly">
                             <div class="col col-12 card p-3">
-                            <form action="" method="post" class="row g-3">
+                            <form action="employee-edit-form.php" method="post" class="row g-3">
                             <?php
                                 $emp_id = $_GET['emp_id'];
                             ?>
