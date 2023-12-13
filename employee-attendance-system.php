@@ -1,10 +1,9 @@
 <?php
     session_start();
     include "connection.php"; 
-
     $empId = $_SESSION['emp_id']; 
 
-    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.pm_in, employee.emp_id, employee.full_name 
+    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.emp_id, employee.full_name 
                                 FROM atlog 
                                 JOIN employee ON atlog.emp_id = employee.emp_id
                                 WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
@@ -15,8 +14,7 @@
         $row = $result->fetch_assoc();
         $employeeFullName = $row['full_name'];
     } else {
-        echo '<button class="btn in_button col col-auto" onclick="logTime(\'am\')">Log AM</button>';
-        echo '<button class="btn in_button col col-auto" onclick="logTime(\'pm\')">Log PM</button>';
+        echo '<p>No previous entry found</p>';
     }
 
     $conn->close();
@@ -74,35 +72,107 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- AM and PM log in and log out buttons -->
                         <div class="grey_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
                         <div class="col col-5 card p-3">
                             <div class="am_title container w-50 mb-3 rounded-2 p-2"><p class="m-0">AM</p></div>
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
-                                    <?php
-                                    // Display AM button based on condition
-                                    if ($row['am_in'] === null) {
-                                        echo '<button class="btn in_button col col-auto" onclick="logTime(\'am\')">Log AM</button>';
-                                    } else {
-                                        echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
-                                    }
+                                <?php
+                                // LOG AM
+                                if ($row['am_in'] === null) {
+                                    echo '<button class="btn in_button col col-auto" onclick="logAM()">Log AM</button>';
+                                } else {
+                                    echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
+                                }
+
+                                // Add the JavaScript function to log AM time using AJAX
+                                echo '<script>
+                                        function logAM() {
+                                            var xhr = new XMLHttpRequest();
+                                            xhr.open("GET", "log_am.php", true);
+                                            xhr.onreadystatechange = function() {
+                                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                                    // Update the button status or show a success message if needed
+                                                    console.log(xhr.responseText);
+                                                }
+                                            };
+                                            xhr.send();
+                                        }
+                                    </script>';
+
+                                // OUT AM
+                                if ($row['am_out'] === null) {
+                                    echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
+                                } else {
+                                    echo '<button class="btn out_button col col-auto" disabled>Logged</button>';
+                                }
+
+                                // Add the JavaScript function to log AM out time using AJAX
+                                echo '<script>
+                                        function logAMOut() {
+                                            var xhr = new XMLHttpRequest();
+                                            xhr.open("GET", "out_am.php", true);
+                                            xhr.onreadystatechange = function() {
+                                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                                    // Update the button status or show a success message if needed
+                                                    console.log(xhr.responseText);
+                                                }
+                                            };
+                                            xhr.send();
+                                        }
+                                    </script>';
                                     ?>
-                                    <button class="btn out_button col col-auto" onclick="">OUT</button>
-                                </form>
-                                                </div>
+                            </form>
+                            </div>
                         <div class="col col-5 card p-3">
                             <div class="pm_title container w-50 mb-3 rounded-2 p-2"><p class="m-0">PM</p></div>
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                                 <?php
                                     // Display PM button based on condition
-                                    if ($row['pm_in'] === null) {
-                                        echo '<button class="btn in_button col col-auto" onclick="logTime(\'pm\')">Log PM</button>';
-                                    } else {
-                                        echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
-                                    }
-                                    ?>
-                                <button class="btn out_button col col-auto" onclick="">OUT</button>
+                                        if ($row['pm_in'] === null) {
+                                            echo '<button class="btn in_button col col-auto" onclick="logPM()">Log PM</button>';
+                                        } else {
+                                            echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
+                                        }
+
+                                        // Add the JavaScript function to log PM time using AJAX
+                                        echo '<script>
+                                                function logPM() {
+                                                    var xhr = new XMLHttpRequest();
+                                                    xhr.open("GET", "log_pm.php", true);
+                                                    xhr.onreadystatechange = function() {
+                                                        if (xhr.readyState == 4 && xhr.status == 200) {
+                                                            // Update the button status or show a success message if needed
+                                                            console.log(xhr.responseText);
+                                                        }
+                                                    };
+                                                    xhr.send();
+                                                }
+                                            </script>';
+
+
+                                            // Display AM out button based on condition
+                                        if ($row['pm_out'] === null) {
+                                            echo '<button class="btn out_button col col-auto" onclick="logPMOut()">OUT</button>';
+                                        } else {
+                                            echo '<button class="btn out_button col col-auto" disabled>Logged</button>';
+                                        }
+
+                                        // Add the JavaScript function to log AM out time using AJAX
+                                        echo '<script>
+                                                function logPMOut() {
+                                                    var xhr = new XMLHttpRequest();
+                                                    xhr.open("GET", "out_pm.php", true);
+                                                    xhr.onreadystatechange = function() {
+                                                        if (xhr.readyState == 4 && xhr.status == 200) {
+                                                            // Update the button status or show a success message if needed
+                                                            console.log(xhr.responseText);
+                                                        }
+                                                    };
+                                                    xhr.send();
+                                                }
+                                            </script>';
+                                ?>
+                                
                             </form>                  
                             <!-- Alert Message -->
                             <!-- <div class="alert_container card mt-3">
@@ -115,3 +185,5 @@
         </div>
     </body>
 </html>
+
+
