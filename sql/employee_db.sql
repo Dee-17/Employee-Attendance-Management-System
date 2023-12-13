@@ -99,11 +99,11 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`emp_id`, `password`, `first_name`, `middle_name`, `last_name`, `address`, `zip`, `contact_number`, `email_address`, `contract`, `shift`) VALUES
-(8, '', 'Daniela', 'M.', 'Cantillo', 'Labnig, Malinao, Albay', '2311', '09669517555', 'danielamarzan.cantillo@bicol-u.edu.ph', 'Part Time', 'Afternoon Shift'),
-(9, '', 'Dee', 'Monde', 'Razon', 'Sagpon, Daraga, Albay', '3434', '09468381717', 'dee@outlook.com', 'Full Time', 'Night Shift'),
-(10, '', 'Minzy', 'Grado', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Part Time', 'Morning Shift'),
-(11, '', 'Alex', 'MIddle', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Full Time', 'Night Shift'),
-(12, '', 'Dawn', 'Cruz', 'Bande', '1231 Harong Pagkamoot, Magapo, Albay', '1234', '09562849189', 'dawnbc@gmail.com', 'Full Time', 'Day Shift');
+(8, '1234', 'Daniela', 'M.', 'Cantillo', 'Labnig, Malinao, Albay', '2311', '09669517555', 'danielamarzan.cantillo@bicol-u.edu.ph', 'Part Time', 'Afternoon Shift'),
+(9, '1234', 'Dee', 'Monde', 'Razon', 'Sagpon, Daraga, Albay', '3434', '09468381717', 'dee@outlook.com', 'Full Time', 'Night Shift'),
+(10, '1234', 'Minzy', 'Grado', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Part Time', 'Morning Shift'),
+(11, '1234', 'Alex', 'MIddle', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Full Time', 'Night Shift'),
+(12, '1234', 'Dawn', 'Cruz', 'Bande', '1231 Harong Pagkamoot, Magapo, Albay', '1234', '09562849189', 'dawnbc@gmail.com', 'Full Time', 'Day Shift');
 
 --
 -- Indexes for dumped tables
