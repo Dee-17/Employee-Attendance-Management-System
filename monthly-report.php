@@ -20,6 +20,7 @@
             $("#table_body").load("monthly-load.php",{
                 table_onload: JSON.stringify(today),
                 });
+            
             //search
             $("#search_ID").click(function(){
             var employee_Id = document.getElementById('emp_search').value;
@@ -37,6 +38,7 @@
                 }
             });
         });
+    });
     </script>
 </head>
 <body class="container-fluid">
@@ -131,7 +133,7 @@
                 <div class="col col-4 p-0">
                     <div class="row m-0 p-0 gap-3">
                         <div class="card px-3 py-3 col m-0">
-                            <form action="monthly-search.php" class="employee_search d-flex gap-2">
+                            <form class="employee_search d-flex gap-2">
                                 <div class="col col-9 m-0 p-0">
                                     <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
@@ -160,8 +162,7 @@
 
                     <tbody class="table_body" id="table_body">
                   
-                    </tbody>
-                </table>
+
             </div>
         </div>
     </div>
