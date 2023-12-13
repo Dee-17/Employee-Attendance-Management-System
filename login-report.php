@@ -76,7 +76,7 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $row["emp_id"] . "</td>";
-                                echo "<td>" . $row["first_name"]  .  $row['middle_name'].$rowp['last_name']. "</td>";
+                                echo "<td>" . $row["first_name"]  .  $row['middle_name'].$row['last_name']. "</td>";
                                 echo "<td>" . $row["am_in"] . "</td>";
                                 echo "<td>" . $row["am_out"] . "</td>";
                                 echo "<td>" . $row["pm_in"] . "</td>";
