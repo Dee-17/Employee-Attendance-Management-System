@@ -90,7 +90,7 @@
 <body>
     <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
         <div class="login_container card rounded-4 shadow-lg m-0 p-0 overflow-hidden">
-            <!-- Company info -->
+            <!-- Back button -->
             <div class="top_panel p-3 d-flex justify-content-center">
                 <div class="row container-fluid justify-content-end">
                     <a href="landing-page.php"><i class="bi bi-arrow-left" style="color: white;"></i></a>
