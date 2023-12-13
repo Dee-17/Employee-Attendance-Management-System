@@ -1,6 +1,6 @@
 <?php
     include "update.php";
-    $sql = "SELECT atlog.emp_id, employee.full_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
+    $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
     FROM atlog
     JOIN employee ON atlog.emp_id = employee.emp_id
     WHERE atlog.atlog_DATE = CURDATE();";
@@ -77,13 +77,13 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $row["emp_id"] . "</td>";
-                                echo "<td>" . $row["full_name"]  . "</td>";
+                                echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
                                 echo "<td>" . $row["shift"] . "</td>";
                                 echo "<td>" . $row["am_in"] . "</td>";
                                 echo "<td>" . $row["am_out"] . "</td>";
                                 echo "<td>" . $row["pm_in"] . "</td>";
                                 echo "<td>" . $row["pm_out"] . "</td>";
-                                echo "<td>" . $row["night_differential"] . "</td>";
+                                echo "<td>" . $row["overtime"] . "</td>";
                                 echo "<td>" . $row["night_differential"] . "</td>";
                                 echo "</tr>";
                             }
