@@ -37,7 +37,7 @@
                                       <input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" required>
                                     </div>
                                     <div class="col-md-4">
-                                      <label for="inputLastName" class="form-label">Password</label>
+                                      <label for="inputLastName" class="form-label">Last Name</label>
                                       <input type="text" class="form-control" id="input-last-name" name="input-last-name" required>
                                     </div>
                                     <div class="col-10">
@@ -72,7 +72,11 @@
                                         <option>Afternoon Shift</option>
                                       </select>
                                     </div>
-                            </div>
+                                    <div class="col-md-4">
+                                      <label for="inputPassword4" class="form-label">Password</label>
+                                      <input type="password" class="form-control" id="input-pasword" name="input-password">
+                                  </div>
+                                </div>
                         </div>
                         <div class="card white_container row mt-3 mx-0 text-center justify-content-evenly">
                           <div class="d-flex">
