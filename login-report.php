@@ -6,7 +6,7 @@
     if (isset($_SESSION['emp_id'])) {
         $empId = $_SESSION['emp_id']; 
 
-        $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
+        $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
                 FROM atlog 
                 JOIN employee ON atlog.emp_id = employee.emp_id
                 WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
@@ -103,7 +103,6 @@
                             <th scope="col">PM In</th>
                             <th scope="col">PM Out</th>
                             <th scope="col">Overtime</th>
-                            <th scope="col">Night Differential</th>
                         </tr>
                     </thead>
                     <tbody class="table_body">
@@ -143,7 +142,6 @@
                                     echo "<td>" . $row["pm_out"] . "</td>";
                                 }
                                 echo "<td>" . $row["overtime"] . "</td>";
-                                echo "<td>" . $row["night_differential"] . "</td>";
                                 echo "</tr>";
                             }
                             echo "</tbody></table>";

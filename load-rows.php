@@ -3,7 +3,7 @@
 
     $date_picked = ($_POST['table_date']);
     $date_picked = mysqli_real_escape_string($conn, $date_picked);
-    $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
+    $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
     FROM atlog
     JOIN employee ON atlog.emp_id = employee.emp_id
     WHERE atlog.atlog_DATE = '$date_picked';";
@@ -42,7 +42,6 @@
                 echo "<td>" . $row["pm_out"] . "</td>";
             }
             echo "<td>" . $row["overtime"] . "</td>";
-            echo "<td>" . $row["night_differential"] . "</td>";
             echo "</tr>";
         }
         echo "</tbody></table>";

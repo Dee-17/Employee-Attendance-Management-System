@@ -23,10 +23,6 @@ if ($conn->query($updatePmOutQuery) === TRUE) {
 $updatePmUnderTimeQuery = "UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out, '17:59:00') > '00:30:00', 1, 0)";
 $conn->query($updatePmUnderTimeQuery);
 
-// Update night_differential column
-$updateNightDifferentialQuery = "UPDATE atlog SET night_differential = IF(pm_out < '22:00:00', 0, TIME_TO_SEC(TIMEDIFF(pm_out, '6:00:00')) * 0.10 / 3600)";
-$conn->query($updateNightDifferentialQuery);
-
 
 $conn->close();
 ?>

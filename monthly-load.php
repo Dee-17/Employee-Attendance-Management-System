@@ -6,7 +6,7 @@
     if(isset($_POST['table_onload'])){
         $date_picked = ($_POST['table_onload']);
         
-        $sql = "SELECT atlog.emp_id, atlog.atlog_DATE, employee.first_name, employee.last_name, employee.middle_name, employee.shift,employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
+        $sql = "SELECT atlog.emp_id, atlog.atlog_DATE, employee.first_name, employee.last_name, employee.middle_name, employee.shift,employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME
         FROM atlog
         JOIN employee ON atlog.emp_id = employee.emp_id
         WHERE MONTH(atlog.atlog_DATE) = MONTH(STR_TO_DATE($date_picked, '%m/%d/%Y'))";
@@ -74,7 +74,7 @@
         list($year, $month) = explode('-', $selected_date);
         $year = substr($year, 1);
 
-        $sql = "SELECT atlog.emp_id, atlog.atlog_DATE, employee.first_name, employee.last_name, employee.middle_name, employee.shift,employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
+        $sql = "SELECT atlog.emp_id, atlog.atlog_DATE, employee.first_name, employee.last_name, employee.middle_name, employee.shift,employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME
         FROM atlog
         JOIN employee ON atlog.emp_id = employee.emp_id
         WHERE MONTH(atlog.atlog_DATE) = '$month' AND YEAR(atlog.atlog_DATE) = '$year'";
@@ -147,7 +147,7 @@
         
         echo "<script>console.log('".$year."')</script>";
 
-        $sql = "SELECT atlog.emp_id, atlog.atlog_DATE, employee.first_name, employee.last_name, employee.middle_name, employee.shift,employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.night_differential
+        $sql = "SELECT atlog.emp_id, atlog.atlog_DATE, employee.first_name, employee.last_name, employee.middle_name, employee.shift,employee.contract, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME
         FROM atlog
         JOIN employee ON atlog.emp_id = employee.emp_id
         WHERE MONTH(atlog.atlog_DATE) = '$month' AND YEAR(atlog.atlog_DATE) = '$year' AND atlog.emp_id = '$emp_id'";

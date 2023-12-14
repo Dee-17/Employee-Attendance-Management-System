@@ -108,7 +108,6 @@
                             <th scope="col">PM IN</th>
                             <th scope="col">PM OUT</th>
                             <th scope="col">Overtime</th>
-                            <th scope="col">Night Differential</th>
                         </tr>
                     </thead>
 
