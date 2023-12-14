@@ -17,10 +17,10 @@
             $row = $result->fetch_assoc();
             $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
         } else {
-            echo '<p>No previous entry found</p>';
+            echo '<script>console.log("No previous entry found");</script>';
         }
     } else {
-        echo '<p>Employee ID not set in the session</p>';
+        echo '<script>console.log("Employee ID not set in the session");</script>';
     }
 
     if (isset($_SESSION['admin_id'])) {
@@ -34,15 +34,14 @@
             $adminRow = $adminResult->fetch_assoc();
             $adminUsername = $adminRow['username'];
         } else {
-            echo '<p>No admin entry found</p>';
+            echo '<script>console.log("No admin entry found");</script>';
         
             $adminUsername = ''; 
         }
     } else {
-        echo '<p>Admin ID not set in the session</p>';
+        echo '<script>console.log("Admin ID not set in the session");</script>';
         $adminUsername = ''; 
     }
-
     $conn->close();
 ?>
 <!DOCTYPE html>
