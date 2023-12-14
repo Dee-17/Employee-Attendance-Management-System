@@ -1,0 +1,42 @@
+store 
+if (mysqli_num_rows($result) > 0){
+            while ($row = mysqli_fetch_assoc($result)){
+                echo "<script>console.log('if')</script>";
+                echo "<tr>";
+                echo "<td>";
+                echo $row['atlog_DATE'];
+                echo "</td>";
+                echo "<td>";
+                echo "<tr>";
+                echo "<td>";
+                echo $row['emp_id'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['first_name']." ".$row['middle_name']." ".$row['last_name'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['contract'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['shift'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['am_in'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['am_out'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['pm_in'];
+                echo "</td>";
+                echo "<td>";
+                echo $row['pm_out'];
+                echo "</td>";
+                echo "</tr>";
+            }
+        }
+        else{
+            echo "<td>";
+            echo "No Records Found";
+            echo "</td>"; 
+        }
