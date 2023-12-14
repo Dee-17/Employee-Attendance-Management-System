@@ -114,7 +114,7 @@
                                 <?php
                                 // LOG AM
                                 if ($row['am_in'] === null) {
-                                    echo '<button class="btn in_button col col-auto" onclick="logAM()">Log AM</button>';
+                                    echo '<button class="btn in_button col col-auto" onclick="logAM()">AM</button>';
                                 } else {
                                     echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
                                 }
@@ -164,7 +164,7 @@
                                 <?php
                                     // Display PM button based on condition
                                         if ($row['pm_in'] === null) {
-                                            echo '<button class="btn in_button col col-auto" onclick="logPM()">Log PM</button>';
+                                            echo '<button class="btn in_button col col-auto" onclick="logPM()">PM</button>';
                                         } else {
                                             echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
                                         }
