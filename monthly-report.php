@@ -17,9 +17,10 @@
         $(document).ready(function(){
             //On Load
             var today = new Date().toLocaleDateString();
-            $("#table_body").load("monthly-load.php",{
+            $("#table_vals").load("monthly-load.php",{
                 table_onload: JSON.stringify(today),
                 });
+            
             //search
             $("#search_ID").click(function(){
             var employee_Id = document.getElementById('emp_search').value;
@@ -37,6 +38,7 @@
                 }
             });
         });
+    });
     </script>
 </head>
 <body class="container-fluid">
@@ -131,7 +133,7 @@
                 <div class="col col-4 p-0">
                     <div class="row m-0 p-0 gap-3">
                         <div class="card px-3 py-3 col m-0">
-                            <form action="monthly-search.php" class="employee_search d-flex gap-2">
+                            <form class="employee_search d-flex gap-2">
                                 <div class="col col-9 m-0 p-0">
                                     <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
@@ -144,24 +146,11 @@
                 </div>
             </div>
             <!-- Reports -->
-            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">AM IN</th>
-                            <th scope="col">AM OUT</th>
-                            <th scope="col">PM IN</th>
-                            <th scope="col">PM OUT</th>
-                            <th scope="col">Overtime</th>
-                            <th scope="col">Night Differential</th>
-                        </tr>
-                    </thead>
+            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_vals">
 
-                    <tbody class="table_body" id="table_body">
-                  
-                    </tbody>
+
                 </table>
+
             </div>
         </div>
     </div>

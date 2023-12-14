@@ -10,11 +10,43 @@
 
     $result = $conn->query($checkPreviousEntryQuery);
 
+
+    echo '<script>console.log("hello");</script>';
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+
+        echo '<script>console.log(num_rows);</script>';
+
     } else {
-        echo '<p>No previous entry found</p>';
+        // Retrieve employee full name from the employee table using the employee ID
+        $getEmployeeNameQuery = "SELECT first_name, middle_name, last_name FROM employee WHERE emp_id = $empId";
+        $employeeNameResult = $conn->query($getEmployeeNameQuery);
+    
+        if ($employeeNameResult->num_rows > 0) {
+            $row = $employeeNameResult->fetch_assoc();
+            $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+
+            // Create a new entry in the atlog table using the emp_id if it does not exist yet
+            $createNewEntryQuery = "INSERT INTO atlog (emp_id, atlog_DATE) VALUES ($empId, CURDATE())";
+            if ($conn->query($createNewEntryQuery) === TRUE) {
+                $getNewEntries = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.emp_id, employee.first_name, employee.middle_name, employee.last_name
+                                FROM atlog 
+                                JOIN employee ON atlog.emp_id = employee.emp_id
+                                WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
+
+                $resultNew = $conn->query($getNewEntries);   
+
+                $row = $resultNew->fetch_assoc();
+
+            } else {
+                // Error creating new entry
+            }
+            // You can use $employeeFullName for further operations
+        } else {
+            // Handle the case when employee name retrieval fails
+        }
     }
 
     $conn->close();
@@ -49,7 +81,10 @@
             <!-- Main contents -->
             <div class="right_panel container p-5">
                 <?php
-                $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+                
+                if (isset($row['first_name'], $row['middle_name'], $row['last_name'])) {
+                    $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+                }
                 ?>
                 <p class="header_title">Welcome <span class="employee_name" id="employee_name"><?php echo $employeeFullName; ?></span>!</p>
                 <div class="container mt-4 row gap-3">
