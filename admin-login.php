@@ -1,9 +1,10 @@
 <?php
     include "connection.php";
+    session_start();
     
     if (isset($_POST['form_id'])) {
         // prepare and bind
-        $stmt = $conn->prepare("SELECT username, password FROM admin WHERE username = ? AND password = ?");
+        $stmt = $conn->prepare("SELECT admin_id, username, password FROM admin WHERE username = ? AND password = ?");
         $stmt->bind_param("ss", $username, $password);
 
         // set parameters and execute
@@ -15,11 +16,14 @@
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
+            // Fetch the admin ID and store it in the session
+            $row = $result->fetch_assoc();
+            $_SESSION['admin_id'] = $row['admin_id'];
+
             // redirect
-            header("Location:login-report.php");
-            
+            header("Location: login-report.php");
         } else {
-            if(empty($username) || empty($password)) {
+            if (empty($username) || empty($password)) {
                 $sn_missing = true; 
             } else {
                 // output a warning saying incorrect details
@@ -31,7 +35,7 @@
         $conn->close();
     } 
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
