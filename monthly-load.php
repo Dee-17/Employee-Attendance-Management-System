@@ -16,27 +16,53 @@
         
 
         if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row["emp_id"] . "</td>";
-                echo "<td>" . $row["atlog_DATE"] . "</td>";
-                echo "<td>" . $row["first_name"] . "</td>";
-                echo "<td>" . $row["last_name"] . "</td>";
-                echo "<td>" . $row["middle_name"] . "</td>";
-                echo "<td>" . $row["shift"] . "</td>";
-                echo "<td>" . $row["contract"] . "</td>";
-                echo "<td>" . $row["am_in"] . "</td>";
-                echo "<td>" . $row["am_out"] . "</td>";
-                echo "<td>" . $row["pm_in"] . "</td>";
-                echo "<td>" . $row["pm_out"] . "</td>";
-                echo "<td>" . $row["am_late"] . "</td>";
-                echo "<td>" . $row["pm_late"] . "</td>";
-                echo "<td>" . $row["am_underTIME"] . "</td>";
-                echo "<td>" . $row["pm_underTIME"] . "</td>";
-                echo "<td>" . $row["night_differential"] . "</td>";
-                echo "</tr>";
+            echo "<table class='table'>";
+                echo "<thead>";
+                    echo "<tr>";
+                        echo "<th scope='col'>Emp ID</th>";
+                        echo "<th scope='col'>Date</th>";
+                        echo "<th scope='col'>AM IN</th>";
+                        echo "<th scope='col'>AM OUT</th>";
+                        echo "<th scope='col'>PM IN</th>";
+                        echo "<th scope='col'>PM OUT</th>";
+                        echo "<th scope='col'>Overtime</th>";
+                        echo " <th scope='col'>Night Differential</th>";
+                    echo "</tr>";
+                echo "</thead>";
+
+                echo "<tbody class='table_body' id='table_body'>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row["emp_id"] . "</td>";
+                    echo "<td>" . $row["atlog_DATE"] . "</td>";
+                //echo "<td>" . $row["first_name"] . "</td>";
+                //echo "<td>" . $row["last_name"] . "</td>";
+                //echo "<td>" . $row["middle_name"] . "</td>";
+                //echo "<td>" . $row["shift"] . "</td>";
+                //echo "<td>" . $row["contract"] . "</td>";
+                    if($row["am_late"] == "YES"){
+                        echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                    }
+                    else{
+                        echo "<td>" . $row["am_in"] . "</td>";
+                    }
+                    if($row["am_out"]== "YES"){
+                        echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
+                    }else{
+                        echo "<td>" . $row["am_out"] . "</td>";
+                    }
+                    
+                    echo "<td>" . $row["pm_in"] . "</td>";
+                    echo "<td>" . $row["pm_out"] . "</td>";
+                //
+                //echo "<td>" . $row["pm_late"] . "</td>";
+                //echo "<td>" . $row["am_underTIME"] . "</td>";
+                //echo "<td>" . $row["pm_underTIME"] . "</td>";
+                    echo "<td>" . $row["night_differential"] . "</td>";
+                    echo "</tr>";
             }
-            echo "</tbody></table>";
+                echo "</tbody>";
+                echo "</table>";
         } else {
             // Handle case when no records are found
             echo "No Records Found";

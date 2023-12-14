@@ -17,7 +17,7 @@
         $(document).ready(function(){
             //On Load
             var today = new Date().toLocaleDateString();
-            $("#table_body").load("monthly-load.php",{
+            $("#table_vals").load("monthly-load.php",{
                 table_onload: JSON.stringify(today),
                 });
             
@@ -146,22 +146,10 @@
                 </div>
             </div>
             <!-- Reports -->
-            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">AM IN</th>
-                            <th scope="col">AM OUT</th>
-                            <th scope="col">PM IN</th>
-                            <th scope="col">PM OUT</th>
-                            <th scope="col">Overtime</th>
-                            <th scope="col">Night Differential</th>
-                        </tr>
-                    </thead>
+            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_vals">
 
-                    <tbody class="table_body" id="table_body">
-                  
+
+                </table>
 
             </div>
         </div>
