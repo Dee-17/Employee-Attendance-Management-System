@@ -1,10 +1,49 @@
 <?php
+    session_start();
     include "update.php";
-    $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
-    FROM atlog
-    JOIN employee ON atlog.emp_id = employee.emp_id
-    WHERE atlog.atlog_DATE = CURDATE();";
-?> 
+    
+    // Check if employee ID is set in the session
+    if (isset($_SESSION['emp_id'])) {
+        $empId = $_SESSION['emp_id']; 
+
+        $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
+                FROM atlog 
+                JOIN employee ON atlog.emp_id = employee.emp_id
+                WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+        } else {
+            echo '<script>console.log("No previous entry found");</script>';
+        }
+    } else {
+        echo '<script>console.log("Employee ID not set in the session");</script>';
+    }
+
+    if (isset($_SESSION['admin_id'])) {
+        $adminId = $_SESSION['admin_id']; 
+
+        $adminUsernameQuery = "SELECT username FROM admin WHERE admin_id = $adminId";
+        
+        $adminResult = $conn->query($adminUsernameQuery);
+
+        if ($adminResult->num_rows > 0) {
+            $adminRow = $adminResult->fetch_assoc();
+            $adminUsername = $adminRow['username'];
+        } else {
+            echo '<script>console.log("No admin entry found");</script>';
+        
+            $adminUsername = ''; 
+        }
+    } else {
+        echo '<script>console.log("Admin ID not set in the session");</script>';
+        $adminUsername = ''; 
+    }
+    $conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +65,7 @@
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <!-- Name must be according to id inputted by admin -->
-            <p class="header_title">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
+            <p class="header_title">Welcome <span class="admin_name" id="admin_name"><?php echo htmlspecialchars($adminUsername); ?></span>!</p>
             <div class="row container-fluid m-0 gap-3">
                 <!-- Date today -->
                 <div class="date_container card px-4 py-2 col col-4 justify-content-center">
@@ -79,24 +118,43 @@
                                 echo "<td>" . $row["emp_id"] . "</td>";
                                 echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
                                 echo "<td>" . $row["shift"] . "</td>";
-                                echo "<td>" . $row["am_in"] . "</td>";
-                                echo "<td>" . $row["am_out"] . "</td>";
-                                echo "<td>" . $row["pm_in"] . "</td>";
-                                echo "<td>" . $row["pm_out"] . "</td>";
+                                if($row["am_late"] == "YES"){
+                                    echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                                    echo "<script>console.log('" . $row["am_in"] . "')</script>";
+                                } else{
+                                    echo "<td>" . $row["am_in"] . "</td>";
+                                }
+            
+                                if($row["am_underTIME"]== "YES"){
+                                    echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
+                                } else{
+                                    echo "<td>" . $row["am_out"] . "</td>";
+                                }
+            
+                                if($row["pm_late"] == "YES"){
+                                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                                } else{
+                                    echo "<td>" . $row["pm_in"] . "</td>";
+                                }
+                                
+                                if($row["pm_out"]== "YES"){
+                                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                                } else {
+                                    echo "<td>" . $row["pm_out"] . "</td>";
+                                }
                                 echo "<td>" . $row["overtime"] . "</td>";
                                 echo "<td>" . $row["night_differential"] . "</td>";
                                 echo "</tr>";
                             }
                             echo "</tbody></table>";
-                        }
-                        else {
-                            echo "</tbody></table>";
+                            
+                        } else {
                             echo "
-                                <div class='alert alert-danger m-0 p-3' role='alert'>
-                                No Records Found
-                                </div>
-                            ";
+                            <div class='alert alert-danger m-0 p-3' role='alert'>
+                            No Records Found
+                            </div>";
                         }
+                    
                         $conn->close();
                     ?>
         </div>

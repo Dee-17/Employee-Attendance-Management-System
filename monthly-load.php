@@ -56,7 +56,7 @@
                     
                     if($row["pm_underTIME"]== "YES"){
                         echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
-                    }else{
+                    } else{
                         echo "<td>" . $row["pm_out"] . "</td>";
                     }
                     echo "</tr>";
@@ -134,7 +134,9 @@
             // Handle case when no records are found
             echo "No Records Found";
         }
+
         
+    
     }
 
     if(isset($_POST['emp_id'])){
