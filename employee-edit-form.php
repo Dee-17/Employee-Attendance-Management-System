@@ -18,14 +18,12 @@
     } else {
         // Update the existing employee with the provided ID
         $sql = "UPDATE employee SET first_name = '$first_name', middle_name = '$middle_name', last_name = '$last_name', address = '$address', zip = '$zip', contact_number = '$contact_number', email_address = '$email_address', contract = '$contract', shift = '$shift', password = '$password' WHERE emp_id = $emp_id";
-
-        
         $result = mysqli_query($conn, $sql);
     }
 
     mysqli_close($conn);
 
-    header('Location: employee-edit.php?emp_id=' . $emp_id);
+    header('Location: employee-maintenance.php');
     exit;
 
 ?>
