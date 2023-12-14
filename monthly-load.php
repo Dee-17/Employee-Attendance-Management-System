@@ -44,7 +44,7 @@
                         echo "<td>" . $row["am_in"] . "</td>";
                     }
 
-                    if($row["am_undertime"]== "YES"){
+                    if($row["am_underTIME"]== "YES"){
                         echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
                     }else{
                         echo "<td>" . $row["am_out"] . "</td>";
@@ -59,16 +59,9 @@
                     
                     if($row["pm_out"]== "YES"){
                         echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
-                    }else{
+                    } else{
                         echo "<td>" . $row["pm_out"] . "</td>";
                     }
-
-                    
-
-                //
-                //echo "<td>" . $row["pm_late"] . "</td>";
-                //echo "<td>" . $row["am_underTIME"] . "</td>";
-                //echo "<td>" . $row["pm_underTIME"] . "</td>";
                     echo "<td>" . $row["night_differential"] . "</td>";
                     echo "</tr>";
             }
