@@ -118,24 +118,43 @@
                                 echo "<td>" . $row["emp_id"] . "</td>";
                                 echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
                                 echo "<td>" . $row["shift"] . "</td>";
-                                echo "<td>" . $row["am_in"] . "</td>";
-                                echo "<td>" . $row["am_out"] . "</td>";
-                                echo "<td>" . $row["pm_in"] . "</td>";
-                                echo "<td>" . $row["pm_out"] . "</td>";
+                                if($row["am_late"] == "YES"){
+                                    echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                                    echo "<script>console.log('" . $row["am_in"] . "')</script>";
+                                } else{
+                                    echo "<td>" . $row["am_in"] . "</td>";
+                                }
+            
+                                if($row["am_underTIME"]== "YES"){
+                                    echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
+                                } else{
+                                    echo "<td>" . $row["am_out"] . "</td>";
+                                }
+            
+                                if($row["pm_late"] == "YES"){
+                                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                                } else{
+                                    echo "<td>" . $row["pm_in"] . "</td>";
+                                }
+                                
+                                if($row["pm_out"]== "YES"){
+                                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                                } else {
+                                    echo "<td>" . $row["pm_out"] . "</td>";
+                                }
                                 echo "<td>" . $row["overtime"] . "</td>";
                                 echo "<td>" . $row["night_differential"] . "</td>";
                                 echo "</tr>";
                             }
                             echo "</tbody></table>";
-                        }
-                        else {
-                            echo "</tbody></table>";
+                            
+                        } else {
                             echo "
-                                <div class='alert alert-danger m-0 p-3' role='alert'>
-                                No Records Found
-                                </div>
-                            ";
+                            <div class='alert alert-danger m-0 p-3' role='alert'>
+                            No Records Found
+                            </div>";
                         }
+                    
                         $conn->close();
                     ?>
         </div>

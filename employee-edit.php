@@ -30,35 +30,65 @@
 						<form action="employee-edit-form.php" method="post" class="register_form row g-3">
 							<?php
                                 $emp_id = $_GET['emp_id'];
+								// Query to fetch employee information
+								include "connection.php";
+
+								$query = "SELECT * FROM employee WHERE emp_id = $emp_id";
+								$result = mysqli_query($conn, $query);
+
+								// Check if the query was successful
+								if ($result) {
+									// Fetch the data as an associative array
+									$employeeData = mysqli_fetch_assoc($result);
+
+									// Assign the fetched values to variables
+									$first_name = $employeeData['first_name'];
+									$middle_name = $employeeData['middle_name'];
+									$last_name = $employeeData['last_name'];
+									$address = $employeeData['address'];
+									$zip = $employeeData['zip'];
+									$contact_number = $employeeData['contact_number'];
+									$email_address = $employeeData['email_address'];
+
+									// Now you can use these variables as needed
+								} else {
+									// Handle the case where the query fails
+									echo "Error: " . mysqli_error($conn);
+								}
+
+								// Don't forget to close the connection when done
+								mysqli_close($conn);
                             ?>
+							
 							<input type="hidden" id="emp_id" name="emp-id" value="<?php echo $emp_id; ?>">
 							<div class="col-md-4">
 								<label for="inputFirstName" class="form-label">First Name</label>
-								<input type="text" class="form-control" id="input-first-name" name="input-first-name" placeholder="Enter first name" required>
+								<input type="text" class="form-control" id="input-first-name" name="input-first-name" placeholder="Enter first name" value="<?php echo $first_name ?>" required>
 							</div>
 							<div class="col-md-4">
 							<label for="inputMiddleName" class="form-label">Middle Name</label>
-								<input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" placeholder="Enter middle name" required>
+								<input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" placeholder="Enter middle name" value="<?php echo $middle_name ?>" required>
 							</div>
 							<div class="col-md-4">
 								<label for="inputLastName" class="form-label">Last Name</label>
-								<input type="text" class="form-control" id="input-last-name" name="input-last-name" placeholder="Enter last name" required>
+								<input type="text" class="form-control" id="input-last-name" name="input-last-name" placeholder="Enter last name"value="<?php echo $last_name ?>" required>
 							</div>
 							<div class="col-10">
 								<label for="inputAddress" class="form-label">Address</label>
-								<input type="text" class="form-control" id="input-address" name="input-address" placeholder="1234 Main St" required>
+								<input type="text" class="form-control" id="input-address" name="input-address" placeholder="1234 Main St" value="<?php echo $address ?>" required>
 							</div>
 							<div class="col-2">
 								<label for="inputZIP" class="form-label">ZIP Code</label>
-								<input type="text" class="form-control" id="input-zip" name="input-zip" placeholder="4500" required>
+								<input type="text" class="form-control" id="input-zip" name="input-zip" placeholder="4500" value="<?php echo $zip ?>" required>
 							</div>
 							<div class="col-4">
 								<label for="inputContactNumber" class="form-label">Contact Number</label>
-								<input type="text" class="form-control" id="input-contact-number" name="input-contact-number" placeholder="09123456789" required>
+								<input type="text" class="form-control" id="input-contact-number" name="input-contact-number" placeholder="09123456789" value="<?php echo $contact_number ?>" required>
 							</div>
+
 							<div class="col-md-8">
 								<label for="inputEmailAddress" class="form-label">Email Address</label>
-								<input type="text" class="form-control" id="input-email-address" name="input-email-address" placeholder="example123@email.com" required>
+								<input type="text" class="form-control" id="input-email-address" name="input-email-address" placeholder="example123@email.com" value="<?php echo $email_address ?>" required>
 							</div>
 							<div class="col-md-4">
 							<label for="inputEmployeeContract" class="form-label">Employee Contract</label>
@@ -78,7 +108,7 @@
 							</div>
 							<div class="col-md-4">
 								<label for="inputPassword4" class="form-label">Password</label>
-								<input type="password" class="form-control" id="input-pasword" name="input-password" placeholder="Enter employee password" required>
+								<input type="password" class="form-control" id="input-pasword" name="input-password" placeholder="Enter employee password" required required>
 							</div>
 					</div>
 				</div>

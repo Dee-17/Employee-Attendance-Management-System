@@ -35,29 +35,33 @@
                     echo "<tr>";
                     echo "<td>" . $row["emp_id"] . "</td>";
                     echo "<td>" . $row["atlog_DATE"] . "</td>";
-                //echo "<td>" . $row["first_name"] . "</td>";
-                //echo "<td>" . $row["last_name"] . "</td>";
-                //echo "<td>" . $row["middle_name"] . "</td>";
-                //echo "<td>" . $row["shift"] . "</td>";
-                //echo "<td>" . $row["contract"] . "</td>";
+                    
                     if($row["am_late"] == "YES"){
                         echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                        echo "<script>console.log('" . $row["am_in"] . "')</script>";
                     }
                     else{
                         echo "<td>" . $row["am_in"] . "</td>";
                     }
-                    if($row["am_out"]== "YES"){
+
+                    if($row["am_underTIME"]== "YES"){
                         echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
                     }else{
                         echo "<td>" . $row["am_out"] . "</td>";
                     }
+
+                    if($row["pm_late"] == "YES"){
+                        echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                    }
+                    else{
+                        echo "<td>" . $row["pm_in"] . "</td>";
+                    }
                     
-                    echo "<td>" . $row["pm_in"] . "</td>";
-                    echo "<td>" . $row["pm_out"] . "</td>";
-                //
-                //echo "<td>" . $row["pm_late"] . "</td>";
-                //echo "<td>" . $row["am_underTIME"] . "</td>";
-                //echo "<td>" . $row["pm_underTIME"] . "</td>";
+                    if($row["pm_out"]== "YES"){
+                        echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                    } else{
+                        echo "<td>" . $row["pm_out"] . "</td>";
+                    }
                     echo "<td>" . $row["night_differential"] . "</td>";
                     echo "</tr>";
             }
