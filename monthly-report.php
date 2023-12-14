@@ -17,26 +17,29 @@
         $(document).ready(function(){
             //On Load
             var today = new Date().toLocaleDateString();
+            var curr = new Date();
+            var month = curr.getMonth() + 1; 
+            var year = curr.getFullYear();
+            var global_date_pick = [year, month].join('-');
+
             $("#table_vals").load("monthly-load.php",{
                 table_onload: JSON.stringify(today),
-                });
-            
+                }); 
+            $("#search_button").click(function(){
+                var date_pick = document.getElementById('picked_date').value;
+                global_date_pick =date_pick;
+                $("#table_vals").load("monthly-load.php",{
+                    select_date: JSON.stringify(date_pick),
+                })
+            })
             //search
             $("#search_ID").click(function(){
-            var employee_Id = document.getElementById('emp_search').value;
+                var employee_Id = document.getElementById('emp_search').value;
+                $("#table_vals").load("monthly-load.php",{
+                    emp_id:employee_Id,
+                    select_date:global_date_pick
+                })
             //send to monthly-load.php
-            $.ajax({
-                url: 'monthly-load.php',
-                type: 'post',
-                data: {emp_id: employee_Id},
-                success: function(response){
-                    var employee = JSON.parse(response);
-                    $('input[name="emp_id"]').val(employee.emp_id);
-                    $('input[name="emp_name"]').val(employee.first_name + ' ' + employee.middle_name + ' ' + employee.last_name);
-                    $('input[name="emp_contract"]').val(employee.contract);
-                    $('input[name="emp_shift"]').val(employee.shift);
-                }
-            });
         });
     });
     </script>
@@ -138,7 +141,7 @@
                                     <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
                                 <div class="col col-2 m-0 p-0">
-                                    <input class="btn btn-primary" id="search_ID" type="submit" value="Search">
+                                    <input class="btn btn-primary" id="search_ID" type="button" value="Search">
                                 </div>
                             </form>
                         </div>
