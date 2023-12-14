@@ -1,10 +1,50 @@
 <?php
+    session_start();
     include "update.php";
-    $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
-    FROM atlog
-    JOIN employee ON atlog.emp_id = employee.emp_id
-    WHERE atlog.atlog_DATE = CURDATE();";
-?> 
+    
+    // Check if employee ID is set in the session
+    if (isset($_SESSION['emp_id'])) {
+        $empId = $_SESSION['emp_id']; 
+
+        $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime, atlog.night_differential
+                FROM atlog 
+                JOIN employee ON atlog.emp_id = employee.emp_id
+                WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+        } else {
+            echo '<p>No previous entry found</p>';
+        }
+    } else {
+        echo '<p>Employee ID not set in the session</p>';
+    }
+
+    if (isset($_SESSION['admin_id'])) {
+        $adminId = $_SESSION['admin_id']; 
+
+        $adminUsernameQuery = "SELECT username FROM admin WHERE admin_id = $adminId";
+        
+        $adminResult = $conn->query($adminUsernameQuery);
+
+        if ($adminResult->num_rows > 0) {
+            $adminRow = $adminResult->fetch_assoc();
+            $adminUsername = $adminRow['username'];
+        } else {
+            echo '<p>No admin entry found</p>';
+        
+            $adminUsername = ''; 
+        }
+    } else {
+        echo '<p>Admin ID not set in the session</p>';
+        $adminUsername = ''; 
+    }
+
+    $conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +66,7 @@
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <!-- Name must be according to id inputted by admin -->
-            <p class="header_title">Welcome <span class="admin_name" id="admin_name">ADMIN123</span>!</p>
+            <p class="header_title">Welcome <span class="admin_name" id="admin_name"><?php echo htmlspecialchars($adminUsername); ?></span>!</p>
             <div class="row container-fluid m-0 gap-3">
                 <!-- Date today -->
                 <div class="date_container card px-4 py-2 col col-4 justify-content-center">
