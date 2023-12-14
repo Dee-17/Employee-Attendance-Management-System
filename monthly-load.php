@@ -67,6 +67,7 @@
             // Handle case when no records are found
             echo "No Records Found";
         }
+        
     }
     if(isset($_POST['select_date'])){
         $selected_date = ($_POST['select_date']);
