@@ -21,9 +21,7 @@
         $result = mysqli_query($conn, $sql);
         
         if ($result) {
-            echo "<script>console.log('Employee added successfully!');</script>";
-            
-                
+            echo "<script>console.log('Employee added successfully!');</script>"; 
         } else {
             echo "<script>console.log('ERROR!');</script>";
         }
@@ -31,7 +29,7 @@
     
     mysqli_close($conn);
 
-    header('Location: employee-registration.php');
+    header('Location: employee-maintenance.php');
     exit;
 ?>
 

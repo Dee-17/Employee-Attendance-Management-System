@@ -28,7 +28,7 @@
                     <div class="search_button col col-1 m-0 p-0"> 
                         <input class="btn btn-primary w-100" type="submit" value="Search">
                     </div>
-                    <div class="col col-1 ms-auto p-0">
+                    <div class="register_button col col-1 ms-auto p-0">
                         <a href="employee-maintenance.php"><button type="button" class="btn btn-primary w-100"><i class="bi bi-arrow-clockwise"></i></button></a>
                     </div>
                 </form>
