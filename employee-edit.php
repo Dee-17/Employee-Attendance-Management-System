@@ -34,11 +34,11 @@
 							<input type="hidden" id="emp_id" name="emp-id" value="<?php echo $emp_id; ?>">
 							<div class="col-md-4">
 								<label for="inputFirstName" class="form-label">First Name</label>
-								<input type="text" class="form-control" id="input-first-name" name="input-first-name" required>
+								<input type="text" class="form-control" id="input-first-name" name="input-first-name" placeholder="Enter first name" required>
 							</div>
 							<div class="col-md-4">
 							<label for="inputMiddleName" class="form-label">Middle Name</label>
-								<input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" required>
+								<input type="input-middle-name" class="form-control" id="input-middle-name" name="input-middle-name" placeholder="Enter middle name" required>
 							</div>
 							<div class="col-md-4">
 								<label for="inputLastName" class="form-label">Last Name</label>
@@ -50,15 +50,15 @@
 							</div>
 							<div class="col-2">
 								<label for="inputZIP" class="form-label">ZIP Code</label>
-								<input type="text" class="form-control" id="input-zip" name="input-zip" placeholder="1412" required>
+								<input type="text" class="form-control" id="input-zip" name="input-zip" placeholder="4500" required>
 							</div>
 							<div class="col-4">
 								<label for="inputContactNumber" class="form-label">Contact Number</label>
-								<input type="text" class="form-control" id="input-contact-number" name="input-contact-number" placeholder="0912345678" required>
+								<input type="text" class="form-control" id="input-contact-number" name="input-contact-number" placeholder="09123456789" required>
 							</div>
 							<div class="col-md-8">
 								<label for="inputEmailAddress" class="form-label">Email Address</label>
-								<input type="text" class="form-control" id="input-email-address" name="input-email-address" required>
+								<input type="text" class="form-control" id="input-email-address" name="input-email-address" placeholder="example123@email.com" required>
 							</div>
 							<div class="col-md-4">
 							<label for="inputEmployeeContract" class="form-label">Employee Contract</label>
@@ -78,7 +78,7 @@
 							</div>
 							<div class="col-md-4">
 								<label for="inputPassword4" class="form-label">Password</label>
-								<input type="password" class="form-control" id="input-pasword" name="input-password">
+								<input type="password" class="form-control" id="input-pasword" name="input-password" placeholder="Enter employee password" required>
 							</div>
 					</div>
 				</div>
