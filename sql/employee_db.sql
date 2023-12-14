@@ -57,10 +57,10 @@ CREATE TABLE `atlog` (
   `am_out` time DEFAULT NULL,
   `pm_in` time DEFAULT NULL,
   `pm_out` time DEFAULT NULL,
-  `am_late` int(11) DEFAULT NULL,
-  `am_underTIME` int(11) DEFAULT NULL,
-  `pm_late` int(11) DEFAULT NULL,
-  `pm_underTIME` int(11) DEFAULT NULL,
+  `am_late` VARCHAR(3) DEFAULT NULL,
+  `am_underTIME` VARCHAR(3) DEFAULT NULL,
+  `pm_late` VARCHAR(3) DEFAULT NULL,
+  `pm_underTIME` VARCHAR(3) DEFAULT NULL,
   `night_differential` decimal(3,2) DEFAULT NULL,
   `overtime` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
