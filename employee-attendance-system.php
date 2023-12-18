@@ -117,7 +117,7 @@
                                 if ($row['am_in'] === null && ($employeeShift == 'Morning Shift' || $employeeShift == 'Both')) {
                                     echo '<button class="btn in_button col col-auto" onclick="logAM()">AM</button>';
                                 } else {
-                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Checked In</button>';
+                                    echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
 
                                 }
 
@@ -140,7 +140,7 @@
                                 if ($row['am_out'] === null && ($employeeShift == 'Morning Shift' || $employeeShift == 'Both')) {
                                     echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
                                 } else {
-                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small; padding: 9px;">Checked Out</button>';
+                                    echo '<button class="btn out_button col col-auto" disabled>Checked Out</button>';
                                 }
 
                                 // Add the JavaScript function to log AM out time using AJAX
@@ -168,7 +168,7 @@
                                     if ($row['pm_in'] === null && ($employeeShift == 'Afternoon Shift' || $employeeShift == 'Both')) {
                                             echo '<button class="btn in_button col col-auto" onclick="logPM()">PM</button>';
                                         } else {
-                                            echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Checked In</button>';
+                                            echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
                                         }
 
                                         // Add the JavaScript function to log PM time using AJAX
@@ -191,7 +191,7 @@
                                             if ($row['pm_out'] === null && ($employeeShift == 'Afternoon Shift' || $employeeShift == 'Both')) {
                                             echo '<button class="btn out_button col col-auto" onclick="logPMOut()">OUT</button>';
                                         } else {
-                                            echo '<button class="btn in_button col col-auto" disabled style="font-size: small; padding: 9px;">Checked Out</button>';
+                                            echo '<button class="btn out_button col col-auto" disabled>Checked Out</button>';
                                         }
 
                                         // Add the JavaScript function to log AM out time using AJAX

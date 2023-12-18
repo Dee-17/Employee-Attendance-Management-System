@@ -67,7 +67,8 @@ body {
 }
 .in_out_button button {
     width: 45%;
-    font-size: 18px;
+    font-size: small;
+    padding: 8px;
     font-weight: bold;
 }
 .in_out_button button:hover {
