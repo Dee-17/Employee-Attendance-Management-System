@@ -104,10 +104,6 @@ body {
 .modal-footer button {
     border: none;
 }
-.search_button, .search_button:hover {
-    background-color: #072560;
-    border: none;
-}
 .table th {
     color: #989898;
 }

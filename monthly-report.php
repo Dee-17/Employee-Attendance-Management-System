@@ -170,7 +170,7 @@
                                     <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
                                 <div class="col col-2 m-0 p-0">
-                                    <input class="btn btn-primary search_button" id="search_ID" type="button" value="Search">
+                                    <input class="btn btn-primary" id="search_ID" type="button" value="Search">
                                 </div>
                             </form>
                         </div>
