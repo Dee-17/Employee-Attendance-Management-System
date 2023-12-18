@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">    
     <link rel="stylesheet" href="css/monthly-report.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
     <script src="js/month-year-calendar.js" defer></script>
+    
         <script>
         $(document).ready(function(){
             //On Load
@@ -64,22 +69,23 @@
         ?>
         <!-- Calendar modal -->
         <div class="modal fade" id="calendar_modal" tabindex="-1" aria-labelledby="calendar_label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="calendar_label">Date picker</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="calendar_label">Date picker</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Select the month and year</p>
+                <input class="form-control" type="month" name="date_picker" id="picked_date">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="search_button"><button type="button" class="btn btn-primary" id="search_button">Search</button></div>
+                </div>
+                </div>
+                
             </div>
-            <div class="modal-body">
-                <p>Select the month and year</p>
-               <input class="form-control" type="month" name="date_picker" id="picked_date">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <div class="search_button"><button type="button" class="btn btn-primary" id="search_button">Search</button></div>
-            </div>
-            </div>
-        </div>
         </div>
 
         <!-- Main contents -->
@@ -117,6 +123,13 @@
                     <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
                     <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
                 </div>
+
+                <div class="grey_container ">
+                    <div class="export-button">
+                        <button id="exportButton" class="btn btn-secondary">Export to PDF</button>
+                    </div>
+                </div>
+      
             </div>
             <!-- Employee search and info -->
             <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between gap-2">
@@ -127,19 +140,19 @@
                             <form action="" class="employee_info d-flex gap-2 justify-content-between">
                                 <div class="col col-1">
                                     <label for="emp_id" class="form-label m-0">Emp ID</label>
-                                    <input class="form-control" type="text" value="1" name="emp_id" disabled readonly>
+                                    <input class="form-control" type="text" name="emp_id" disabled readonly>
                                 </div>
                                 <div class="col col-6-sm employee_name">
                                     <label for="emp_name" class="form-label m-0">Full name</label>
-                                    <input class="form-control" type="text" value="MARK OTTO" name="emp_name" disabled readonly>
+                                    <input class="form-control" type="text" name="emp_name"id="full_name" disabled readonly>
                                 </div>
                                 <div class="col col-3-sm">
                                     <label for="emp_contract" class="form-label m-0">Contract</label>
-                                    <input class="form-control" type="text" value="Part Time" name="emp_contract" disabled readonly>
+                                    <input class="form-control" type="text" name="emp_contract" disabled readonly>
                                 </div>
                                 <div class="col col-2-sm">
                                     <label for="emp_shift" class="form-label m-0">Shift</label>
-                                    <input class="form-control" type="text" value="Morning" name="emp_shift" disabled readonly>
+                                    <input class="form-control" type="text" name="emp_shift" disabled readonly>
                                 </div>
                             </form>
                         </div>
@@ -167,5 +180,60 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        document.getElementById('exportButton').addEventListener('click', function() {
+            
+            const selectedDate = document.getElementById('month_year').value; // Get the selected date
+            const employeeName = document.getElementById('full_name').value; // Get the surname of the employee (assuming there's an input field for the surname)
+
+            console.log(selectedDate);
+            let fileName = 'monthly_report'; // Default file name
+
+            if (employeeName) {
+                fileName = selectedDate + '_' + employeeName; // If an employee is selected, use date and surname for the file name
+            } else {
+                fileName = selectedDate; // If no employee is selected, use only the date for the file name
+            }
+
+            const pdf = new jsPDF();
+            const contentDiv = document.getElementById('table_rows'); // Replace 'your_div_id' with the actual ID of your div
+            console.log(contentDiv);
+            // Define the column widths
+            const columnWidths = [20, 35, 25, 25, 25, 25, 25]; // Replace with the desired widths for each column
+
+            pdf.autoTable({
+                html: contentDiv,
+                startY: 30,
+                theme: 'grid',
+                columnStyles: {
+                    0: { cellWidth: columnWidths[0], halign: 'center' },
+                    1: { cellWidth: columnWidths[1], halign: 'center' },
+                    2: { cellWidth: columnWidths[2], halign: 'center' },
+                    3: { cellWidth: columnWidths[3], halign: 'center' },
+                    4: { cellWidth: columnWidths[4], halign: 'center' },
+                    5: { cellWidth: columnWidths[5], halign: 'center' },
+                    6: { cellWidth: columnWidths[6], halign: 'center' },
+                    7: { cellWidth: columnWidths[7], halign: 'center' }
+                },
+                headerStyles: {
+                fillColor: [7, 37, 96],
+                textColor: [255, 255, 255],
+                halign: 'center' // Center align for the header cells
+            }
+            });
+            
+            if (!employeeName) {
+                pdf.text(selectedDate + ' Monthly Report', 15, 15);
+            } else {
+                pdf.text(selectedDate + ' Monthly Report', 15, 15);
+                pdf.text('Name: ' + employeeName, 15, 25);
+          }
+            pdf.save(fileName + '.pdf'); // Save the PDF with the constructed file name
+
+        });
+    </script>
+
 </body>
 </html>
