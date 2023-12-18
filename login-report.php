@@ -74,7 +74,7 @@
                 <table class="table m-0 p-0">
                     <?php
                         include "connection.php";
-                        $sql = "SELECT atlog.work_hour,atlog.emp_id,employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.work_hour, atlog.overtime
+                        $sql = "SELECT atlog.work_hour,atlog.emp_id, employee.contract, employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.work_hour, atlog.overtime
                         FROM atlog 
                         JOIN employee ON atlog.emp_id = employee.emp_id
                         WHERE  atlog.atlog_DATE = CURDATE()";
@@ -88,6 +88,7 @@
                                 <tr>
                                     <th scope='col'>Emp ID</th>
                                     <th scope='col'>Full Name</th>
+                                    <th scope='col'>Contract</th>
                                     <th scope='col'>Shift</th>
                                     <th scope='col'>AM In</th>
                                     <th scope='col'>AM Out</th>
@@ -108,6 +109,9 @@
                                 echo $row['first_name']." ".$row['middle_name']." ".$row['last_name'];
                                 echo "</td>";
                                 echo "<td>";
+                                echo $row['contract'];
+                                echo "</td>";
+                                echo "<td>";
                                 echo $row['shift'];
                                 echo "</td>";
                                 echo "<td>";
@@ -125,9 +129,11 @@
                                 echo "<td>";
                                 echo $row['work_hour'];
                                 echo "</td>";
+                                echo "<td>";
                                 echo $row['overtime'];
                                 echo "</td>";
                                 echo "</tr>";
+                                
                             }
                             echo "</tbody>";
                         } else {
