@@ -64,7 +64,7 @@
             echo "</table>";
         } else {
             // Handle case when no records are found
-            echo "No Records Found";
+            echo "<div class='alert alert-danger m-0 p-3' role='alert'>No Records Found</div>";
         }
     }
 
@@ -130,11 +130,11 @@
             echo "</table>";
         } else {
             // Handle case when no records are found
-            echo "No Records Found";
+            echo "<div class='alert alert-danger m-0 p-3' role='alert'>No Records Found</div>";
         }
     }
 
-    // for a specific employee
+    // for a specific employee and date
     if(isset($_POST['emp_id'])){
         $emp_id = ($_POST['emp_id']);
         $selected_date = ($_POST['select_date']);
@@ -149,7 +149,6 @@
         
         $result = mysqli_query($conn, $sql);
         
-
         if (mysqli_num_rows($result) > 0) {
             echo "<table class='table'>";
                 echo "<thead>";
