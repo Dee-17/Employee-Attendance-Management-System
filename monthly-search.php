@@ -20,7 +20,8 @@
             echo json_encode($row);
         }
         else{
-            echo "<div class='alert alert-danger m-0 p-3' role='alert'>No Records Found</div>";
+            echo json_encode([]);
+       
         }
     }
 ?>
