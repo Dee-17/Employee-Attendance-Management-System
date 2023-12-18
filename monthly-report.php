@@ -26,7 +26,7 @@
             var month = curr.getMonth() + 1; 
             var year = curr.getFullYear();
             var global_date_pick = [year, month].join('-');
-
+            
             $("#table_vals").load("monthly-load.php",{
                 table_onload: JSON.stringify(today),
                 }); 
@@ -185,10 +185,9 @@
 
         document.getElementById('exportButton').addEventListener('click', function() {
             
-            const selectedDate = document.getElementById('month_year').value; // Get the selected date
+            const selectedDate = document.getElementById('month_year').innerHTML; // Get the selected date
             const employeeName = document.getElementById('full_name').value; // Get the surname of the employee (assuming there's an input field for the surname)
 
-            console.log(selectedDate);
             let fileName = 'monthly_report'; // Default file name
 
             if (employeeName) {
@@ -198,8 +197,8 @@
             }
 
             const pdf = new jsPDF();
+            
             const contentDiv = document.getElementById('table_rows'); // Replace 'your_div_id' with the actual ID of your div
-            console.log(contentDiv);
             // Define the column widths
             const columnWidths = [20, 35, 25, 25, 25, 25, 25]; // Replace with the desired widths for each column
 
