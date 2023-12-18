@@ -46,16 +46,14 @@
                 <h1 class="modal-title fs-5" id="calendar_label">Date picker</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form target="ifrm" method="POST"> 
-                <div class="modal-body">
-                    <p>Select a date</p>
-                <input class="form-control" type="date" name="date_picker" id="picked_date">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <div class="search_button"><button type="submit" class="btn btn-primary" id="search_button">Search</button></div>
-                </div>
-            </form>
+            <div class="modal-body">
+                <p>Select a date</p>
+               <input class="form-control" type="date" name="date_picker" id="picked_date">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="close_button btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="search_button"><button type="button" class="btn btn-primary" id="search_button">Search</button></div>
+            </div>           
             </div>
         </div>
         </div>
