@@ -113,116 +113,145 @@
                             <div class="am_title container w-50 mb-3 rounded-2 p-2"><p class="m-0">AM</p></div>
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                             <?php
-                                // Display "Unassigned" button when its != to shift 
-                                if ($employeeShift === 'Morning Shift' || $employeeShift === 'Full Time') {
-                                    // Display "AM" button if not checked in for PM and it's the Afternoon Shift
-                                    if ($row['am_in'] === null ) {
+                                // Initialize the variable to track online/offline status
+                                $employeeStatus = 'Unassigned';
+
+                                // Display "Unassigned" button when it's not in the Morning or Day Shift
+                                if ($employeeShift === 'Morning Shift' || $employeeShift === 'Day Shift') {
+                                    // Display "AM" button if not checked in for PM and it's the Morning or Day Shift
+                                    if ($row['am_in'] === null) {
                                         echo '<button class="btn in_button col col-auto" onclick="logAM()">IN</button>';
+                                        // Update employee status to online when AM is logged in
                                     } else {
-                                        // Display "Checked In" button if PM is checked in
-                                        echo '<button class="btn in_button col col-auto" disabled ">Checked In</button>';
+                                        // Display "Checked In" button if AM is checked in
+                                        echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
+                                        $employeeStatus = 'Online';
                                     }
-                        
-                                    // Add the JavaScript function to log PM time using AJAX
+
+                                    // Add the JavaScript function to log AM time using AJAX
                                     echo '<script>
-                                        function logAM() {
-                                            var xhr = new XMLHttpRequest();
-                                            xhr.open("GET", "log_am.php", true);
-                                            xhr.onreadystatechange = function() {
-                                                if (xhr.readyState == 4 && xhr.status == 200) {
-                                                    // Update the button status or show a success message if needed
-                                                    console.log(xhr.responseText);
-                                                }
-                                            };
-                                            xhr.send();
-                                        }
-                                    </script>';
-                        
-                                    // Display "OUT" button if not checked out for PM and it's the Afternoon Shift
-                                    if ($row['am_out'] === null ) {
+                                            function logAM() {
+                                                var xhr = new XMLHttpRequest();
+                                                xhr.open("GET", "log_am.php", true);
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState == 4 && xhr.status == 200) {
+                                                        // Update the button status or show a success message if needed
+                                                        console.log(xhr.responseText);
+                                                    }
+                                                };
+                                                xhr.send();
+                                            }
+                                        </script>';
+
+                                    // Display "OUT" button if not checked out for PM and it's the Morning or Day Shift
+                                    if ($row['am_out'] === null) {
                                         echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
+                                        // Update employee status to online when AM is logged out
                                     } else {
-                                        // Display "Checked Out" button if PM is checked out
-                                        echo '<button class="btn out_button col col-auto" disabled ">Checked Out</button>';
-                                    }
-                        
-                                    // Add the JavaScript function to log PM out time using AJAX
-                                    echo '<script>
-                                        function logAMOut() {
-                                            var xhr = new XMLHttpRequest();
-                                            xhr.open("GET", "out_am.php", true);
-                                            xhr.onreadystatechange = function() {
-                                                if (xhr.readyState == 4 && xhr.status == 200) {
-                                                    // Update the button status or show a success message if needed
-                                                    console.log(xhr.responseText);
-                                                }
-                                            };
-                                            xhr.send();
+                                        // Display "Checked Out" button if AM is checked out
+                                        echo '<button class="btn out_button col col-auto" disabled>Checked Out</button>';
+                                        // If both AM in and AM out have values, update employee status to offline
+                                        if ($row['am_in'] !== null && $row['am_out'] !== null) {
+                                            $employeeStatus = 'Offline';
                                         }
-                                    </script>';
-                                    
-                                } else {
-                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
+                                    }
+
+                                    // Add the JavaScript function to log AM out time using AJAX
+                                    echo '<script>
+                                            function logAMOut() {
+                                                var xhr = new XMLHttpRequest();
+                                                xhr.open("GET", "out_am.php", true);
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState == 4 && xhr.status == 200) {
+                                                        // Update the button status or show a success message if needed
+                                                        console.log(xhr.responseText);
+                                                    }
+                                                };
+                                                xhr.send();
+                                            }
+                                        </script>';
                                 }
-                            ?>
+
+                                // Display the appropriate button based on the employee status
+                                if ($employeeStatus === 'Unassigned') {
+                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
+                                } else {
+                                    // Output the employee status
+                                    echo '<p>Employee Status: ' . $employeeStatus . '</p>';
+                                }
+                                ?>
+
                             </form>
                         </div>
                         <div class="col col-5 card p-3">
                             <div class="pm_title container w-50 mb-3 rounded-2 p-2"><p class="m-0">PM</p></div>
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                             <?php
-                                // Display "Unassigned" button when its != to shift 
-                                if ($employeeShift === 'Afternoon Shift' || $employeeShift === 'Full Time' ) {
-                                    // Display "AM" button if not checked in for PM and it's the Afternoon Shift
+                                $employeeStatus = 'Unassigned';
+
+                                // Display "Unassigned" button when it's not in the Morning or Day Shift
+                                if ($employeeShift === 'Afternoon Shift' || $employeeShift === 'Day Shift') {
+                                    // Display "AM" button if not checked in for PM and it's the Morning or Day Shift
                                     if ($row['pm_in'] === null) {
                                         echo '<button class="btn in_button col col-auto" onclick="logPM()">IN</button>';
+                                        // Update employee status to online when AM is logged in
                                     } else {
-                                        // Display "Checked In" button if PM is checked in
-                                        echo '<button class="btn in_button col col-auto" disabled ">Checked In</button>';
+                                        // Display "Checked In" button if AM is checked in
+                                        echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
+                                        $employeeStatus = 'Online';
                                     }
-                        
-                                    // Add the JavaScript function to log PM time using AJAX
+
+                                    // Add the JavaScript function to log AM time using AJAX
                                     echo '<script>
-                                        function logPM() {
-                                            var xhr = new XMLHttpRequest();
-                                            xhr.open("GET", "log_pm.php", true);
-                                            xhr.onreadystatechange = function() {
-                                                if (xhr.readyState == 4 && xhr.status == 200) {
-                                                    // Update the button status or show a success message if needed
-                                                    console.log(xhr.responseText);
-                                                }
-                                            };
-                                            xhr.send();
-                                        }
-                                    </script>';
-                        
-                                    // Display "OUT" button if not checked out for PM and it's the Afternoon Shift
+                                            function logPM() {
+                                                var xhr = new XMLHttpRequest();
+                                                xhr.open("GET", "log_pm.php", true);
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState == 4 && xhr.status == 200) {
+                                                        // Update the button status or show a success message if needed
+                                                        console.log(xhr.responseText);
+                                                    }
+                                                };
+                                                xhr.send();
+                                            }
+                                        </script>';
+
+                                    // Display "OUT" button if not checked out for PM and it's the Morning or Day Shift
                                     if ($row['pm_out'] === null) {
                                         echo '<button class="btn out_button col col-auto" onclick="logPMOut()">OUT</button>';
+                                        // Update employee status to online when AM is logged out
                                     } else {
-                                        // Display "Checked Out" button if PM is checked out
-                                        echo '<button class="btn out_button col col-auto" disabled ">Checked Out</button>';
-                                    }
-                        
-                                    // Add the JavaScript function to log PM out time using AJAX
-                                    echo '<script>
-                                        function logPMOut() {
-                                            var xhr = new XMLHttpRequest();
-                                            xhr.open("GET", "out_pm.php", true);
-                                            xhr.onreadystatechange = function() {
-                                                if (xhr.readyState == 4 && xhr.status == 200) {
-                                                    // Update the button status or show a success message if needed
-                                                    console.log(xhr.responseText);
-                                                }
-                                            };
-                                            xhr.send();
+                                        // Display "Checked Out" button if AM is checked out
+                                        echo '<button class="btn out_button col col-auto" disabled>Checked Out</button>';
+                                        // If both AM in and AM out have values, update employee status to offline
+                                        if ($row['pm_in'] !== null && $row['pm_out'] !== null) {
+                                            $employeeStatus = 'Offline';
                                         }
-                                    </script>'; 
-                                        
-
-                                } else {
-                                    echo '<button class="btn in_button col col-auto" disabled ">Unassigned</button>';
                                     }
+
+                                    // Add the JavaScript function to log AM out time using AJAX
+                                    echo '<script>
+                                            function logPMOut() {
+                                                var xhr = new XMLHttpRequest();
+                                                xhr.open("GET", "out_pm.php", true);
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState == 4 && xhr.status == 200) {
+                                                        // Update the button status or show a success message if needed
+                                                        console.log(xhr.responseText);
+                                                    }
+                                                };
+                                                xhr.send();
+                                            }
+                                        </script>';
+                                }
+
+                                // Display the appropriate button based on the employee status
+                                if ($employeeStatus === 'Unassigned') {
+                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
+                                } else {
+                                    // Output the employee status
+                                    echo '<p>Employee Status: ' . $employeeStatus . '</p>';
+                                }
                                 ?>
                             </form>
                         </div>
