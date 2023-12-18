@@ -20,7 +20,7 @@ if ($conn->query($updatePmInQuery) === TRUE) {
 }
 
 // Update pm_late column
-$updatePmLateQuery = "UPDATE atlog SET pm_late = IF(TIMEDIFF(pm_in, '13:30:00') > '00:30:00', 1, 0)";
+$updatePmLateQuery = "UPDATE atlog SET pm_late = IF(TIMEDIFF(pm_in, '13:30:00') > '00:30:00', 'YES', 'NO')";
 $conn->query($updatePmLateQuery);
 
 $conn->close();
