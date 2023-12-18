@@ -3,7 +3,7 @@
     include "connection.php"; 
     $empId = $_SESSION['emp_id']; 
 
-    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.shift, employee.emp_id, employee.first_name, employee.middle_name, employee.last_name
+    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.shift, employee.emp_id, employee.contract, employee.first_name, employee.middle_name, employee.last_name
                                 FROM atlog 
                                 JOIN employee ON atlog.emp_id = employee.emp_id
                                 WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
@@ -17,6 +17,7 @@
         $row = $result->fetch_assoc();
         $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
         $employeeShift = $row['shift'];
+        $employeeContract =$row['contract'];
 
         echo '<script>console.log(num_rows);</script>';
 
@@ -235,15 +236,15 @@
                         <form action="" class="card m-3 p-3 employee_info d-flex gap-2 justify-content-between">
                             <div class="">
                                 <label for="emp_id" class="form-label m-0">Emp ID</label>
-                                <input class="form-control" type="text" value="1" name="emp_id" disabled readonly>
+                                <input class="form-control" type="text" value="<?php echo $empId; ?>" name="emp_id" disabled readonly>
                             </div>
                             <div class="">
                                 <label for="emp_contract" class="form-label m-0">Contract</label>
-                                <input class="form-control" type="text" value="Part Time" name="emp_contract" disabled readonly>
+                                <input class="form-control" type="text" value="<?php echo $employeeContract; ?>" name="emp_contract" disabled readonly>
                             </div>
                             <div class="">
                                 <label for="emp_shift" class="form-label m-0">Shift</label>
-                                <input class="form-control" type="text" value="Morning" name="emp_shift" disabled readonly>
+                                <input class="form-control" type="text" value="<?php echo $employeeShift; ?>" name="emp_shift" disabled readonly>
                             </div>
                         </form>
                     </div>
