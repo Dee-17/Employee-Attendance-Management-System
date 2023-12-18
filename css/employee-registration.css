@@ -1,16 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+a {
+    margin: 0;
+    padding: 0;
+}
 body {
-
     font-family: 'Inter', sans-serif;
     background: #f7f7f7;
 }
-
+.blue_title {
+    color: #072560;
+}
+.btn_container .btn {
+    font-size: 13px;
+    padding: 2.5px 7px;
+}
+.btn:focus, .form-control:focus, .register_form select:focus {
+    outline: none;
+    box-shadow: none;
+}
 .container-fluid {
     margin: 0;
     padding: 0;
 }
-
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.exit_button button {
+    background-color: #7e7e7e;
+    overflow: hidden;
+    border: none;
+    font-size: 14px;
+}
+.grey_container {
+    background-color: #efefefa5;
+    border-radius: 10px;
+}
+.header {
+    display: flex;
+}
+.header_title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.pop_out_text {
+    font-size: 14px;
+    color: #072560;
+    font-style: italic;
+}
+.register_button button, .register_button button:hover {
+    background-color: #A4C3FF;
+    border: none;
+    color: #072560;
+    font-weight: bold;
+    font-size: 15px;
+}
+.register_button button:hover {
+    box-shadow: 0 0 15px 1px #A4C3FF;
+}
+.register_form label {
+    font-size: 14px;
+    color: #7e7e7e;
+}
+.register_form input, .register_form input:focus, .register_form select {
+    background-color: #efefefa5;
+}
 .right_panel {
     width: 80%;
     margin-left: 20%;
@@ -19,70 +75,11 @@ body {
     color: black;
     min-height: 100vh;
 }
-
-.title_2 {
-    font-size: 2rem;
-    font-weight: bold;
+.search_button {
+    width: 20%;
 }
-
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
-}
-
-.grey_container {
-    background-color: #efefefa5;
-    border-radius: 10px;
-}
-
 .white_container {
     background-color: #fff;
     border-radius: 10px;
     padding: 10px;
-}
-
-a {
-    margin: 0;
-    padding: 0;
-}
-
-
-.register_button {
-    width: 40%;
-}
-
-.btn_container .btn {
-    font-size: 13px;
-    padding: 2.5px 7px;
-}
-
-.search_button {
-    width: 20%;
-}
-
-.pop_out_text {
-    font-size: 14px;
-    color: #072560;
-    font-style: italic;
-    margin-bottom: 0px;
-    margin-top: 8px;
-}
-
-.header {
-    display: flex;
-}
-
-.exit_button {
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #072560;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-weight: bold;
 }

@@ -1,146 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+.admin_button button {
+    background-color: #072560;
+    border: none;
+    color: white;
+}
 body {
-    padding: 0px;
-    margin: 0px;
     font-family: 'Inter', sans-serif;
     background: #f7f7f7;
 }
-
-.container {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 850px;
-    height: 500px;
-    
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 15px;
+.bold_title {
+    font-weight: bold;
 }
-
-.container .content-left{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 45%;
-    height: 100%;
-    background: #072560;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 15px;
-}
-
-.container .content-right{
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    width: 55%;
-    height: 100%;
-    background: #fff;
-
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.logo {
-    width: 25%;
-    padding-top: 30px;
-    margin-left: -5px;
-
-    margin-bottom: 10px;
-}
-
-.company-title {
-    column-gap: 20px;
-    justify-content: space-between;
-    padding-left: 45px;
-}
-
-.title h1 {
-    font-size: 45px;
-    font-weight: 600;
-    margin-bottom: 70px;
-}
-
-.title p {
-    font-size: 10px;
-    line-height: 1.5;
-}
-
-.select-container {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 70%;
-    height: 55%;
-    background: #fff;
-
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-
-    border-radius: 15px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.subtitle h2 {
-    font-size: 24px;
-}
-
-.subtitle h3 {
+.button_group button {
     font-size: 14px;
-    font-weight: 400;
 }
-
-.button-container .button {
-    width: 90%;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    padding: 15px;
+.card {
     border: none;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+.container_1 {
+    width: 55%;
+    height: 70%;
+}
+.custom_font1 {
+    font-size: 30px;
+}
+.custom_font2 {
+    font-size: 15px;
+}
+.emp_button button {
+    background-color: #dddddd9f;
+    border: none;
+}
+.footer_title {
+    font-size: 11px;
+}
+.header_title {
+    font-size: 3.1rem;
+    line-height: 3.1rem;
+}
+.left_panel {
+    background-color: #072560;
+    color: white;
+}
+.left_panel img {
+    width: 80px;
+    height: 80px;
+}
+.left_panel, .right_panel {
+    height: auto;
+}
+.right_panel {
+    background-color: white;
+}
+.shadow_container {
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+}
+.white_container {
+    background-color: white;
     border-radius: 10px;
-}
-
-.button-container .button:first-child {
-    margin-bottom: 12px;
-}
-
-.button-container span {
-    font-weight: 600;
-}
-
-.button-container .button:focus {
-    outline: none;
-}
-
-.button-container .button:hover {
-    cursor: pointer;
-}
-
-#admin-button{
-    background: #072560;
-    color: #fff;
-}
-
-#admin-button:hover{
-    background: #04163a;
-}
-
-#employee-button{
-    background: #d2d2d2;
-    color: #000;
-}
-
-#employee-button:hover{
-    background: #bfbfbf;
+    padding: 10px;
 }

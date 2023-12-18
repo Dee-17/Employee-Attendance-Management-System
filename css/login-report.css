@@ -1,43 +1,29 @@
-.container-fluid {
-    margin: 0;
-    padding: 0;
-}
-
-.right_panel {
-    width: 80%;
-    margin-left: 20%;
-    display: inline-block;
-    background-color: #F7F7F7;
-    color: black;
-    min-height: 100vh;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .admin_name {
-    font-weight: bold;
     color: #072560;
 }
-
-.subtitle_1 {
-    margin: 0;
-    padding: 0;
-    font-size: small;
+body {
+    font-family: 'Inter', sans-serif;
 }
-.title_1 {
-    font-size: large;
-    font-weight: bold;
-}
-.title_2 {
-    font-size: 2rem;
-}
-
 .card {
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
 }
-
-
+.clock_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock_elements span {
+    font-size: 35px;
+    font-weight: bold;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
 .date_container {
     background-color: #A4C3FF;
     box-shadow: 0 0 15px 1px #A4C3FF;
@@ -48,6 +34,10 @@
     margin-top: -3px;
     font-style: normal;
 }
+.date_subtitle {
+    color: #072560;
+    font-style: italic;
+}
 .date_title {
     font-size: 25px;
     margin-top: -8px;
@@ -55,40 +45,46 @@
 .day_title {
     font-size: 20px;
 }
-.date_subtitle {
-    color: #072560;
-    font-style: italic;
+.header_title {
+    font-size: 2rem;
+    font-weight: bold;
 }
-
 .grey_container {
     background-color: #efefefa5;
     border-radius: 10px;
 }
-.am_button, .pm_button {
-    background-color: #ededed9f;
+.legend_blue, .legend_red {
+    font-style: italic;
+    font-size: 12px;
 }
-.am_pm_button button {
-    width: 45%;
-    font-size: 18px;
+.legend_blue {
+    color: #6195ff;
+}
+.legend_red {
+    color: red;
+}
+.right_panel {
+    width: 80%;
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #F7F7F7;
+    color: black;
+    min-height: 100vh;
+}
+.table th {
+    color: #989898;
+}
+.table th, .table_body td {
+    font-size: 14px;
+}
+.legend_title {
+    font-size: 13px;
     font-weight: bold;
+    color: #5f5f5f;
+    margin-bottom: 2px;
 }
-.am_pm_button button:hover {
-    background-color: #d4d4d4;
-    /* color: white; */
-}
-
 .white_container {
     background-color: #fff;
     border-radius: 10px;
     padding: 10px;
-}
-
-.clock_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.clock_elements span {
-    font-size: 35px;
-    font-weight: bold;
 }

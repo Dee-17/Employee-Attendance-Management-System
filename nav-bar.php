@@ -10,6 +10,6 @@
         <a class="nav_button nav-link" href="employee-maintenance.php">Employee Maintenance</a>
         <a class="nav_button nav-link" href="daily-report.php">Daily Report</a>
         <a class="nav_button nav-link" href="monthly-report.php">Monthly Report</a>
-        <span class="log_out_button mb-3"><a class="nav_button nav-link" href="employee-login.php">Log out</a></span>
+        <span class="log_out_button mb-3"><a class="nav_button nav-link" href="admin-login.php">Log out</a></span>
     </nav>
 </div>

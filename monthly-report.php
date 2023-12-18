@@ -13,6 +13,37 @@
     <script src="js/nav-bar.js" defer></script>
     <script src="js/date-time.js" defer></script>
     <script src="js/month-year-calendar.js" defer></script>
+        <script>
+        $(document).ready(function(){
+            //On Load
+            var today = new Date().toLocaleDateString();
+            var curr = new Date();
+            var month = curr.getMonth() + 1; 
+            var year = curr.getFullYear();
+            var global_date_pick = [year, month].join('-');
+
+            $("#table_vals").load("monthly-load.php",{
+                table_onload: JSON.stringify(today),
+                }); 
+            $("#search_button").click(function(){
+                var date_pick = document.getElementById('picked_date').value;
+                global_date_pick =date_pick;
+                $("#table_vals").load("monthly-load.php",{
+                    select_date: JSON.stringify(date_pick),
+                })
+            })
+            //search
+            $("#search_ID").click(function(){
+                var employee_Id = document.getElementById('emp_search').value;
+                $("#table_vals").load("monthly-load.php",{
+                    emp_id:employee_Id,
+                    select_date:global_date_pick
+                })
+
+            //send to monthly-load.php
+        });
+    });
+    </script>
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
@@ -41,28 +72,24 @@
 
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <p class="header_title"><span class="bold_title">Monthly Log in</span> Report</p>
+            <p class="header_title"><span class="blue_title">Monthly Log in</span> Report</p>
             <!-- First row -->
-            <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between">
-                <div class="col col-7 p-0">
-                    <!-- Display the date chosen by user -->
-                    <div class="row m-0 p-0 gap-3">
-                        <!-- hidden by default -->
-                        <div class="date_container card px-4 py-2 col col-6" style="display: none;" id="date_picked">
-                            <p class="date_subtitle">Viewing log in reports during</p>
-                            <p class="date_title" id="selected_date"></p>
-                        </div>
-                        <div class="date_container card px-4 py-2 col col-6" id="current_date">
-                            <p class="date_subtitle">Viewing log in reports today</p>
-                            <p class="date_title" id="month_year"></p>
-                        </div>
-                        <div class="card col col-2 p-0 align-items-center justify-content-center">
-                           <div class="calendar_icon"><a type="button" data-bs-toggle="modal" data-bs-target="#calendar_modal"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
-                        </div>
-                    </div>
+            <div class="row container-fluid mt-4 gap-3 d-flex">
+                <!-- Display the date chosen by user -->
+                <!-- hidden by default -->
+                <div class="date_container card px-4 py-2 col col-4 justify-content-center" style="display: none;" id="date_picked">
+                    <p class="date_subtitle">Viewing log in reports during</p>
+                    <p class="date_title" id="selected_date"></p>
+                </div>
+                <div class="date_container card px-4 py-2 col col-4 justify-content-center" id="current_date">
+                    <p class="date_subtitle">Viewing log in reports today</p>
+                    <p class="date_title" id="month_year"></p>
+                </div>
+                <div class="card col col-1 p-0 align-items-center justify-content-center">
+                    <div class="calendar_icon"><a type="button" data-bs-toggle="modal" data-bs-target="#calendar_modal"><i class="bi bi-calendar4-week" style="font-size: 2rem;"></i></a></div>
                 </div>
                 <!-- Display real-time clock -->
-                <div class="clock_container grey_container col col-4 m-0 p-0">
+                <div class="clock_container grey_container col col-3 m-0 p-0 ms-auto">
                     <div class="clock_elements">
                         <span id="hour"></span>
                         <span id="point">:</span>
@@ -72,19 +99,25 @@
                         <span id="am_pm"></span>
                     </div>
                 </div>
+                <!-- Table legend -->
+                <div class="white_container col col-2 m-0 py-3 px-4">
+                    <p class="legend_title text-center">Table legend</p>
+                    <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
+                    <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
+                </div>
             </div>
             <!-- Employee search and info -->
             <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between gap-2">
-                <!-- Employee information -->
+            <!-- Employee information -->
                 <div class="col col-7-sm p-0">
                     <div class="row m-0 p-0 gap-3">
                         <div class="card px-3 py-3 col">
-                            <form action="" class="d-flex gap-2 employee_info justify-content-between">
+                            <form action="" class="employee_info d-flex gap-2 justify-content-between">
                                 <div class="col col-1">
                                     <label for="emp_id" class="form-label m-0">Emp ID</label>
                                     <input class="form-control" type="text" value="1" name="emp_id" disabled readonly>
                                 </div>
-                                <div class="col col-6-sm">
+                                <div class="col col-6-sm employee_name">
                                     <label for="emp_name" class="form-label m-0">Full name</label>
                                     <input class="form-control" type="text" value="MARK OTTO" name="emp_name" disabled readonly>
                                 </div>
@@ -96,21 +129,21 @@
                                     <label for="emp_shift" class="form-label m-0">Shift</label>
                                     <input class="form-control" type="text" value="Morning" name="emp_shift" disabled readonly>
                                 </div>
-                                <!-- full name, shift, contract, emp number -->
                             </form>
                         </div>
                     </div>
                 </div>
+
                 <!-- Employee search -->
                 <div class="col col-4 p-0">
                     <div class="row m-0 p-0 gap-3">
                         <div class="card px-3 py-3 col m-0">
-                            <form action="" class="d-flex gap-2">
-                                <div class="col col-9 m-0">
-                                    <input type="text" id="emp_search" class="form-control" placeholder="Enter employee name or id">
+                            <form class="employee_search d-flex gap-2">
+                                <div class="col col-9 m-0 p-0">
+                                    <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
-                                <div class="employee_search col col-2-sm m-0">
-                                    <button class="btn btn-primary">Search</button>
+                                <div class="col col-2 m-0 p-0">
+                                    <input class="btn btn-primary" id="search_ID" type="button" value="Search">
                                 </div>
                             </form>
                         </div>
@@ -118,49 +151,7 @@
                 </div>
             </div>
             <!-- Reports -->
-            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
-                <table class="employee_table table">
-                    <thead class="table_header">
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">AM IN</th>
-                            <th scope="col">AM OUT</th>
-                            <th scope="col">PM IN</th>
-                            <th scope="col">PM OUT</th>
-                            <th scope="col">Late</th>
-                            <th scope="col">Undertime</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">November 20, 2023</th>
-                            <td>8:00</td>
-                            <td>12:01</td>
-                            <td>1:00</td>
-                            <td>5:01</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">November 22, 2023</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>1:00</td>
-                            <td>4:51</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">November 23, 2023</th>
-                            <td>9:00</td>
-                            <td>12:51</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
+            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_vals">
                 </table>
             </div>
         </div>
