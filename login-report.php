@@ -71,20 +71,7 @@
             </div>
 
             <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Emp ID</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">Shift</th>
-                            <th scope="col">AM In</th>
-                            <th scope="col">AM Out</th>
-                            <th scope="col">PM In</th>
-                            <th scope="col">PM Out</th>
-                            <th scope="col">Overtime</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table_body">
+                <table class="table m-0 p-0">
                     <?php
                         include "connection.php";
                         $sql = "SELECT atlog.emp_id,employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
@@ -96,6 +83,21 @@
                         $result_check = mysqli_num_rows($result);
 
                         if ($result_check > 0) {
+                            echo "
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Emp ID</th>
+                                    <th scope='col'>Full Name</th>
+                                    <th scope='col'>Shift</th>
+                                    <th scope='col'>AM In</th>
+                                    <th scope='col'>AM Out</th>
+                                    <th scope='col'>PM In</th>
+                                    <th scope='col'>PM Out</th>
+                                    <th scope='col'>Overtime</th>
+                                </tr>
+                            </thead>
+                            <tbody class='table_body'>
+                            ";
                             while ($row = mysqli_fetch_assoc($result)){
                                 echo "<tr>";
                                 echo "<td>";
@@ -121,15 +123,17 @@
                                 echo "</td>";
                                 echo "</tr>";
                             }
-                        }else{
+                            echo "</tbody>";
+                        } else {
                             echo "
                             <div class='alert alert-danger m-0 p-3' role='alert'>
                             No Records Found
                             </div>";
                         }          
-                        echo "</tbody></table>";
                         $conn->close();
                     ?>
+                </table>
+            </div>    
         </div>
     </div>
 </body>
