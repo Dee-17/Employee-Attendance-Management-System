@@ -111,17 +111,21 @@
                         <div class="col col-5 card p-3">
                             <div class="am_title container w-50 mb-3 rounded-2 p-2"><p class="m-0">AM</p></div>
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
-                                <?php
-                                // LOG AM
-                                if ($row['am_in'] === null && ($employeeShift == 'Morning Shift' || $employeeShift == 'Both')) {
-                                    echo '<button class="btn in_button col col-auto" onclick="logAM()">AM</button>';
+                            <?php
+                                // Display "Unassigned" button when its != to shift 
+                                if ($employeeShift !== 'Morning Shift') {
+                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
                                 } else {
-                                    echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
-
-                                }
-
-                                // Add the JavaScript function to log AM time using AJAX
-                                echo '<script>
+                                    // Display "AM" button if not checked in for PM and it's the Afternoon Shift
+                                    if ($row['am_in'] === null && $employeeShift == 'Morning Shift') {
+                                        echo '<button class="btn in_button col col-auto" onclick="logAM()">PM</button>';
+                                    } else {
+                                        // Display "Checked In" button if PM is checked in
+                                        echo '<button class="btn in_button col col-auto" disabled">Checked In</button>';
+                                    }
+                        
+                                    // Add the JavaScript function to log PM time using AJAX
+                                    echo '<script>
                                         function logAM() {
                                             var xhr = new XMLHttpRequest();
                                             xhr.open("GET", "log_am.php", true);
@@ -134,16 +138,17 @@
                                             xhr.send();
                                         }
                                     </script>';
-
-                                // OUT AM
-                                if ($row['am_out'] === null && ($employeeShift == 'Morning Shift' || $employeeShift == 'Both')) {
-                                    echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
-                                } else {
-                                    echo '<button class="btn out_button col col-auto" disabled>Checked Out</button>';
-                                }
-
-                                // Add the JavaScript function to log AM out time using AJAX
-                                echo '<script>
+                        
+                                    // Display "OUT" button if not checked out for PM and it's the Afternoon Shift
+                                    if ($row['am_out'] === null && $employeeShift == 'Morning Shift') {
+                                        echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
+                                    } else {
+                                        // Display "Checked Out" button if PM is checked out
+                                        echo '<button class="btn out_button col col-auto" disabled">Checked Out</button>';
+                                    }
+                        
+                                    // Add the JavaScript function to log PM out time using AJAX
+                                    echo '<script>
                                         function logAMOut() {
                                             var xhr = new XMLHttpRequest();
                                             xhr.open("GET", "out_am.php", true);
@@ -156,44 +161,50 @@
                                             xhr.send();
                                         }
                                     </script>';
-                                    ?>
+                                }
+                            ?>
                             </form>
                         </div>
                         <div class="col col-5 card p-3">
                             <div class="pm_title container w-50 mb-3 rounded-2 p-2"><p class="m-0">PM</p></div>
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
-                                <?php
-                                    // Display PM button based on condition
-                                    if ($row['pm_in'] === null && ($employeeShift == 'Afternoon Shift' || $employeeShift == 'Both')) {
+                            <?php
+                                // Display "Unassigned" button when its != to shift 
+                                if ($employeeShift !== 'Afternoon Shift') {
+                                    echo '<button class="btn in_button col col-auto" disabled ">Unassigned</button>';
+                                } else {
+                                    // Display "AM" button if not checked in for PM and it's the Afternoon Shift
+                                    if ($row['pm_in'] === null && $employeeShift == 'Afternoon Shift') {
                                         echo '<button class="btn in_button col col-auto" onclick="logPM()">PM</button>';
                                     } else {
-                                        echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
+                                        // Display "Checked In" button if PM is checked in
+                                        echo '<button class="btn in_button col col-auto" disabled">Checked In</button>';
                                     }
-
+                        
                                     // Add the JavaScript function to log PM time using AJAX
                                     echo '<script>
-                                            function logPM() {
-                                                var xhr = new XMLHttpRequest();
-                                                xhr.open("GET", "log_pm.php", true);
-                                                xhr.onreadystatechange = function() {
-                                                    if (xhr.readyState == 4 && xhr.status == 200) {
-                                                        // Update the button status or show a success message if needed
-                                                        console.log(xhr.responseText);
-                                                    }
-                                                };
-                                                xhr.send();
-                                            }
-                                        </script>';
-
-
-                                    // Display AM out button based on condition
-                                    if ($row['pm_out'] === null && ($employeeShift == 'Afternoon Shift' || $employeeShift == 'Both')) {
+                                        function logPM() {
+                                            var xhr = new XMLHttpRequest();
+                                            xhr.open("GET", "log_pm.php", true);
+                                            xhr.onreadystatechange = function() {
+                                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                                    // Update the button status or show a success message if needed
+                                                    console.log(xhr.responseText);
+                                                }
+                                            };
+                                            xhr.send();
+                                        }
+                                    </script>';
+                        
+                                    // Display "OUT" button if not checked out for PM and it's the Afternoon Shift
+                                    if ($row['pm_out'] === null && $employeeShift == 'Afternoon Shift') {
                                         echo '<button class="btn out_button col col-auto" onclick="logPMOut()">OUT</button>';
                                     } else {
-                                        echo '<button class="btn out_button col col-auto" disabled>Checked Out</button>';
+                                        // Display "Checked Out" button if PM is checked out
+                                        echo '<button class="btn out_button col col-auto" disabled">Checked Out</button>';
                                     }
-
-                                    // Add the JavaScript function to log AM out time using AJAX
+                        
+                                    // Add the JavaScript function to log PM out time using AJAX
                                     echo '<script>
                                         function logPMOut() {
                                             var xhr = new XMLHttpRequest();
@@ -207,6 +218,7 @@
                                             xhr.send();
                                         }
                                     </script>';
+                                    }
                                 ?>
                             </form>
                         </div>
