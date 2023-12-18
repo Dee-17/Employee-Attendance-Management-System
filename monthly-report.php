@@ -145,32 +145,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Employee information -->
-                <div class="col col-7-sm p-0">
-                    <div class="row m-0 p-0 gap-3">
-                        <div class="card px-3 py-3 col">
-                            <form action="" class="employee_info d-flex gap-2 justify-content-between" id="employee_info">
-                                <div class="col col-1">
-                                    <label for="emp_id" class="form-label m-0">Emp ID</label>
-                                    <input class="form-control" type="text" value="1" name="emp_id" disabled readonly>
-                                </div>
-                                <div class="col col-6-sm employee_name">
-                                    <label for="emp_name" class="form-label m-0">Full name</label>
-                                    <input class="form-control" type="text" value="MARK OTTO" name="emp_name" disabled readonly>
-                                </div>
-                                <div class="col col-3-sm">
-                                    <label for="emp_contract" class="form-label m-0">Contract</label>
-                                    <input class="form-control" type="text" value="Part Time" name="emp_contract" disabled readonly>
-                                </div>
-                                <div class="col col-2-sm">
-                                    <label for="emp_shift" class="form-label m-0">Shift</label>
-                                    <input class="form-control" type="text" value="Morning" name="emp_shift" disabled readonly>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
                 <!-- Employee search -->
                 <div class="col col-4 p-0">
                     <div class="row m-0 p-0 gap-3">
