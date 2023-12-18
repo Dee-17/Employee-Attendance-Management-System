@@ -122,7 +122,7 @@
                                                     echo '<button class="btn in_button col col-auto" onclick="logAM()">PM</button>';
                                                 } else {
                                                     // Display "Checked In" button if PM is checked in
-                                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Checked In</button>';
+                                                    echo '<button class="btn in_button col col-auto" disabled">Checked In</button>';
                                                 }
                                     
                                                 // Add the JavaScript function to log PM time using AJAX
@@ -145,7 +145,7 @@
                                                     echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
                                                 } else {
                                                     // Display "Checked Out" button if PM is checked out
-                                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small; padding: 9px;">Checked Out</button>';
+                                                    echo '<button class="btn out_button col col-auto" disabled">Checked Out</button>';
                                                 }
                                     
                                                 // Add the JavaScript function to log PM out time using AJAX
@@ -172,14 +172,14 @@
                                             <?php
                                             // Display "Unassigned" button when its != to shift 
                                             if ($employeeShift !== 'Afternoon Shift') {
-                                                echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
+                                                echo '<button class="btn in_button col col-auto" disabled ">Unassigned</button>';
                                             } else {
                                                 // Display "AM" button if not checked in for PM and it's the Afternoon Shift
                                                 if ($row['pm_in'] === null && $employeeShift == 'Afternoon Shift') {
                                                     echo '<button class="btn in_button col col-auto" onclick="logPM()">PM</button>';
                                                 } else {
                                                     // Display "Checked In" button if PM is checked in
-                                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Checked In</button>';
+                                                    echo '<button class="btn in_button col col-auto" disabled">Checked In</button>';
                                                 }
                                     
                                                 // Add the JavaScript function to log PM time using AJAX
@@ -202,7 +202,7 @@
                                                     echo '<button class="btn out_button col col-auto" onclick="logPMOut()">OUT</button>';
                                                 } else {
                                                     // Display "Checked Out" button if PM is checked out
-                                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small; padding: 9px;">Checked Out</button>';
+                                                    echo '<button class="btn out_button col col-auto" disabled">Checked Out</button>';
                                                 }
                                     
                                                 // Add the JavaScript function to log PM out time using AJAX
