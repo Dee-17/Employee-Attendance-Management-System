@@ -123,7 +123,7 @@
                             }
                         }else{
                             echo "
-                            <div class='alert alert-danger m-0 p-3' role='alert'>
+                            <div class='alert alert-danger mb-3 p-3' role='alert'>
                             No Records Found
                             </div>";
                         }          
