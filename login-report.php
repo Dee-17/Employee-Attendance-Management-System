@@ -107,26 +107,39 @@
                                 echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
                                 echo "<td>" . $row["contract"] . "</td>";
                                 echo "<td>" . $row["shift"] . "</td>";
-                                if($row["am_late"] == "YES"){
+
+                                if($row["am_in"]==null){
+                                    echo "<td>-</td>";
+                                    }
+                                elseif($row["am_late"] == "YES"){
                                     echo "<td style='color:red'>" . $row["am_in"] . "</td>";
                                     echo "<script>console.log('" . $row["am_in"] . "')</script>";
                                 } else{
                                     echo "<td>" . $row["am_in"] . "</td>";
                                 }
                     
-                                if($row["am_underTIME"]== "YES"){
+                                if($row["am_out"]==null){
+                                    echo "<td>-</td>";
+                                    }
+                                elseif($row["am_underTIME"]== "YES"){
                                     echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
                                 } else{
                                     echo "<td>" . $row["am_out"] . "</td>";
                                 }
                     
-                                if($row["pm_late"] == "YES"){
+                                if($row["pm_in"]==null){
+                                    echo "<td>-</td>";
+                                    }
+                                elseif($row["pm_late"] == "YES"){
                                     echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
                                 } else{
                                     echo "<td>" . $row["pm_in"] . "</td>";
                                 }
                                 
-                                if($row["pm_out"]== "YES"){
+                                if($row["pm_out"]==null){
+                                    echo "<td>-</td>";
+                                    }
+                                elseif($row["pm_out"]== "YES"){
                                     echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
                                 } else {
                                     echo "<td>" . $row["pm_out"] . "</td>";
