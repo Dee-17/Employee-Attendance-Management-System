@@ -20,7 +20,7 @@ if ($conn->query($updatePmOutQuery) === TRUE) {
 }
 
 // Update pm_underTIME column
-$updatePmUnderTimeQuery = "UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out, '17:59:00') > '00:30:00', 1, 0)";
+$updatePmUnderTimeQuery = "UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out, '17:59:00') > '00:30:00', 'YES', 'NO')";
 $conn->query($updatePmUnderTimeQuery);
 
 
