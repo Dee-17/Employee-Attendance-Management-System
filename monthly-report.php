@@ -132,6 +132,7 @@
                     <p class="legend_title text-center">Table legend</p>
                     <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
                     <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
+                    <div class="legend_green"><i class="bi bi-square-fill"></i><span class="mx-1">Overtime</span></div>
                 </div>
             </div>
             <!-- Employee search and info -->

@@ -67,6 +67,7 @@
                     <p class="legend_title text-center">Table legend</p>
                     <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
                     <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
+                    <div class="legend_green"><i class="bi bi-square-fill"></i><span class="mx-1">Overtime</span></div>
                 </div>
             </div>
 
@@ -102,36 +103,40 @@
                             ";
                             while ($row = mysqli_fetch_assoc($result)){
                                 echo "<tr>";
-                                echo "<td>";
-                                echo $row['emp_id'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['first_name']." ".$row['middle_name']." ".$row['last_name'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['contract'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['shift'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['am_in'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['am_out'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['pm_in'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['pm_out'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['work_hour'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $row['overtime'];
-                                echo "</td>";
+                                echo "<td>" . $row["emp_id"] . "</td>";
+                                echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
+                                echo "<td>" . $row["contract"] . "</td>";
+                                echo "<td>" . $row["shift"] . "</td>";
+                                if($row["am_late"] == "YES"){
+                                    echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                                    echo "<script>console.log('" . $row["am_in"] . "')</script>";
+                                } else{
+                                    echo "<td>" . $row["am_in"] . "</td>";
+                                }
+                    
+                                if($row["am_underTIME"]== "YES"){
+                                    echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
+                                } else{
+                                    echo "<td>" . $row["am_out"] . "</td>";
+                                }
+                    
+                                if($row["pm_late"] == "YES"){
+                                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                                } else{
+                                    echo "<td>" . $row["pm_in"] . "</td>";
+                                }
+                                
+                                if($row["pm_out"]== "YES"){
+                                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                                } else {
+                                    echo "<td>" . $row["pm_out"] . "</td>";
+                                }
+                                if($row["overtime"] > "00:00:00"){
+                                    echo "<td style='color:green'>" . $row["work_hour"] . "</td>";
+                                } else {
+                                    echo "<td>" . $row["work_hour"] . "</td>";
+                                }
+                                echo "<td>" . $row["overtime"] . "</td>";
                                 echo "</tr>";
                                 
                             }

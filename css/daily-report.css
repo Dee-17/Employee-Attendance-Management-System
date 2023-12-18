@@ -66,7 +66,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
 }
-.legend_blue, .legend_red {
+.legend_blue, .legend_red, .legend_green {
     font-style: italic;
     font-size: 12px;
 }
@@ -75,6 +75,9 @@ body {
 }
 .legend_red {
     color: red;
+}
+.legend_green {
+    color: green;
 }
 .legend_title {
     font-size: 13px;
