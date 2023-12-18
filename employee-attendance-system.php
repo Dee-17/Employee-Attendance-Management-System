@@ -218,8 +218,6 @@
                                             xhr.send();
                                         }
                                     </script>'; 
-                                        
-
                                 } else {
                                     echo '<button class="btn in_button col col-auto" disabled ">Unassigned</button>';
                                     }
@@ -254,4 +252,7 @@
     </body>
 </html>
 
+<?php
+include "update.php";
 
+?>
