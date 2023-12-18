@@ -121,7 +121,11 @@
                                 echo "<td>";
                                 echo $row['pm_out'];
                                 echo "</td>";
+                                echo "<td>";
+                                echo $row['overtime'];
+                                echo "</td>";
                                 echo "</tr>";
+                                
                             }
                             echo "</tbody>";
                         } else {
