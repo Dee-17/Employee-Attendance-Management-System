@@ -217,8 +217,8 @@
                                             };
                                             xhr.send();
                                         }
-                                    </script>';
-                        
+                                    </script>'; 
+                                        
 
                                 } else {
                                     echo '<button class="btn in_button col col-auto" disabled ">Unassigned</button>';
