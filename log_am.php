@@ -15,13 +15,26 @@ $updateAmInQuery = "UPDATE atlog SET am_in = '$currentDateTime' WHERE emp_id = $
 
 if ($conn->query($updateAmInQuery) === TRUE) {
     echo "AM time logged successfully";
+
+    // Update am_late column
+    $updateAmLateQuery = "UPDATE atlog SET am_late = IF(TIMEDIFF(am_in, '8:30:00') > '00:30:00', 'YES', 'NO')";
+    if ($conn->query($updateAmLateQuery) === TRUE) {
+        echo " and AM late status updated successfully";
+
+        // Update status column
+        $employeeStatus = 'Online'; 
+        $updateStatusQuery = "UPDATE atlog SET status = '$employeeStatus' WHERE emp_id = $empId AND atlog_DATE = CURDATE()";
+        if ($conn->query($updateStatusQuery) === TRUE) {
+            echo " and status updated to '$employeeStatus'";
+        } else {
+            echo " but there was an error updating status: " . $conn->error;
+        }
+    } else {
+        echo " but there was an error updating AM late status: " . $conn->error;
+    }
 } else {
     echo "Error logging AM time: " . $conn->error;
 }
-
-// Update am_late column
-$updateAmLateQuery = "UPDATE atlog SET am_late = IF(TIMEDIFF(am_in, '8:30:00') > '00:30:00', 'YES', 'NO')";
-$conn->query($updateAmLateQuery);
 
 $conn->close();
 ?>
