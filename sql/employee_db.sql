@@ -1,4 +1,6 @@
+
 CREATE DATABASE employee_db;
+
 USE employee_db;
 
 CREATE TABLE `admin` (
@@ -31,22 +33,22 @@ CREATE TABLE `atlog` (
   `am_out` time DEFAULT NULL,
   `pm_in` time DEFAULT NULL,
   `pm_out` time DEFAULT NULL,
-  `am_late` VARCHAR(3) DEFAULT NULL,
-  `am_underTIME` VARCHAR(3) DEFAULT NULL,
-  `pm_late` VARCHAR(3) DEFAULT NULL,
-  `pm_underTIME` VARCHAR(3) DEFAULT NULL,
-  `night_differential` decimal(3,2) DEFAULT NULL,
-  `overtime` int(11) DEFAULT NULL
+  `am_late` varchar(3) DEFAULT NULL,
+  `am_underTIME` varchar(3) DEFAULT NULL,
+  `pm_late` varchar(3) DEFAULT NULL,
+  `pm_underTIME` varchar(3) DEFAULT NULL,
+  `overtime` time DEFAULT NULL,
+  `work_hour` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `atlog`
 --
 
-INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_in`, `pm_out`, `am_late`, `am_underTIME`, `pm_late`, `pm_underTIME`, `night_differential`, `overtime`) VALUES
-(10, 8, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00, 0),
-(11, 9, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00, 0),
-(12, 12, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '04:59:00', 0, 0, 0, 0, 0.00, 0);
+INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_in`, `pm_out`, `am_late`, `am_underTIME`, `pm_late`, `pm_underTIME`, `overtime`, `work_hour`) VALUES
+(10, 8, '2023-12-17', '08:30:00', '11:30:00', '13:30:00', '16:59:00', 'NO', 'NO', 'NO', 'YES', '00:00:00', '06:29:00'),
+(11, 9, '2023-12-17', '08:30:00', '11:30:00', '13:30:00', '20:59:00', 'NO', 'NO', 'NO', 'NO', '00:00:00', '09:29:00'),
+(12, 12, '2023-12-14', '08:30:00', '11:30:00', '13:30:00', '16:59:00', 'NO', 'NO', 'NO', 'YES', '00:00:00', '06:29:00');
 
 -- --------------------------------------------------------
 
@@ -116,7 +118,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `atlog`
 --
 ALTER TABLE `atlog`
-  MODIFY `atlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `atlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -133,4 +135,5 @@ ALTER TABLE `employee`
 --
 ALTER TABLE `atlog`
   ADD CONSTRAINT `atlog_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`);
+
 

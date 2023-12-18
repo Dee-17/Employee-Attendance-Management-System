@@ -13,7 +13,7 @@
         $result = mysqli_query($conn, $sql);
         
         if (mysqli_num_rows($result) > 0) {
-            echo "<table class='table'>";
+            echo "<table class='table' id='table_rows'>";
                 echo "<thead>";
                     echo "<tr>";
                         echo "<th scope='col'>Emp ID</th>";
@@ -77,7 +77,7 @@
                 $result = mysqli_query($conn, $sql);
                 
                 if (mysqli_num_rows($result) > 0) {
-                    echo "<table class='table'>";
+                    echo "<table class='table' id='table_rows'>";
                         echo "<thead>";
                             echo "<tr>";
                                 echo "<th scope='col'>Emp ID</th>";
@@ -148,7 +148,7 @@
         $result = mysqli_query($conn, $sql);
         
         if (mysqli_num_rows($result) > 0) {
-            echo "<table class='table'>";
+            echo "<table class='table' id='table_rows'>";
                 echo "<thead>";
                     echo "<tr>";
                         echo "<th scope='col'>Emp ID</th>";
