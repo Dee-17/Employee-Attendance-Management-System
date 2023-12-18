@@ -91,6 +91,12 @@ body {
 .search_button button, .search_button button:hover {
     background-color: #072560;
 }
+.refresh_button button, .refresh_button button:hover {
+    background-color: #072560;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
 .right_panel {
     width: 80%;
     margin-left: 20%;
