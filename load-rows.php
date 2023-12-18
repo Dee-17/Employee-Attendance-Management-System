@@ -11,7 +11,23 @@
     $result = mysqli_query($conn,$sql);
     
     if (mysqli_num_rows($result) > 0){
+        echo "
+        <thead>
+        <tr>
+            <th scope='col'>Emp ID</th>
+            <th scope='col'>Full Name</th>
+            <th scope='col'>Contract</th>
+            <th scope='col'>Shift</th>
+            <th scope='col'>AM IN</th>
+            <th scope='col'>AM OUT</th>
+            <th scope='col'>PM IN</th>
+            <th scope='col'>PM OUT</th>
+            <th scope='col'>Overtime</th>
+        </tr>
+        </thead>
+        ";
         while ($row = mysqli_fetch_assoc($result)){
+            echo "<tbody class='table_body's>";
             echo "<tr>";
             echo "<td>" . $row["emp_id"] . "</td>";
             echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
@@ -43,13 +59,9 @@
             }
             echo "<td>" . $row["overtime"] . "</td>";
             echo "</tr>";
+            echo "</tbody>";
         }
-        echo "</tbody></table>";
-        
     } else {
-        echo "
-        <div class='alert alert-danger m-0 p-3' role='alert'>
-        No Records Found
-        </div>";
+        echo "<div class='alert alert-danger m-0 p-3' role='alert'>No Records Found</div>";
     }
 ?>

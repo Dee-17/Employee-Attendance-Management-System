@@ -20,13 +20,13 @@
     <script>
         $(document).ready(function(){
             var today = new Date().toISOString().slice(0,10);
-            $("#table_body").load("load-rows.php",{
+            $("#table_main").load("load-rows.php",{
                 table_date:today
             });
 
             $("#search_button").click(function(){
                 var date_picked = document.getElementById('picked_date').value;
-                $("#table_body").load("load-rows.php",{
+                $("#table_main").load("load-rows.php",{
                     table_date:date_picked
                 });
             });
@@ -95,24 +95,8 @@
                 </div>
             </div>
             <!-- Reports -->
-            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_container">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Emp ID</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">Contract</th>
-                            <th scope="col">Shift</th>
-                            <th scope="col">AM IN</th>
-                            <th scope="col">AM OUT</th>
-                            <th scope="col">PM IN</th>
-                            <th scope="col">PM OUT</th>
-                            <th scope="col">Overtime</th>
-                        </tr>
-                    </thead>
-
-                    <tbody class="table_body" id="table_body">
-                    </tbody>
+            <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly align-items-center" id="table_container">
+                <table class="table m-0 p-0" id="table_main">
                 </table>
             </div>
         </div>
