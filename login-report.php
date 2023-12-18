@@ -139,7 +139,7 @@
                                 if($row["pm_out"]==null){
                                     echo "<td>-</td>";
                                     }
-                                elseif($row["pm_out"]== "YES"){
+                                elseif($row["pm_underTIME"]== "YES"){
                                     echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
                                 } else {
                                     echo "<td>" . $row["pm_out"] . "</td>";
