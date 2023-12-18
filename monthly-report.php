@@ -90,9 +90,15 @@
 
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <p class="header_title"><span class="blue_title">Monthly Log in</span> Report</p>
+            <div class="header row container-fluid align-items-center m-0 p-0">
+				<div class="col col-10 m-0 p-0"><p class="header_title"><span class="blue_title">Monthly Log in</span> Report</p></div>
+				<div class="col col-auto m-0 p-0 ms-auto export_button">
+                    <!-- Export button -->
+                    <button id="exportButton" class="btn btn-secondary m-0">Export to PDF</button>
+				</div>
+			</div>
             <!-- First row -->
-            <div class="row container-fluid mt-4 gap-3 d-flex">
+            <div class="row container-fluid mt-2 gap-3 d-flex">
                 <!-- Display the date chosen by user -->
                 <!-- hidden by default -->
                 <div class="date_container card px-4 py-2 col col-4 justify-content-center" style="display: none;" id="date_picked">
@@ -123,13 +129,6 @@
                     <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
                     <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
                 </div>
-
-                <div class="grey_container ">
-                    <div class="export-button">
-                        <button id="exportButton" class="btn btn-secondary">Export to PDF</button>
-                    </div>
-                </div>
-      
             </div>
             <!-- Employee search and info -->
             <div class="row container-fluid mt-4 gap-3 d-flex justify-content-between gap-2">
@@ -182,23 +181,35 @@
     </div>
 
     <script>
-
+        // export a printable file of reports
         document.getElementById('exportButton').addEventListener('click', function() {
             
-            const selectedDate = document.getElementById('month_year').innerHTML; // Get the selected date
+            const selectedDate = document.getElementById('selected_date').innerHTML; // Get the selected date
+            const currentDate = document.getElementById('month_year').innerHTML; // Get the current date
             const employeeName = document.getElementById('full_name').value; // Get the surname of the employee (assuming there's an input field for the surname)
 
-            let fileName = 'monthly_report'; // Default file name
+            let fileName = 'monthly_report'; // default file name
+            let finalDate = '';
+
+            // if there is a selected date, set it as the file name as well as the date
+            if (selectedDate) {
+                fileName = selectedDate;
+                finalDate = selectedDate;
+            } else {
+                // else use current date
+                fileName = currentDate; 
+                finalDate = currentDate;
+            }
 
             if (employeeName) {
-                fileName = selectedDate + '_' + employeeName; // If an employee is selected, use date and surname for the file name
+                fileName = finalDate + '_' + employeeName; // If an employee is selected, use date and surname for the file name
             } else {
-                fileName = selectedDate; // If no employee is selected, use only the date for the file name
+                fileName = finalDate; // If no employee is selected, use only the date for the file name
             }
 
             const pdf = new jsPDF();
             
-            const contentDiv = document.getElementById('table_rows'); // Replace 'your_div_id' with the actual ID of your div
+            const contentDiv = document.getElementById('table_rows');
             // Define the column widths
             const columnWidths = [20, 35, 25, 25, 25, 25, 25]; // Replace with the desired widths for each column
 
@@ -224,15 +235,14 @@
             });
             
             if (!employeeName) {
-                pdf.text(selectedDate + ' Monthly Report', 15, 15);
+                pdf.text(finalDate + ' Monthly Report', 15, 15);
             } else {
-                pdf.text(selectedDate + ' Monthly Report', 15, 15);
+                pdf.text(finalDate + ' Monthly Report', 15, 15);
                 pdf.text('Name: ' + employeeName, 15, 25);
           }
             pdf.save(fileName + '.pdf'); // Save the PDF with the constructed file name
 
         });
     </script>
-
 </body>
 </html>
