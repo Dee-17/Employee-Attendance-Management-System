@@ -1,8 +1,7 @@
 <?php 
     include "connection.php";
 
-    
-    //function para i-display lahat ng rows on current month 
+    // display reports for the current month 
     if(isset($_POST['table_onload'])){
         $date_picked = ($_POST['table_onload']);
         
@@ -13,7 +12,6 @@
         
         $result = mysqli_query($conn, $sql);
         
-
         if (mysqli_num_rows($result) > 0) {
             echo "<table class='table'>";
                 echo "<thead>";
@@ -29,46 +27,48 @@
                 echo "</thead>";
 
                 echo "<tbody class='table_body' id='table_body'>";
-                    while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["emp_id"] . "</td>";
-                    echo "<td>" . $row["atlog_DATE"] . "</td>";
 
-                    if($row["am_late"] == "YES"){
-                        echo "<td style='color:red'>" . $row["am_in"] . "</td>";
-                    }
-                    else{
-                        echo "<td>" . $row["am_in"] . "</td>";
-                    }
+                while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row["emp_id"] . "</td>";
+                echo "<td>" . $row["atlog_DATE"] . "</td>";
 
-                    if($row["am_underTIME"]== "YES"){
-                        echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
-                    }else{
-                        echo "<td>" . $row["am_out"] . "</td>";
-                    }
+                if($row["am_late"] == "YES"){
+                    echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                }
+                else{
+                    echo "<td>" . $row["am_in"] . "</td>";
+                }
 
-                    if($row["pm_late"] == "YES"){
-                        echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
-                    }
-                    else{
-                        echo "<td>" . $row["pm_in"] . "</td>";
-                    }
-                    
-                    if($row["pm_underTIME"]== "YES"){
-                        echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
-                    } else{
-                        echo "<td>" . $row["pm_out"] . "</td>";
-                    }
-                    echo "</tr>";
+                if($row["am_underTIME"]== "YES"){
+                    echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
+                }else{
+                    echo "<td>" . $row["am_out"] . "</td>";
+                }
+
+                if($row["pm_late"] == "YES"){
+                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                }
+                else{
+                    echo "<td>" . $row["pm_in"] . "</td>";
+                }
+                
+                if($row["pm_underTIME"]== "YES"){
+                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                } else{
+                    echo "<td>" . $row["pm_out"] . "</td>";
+                }
+                echo "</tr>";
             }
-                echo "</tbody>";
-                echo "</table>";
+            echo "</tbody>";
+            echo "</table>";
         } else {
             // Handle case when no records are found
             echo "No Records Found";
         }
-        
     }
+
+    // for a specific date
     if(isset($_POST['select_date'])){
         $selected_date = ($_POST['select_date']);
         list($year, $month) = explode('-', $selected_date);
@@ -81,7 +81,6 @@
         
         $result = mysqli_query($conn, $sql);
         
-
         if (mysqli_num_rows($result) > 0) {
             echo "<table class='table'>";
                 echo "<thead>";
@@ -102,44 +101,40 @@
                     echo "<td>" . $row["emp_id"] . "</td>";
                     echo "<td>" . $row["atlog_DATE"] . "</td>";
 
-                    if($row["am_late"] == "YES"){
+                    if ($row["am_late"] == "YES"){
                         echo "<td style='color:red'>" . $row["am_in"] . "</td>";
-                    }
-                    else{
+                    } else {
                         echo "<td>" . $row["am_in"] . "</td>";
                     }
 
-                    if($row["am_underTIME"]== "YES"){
+                    if ($row["am_underTIME"]== "YES"){
                         echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
-                    }else{
+                    } else {
                         echo "<td>" . $row["am_out"] . "</td>";
                     }
 
-                    if($row["pm_late"] == "YES"){
+                    if ($row["pm_late"] == "YES"){
                         echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
-                    }
-                    else{
+                    } else {
                         echo "<td>" . $row["pm_in"] . "</td>";
                     }
                     
-                    if($row["pm_underTIME"]== "YES"){
+                    if ($row["pm_underTIME"]== "YES"){
                         echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
-                    }else{
+                    } else {
                         echo "<td>" . $row["pm_out"] . "</td>";
                     }
                     echo "</tr>";
             }
-                echo "</tbody>";
-                echo "</table>";
+            echo "</tbody>";
+            echo "</table>";
         } else {
             // Handle case when no records are found
             echo "No Records Found";
         }
-
-        
-    
     }
 
+    // for a specific employee
     if(isset($_POST['emp_id'])){
         $emp_id = ($_POST['emp_id']);
         $selected_date = ($_POST['select_date']);
@@ -170,40 +165,38 @@
                 echo "</thead>";
 
                 echo "<tbody class='table_body' id='table_body'>";
-                    while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["emp_id"] . "</td>";
-                    echo "<td>" . $row["atlog_DATE"] . "</td>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row["emp_id"] . "</td>";
+                echo "<td>" . $row["atlog_DATE"] . "</td>";
 
-                    if($row["am_late"] == "YES"){
-                        echo "<td style='color:red'>" . $row["am_in"] . "</td>";
-                    }
-                    else{
-                        echo "<td>" . $row["am_in"] . "</td>";
-                    }
+                if ($row["am_late"] == "YES"){
+                    echo "<td style='color:red'>" . $row["am_in"] . "</td>";
+                } else {
+                    echo "<td>" . $row["am_in"] . "</td>";
+                }
 
-                    if($row["am_underTIME"]== "YES"){
-                        echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
-                    }else{
-                        echo "<td>" . $row["am_out"] . "</td>";
-                    }
+                if ($row["am_underTIME"]== "YES"){
+                    echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
+                } else {
+                    echo "<td>" . $row["am_out"] . "</td>";
+                }
 
-                    if($row["pm_late"] == "YES"){
-                        echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
-                    }
-                    else{
-                        echo "<td>" . $row["pm_in"] . "</td>";
-                    }
-                    
-                    if($row["pm_underTIME"]== "YES"){
-                        echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
-                    }else{
-                        echo "<td>" . $row["pm_out"] . "</td>";
-                    }
-                    echo "</tr>";
+                if ($row["pm_late"] == "YES"){
+                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                } else {
+                    echo "<td>" . $row["pm_in"] . "</td>";
+                }
+                
+                if ($row["pm_underTIME"]== "YES"){
+                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                } else {
+                    echo "<td>" . $row["pm_out"] . "</td>";
+                }
+                echo "</tr>";
             }
-                echo "</tbody>";
-                echo "</table>";
+            echo "</tbody>";
+            echo "</table>";
         } 
     }
 ?>

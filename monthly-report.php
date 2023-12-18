@@ -126,10 +126,7 @@
             </div>
             <!-- Reports -->
             <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly" id="table_vals">
-
-
                 </table>
-
             </div>
         </div>
     </div>
