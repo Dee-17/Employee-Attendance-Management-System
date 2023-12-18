@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2023 at 04:32 PM
+-- Generation Time: Dec 18, 2023 at 09:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -62,18 +62,22 @@ CREATE TABLE `atlog` (
   `pm_late` varchar(3) DEFAULT NULL,
   `pm_underTIME` varchar(3) DEFAULT NULL,
   `overtime` time DEFAULT NULL,
-  `work_hour` time NOT NULL
+  `work_hour` time NOT NULL,
+  `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `atlog`
 --
 
-INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_in`, `pm_out`, `am_late`, `am_underTIME`, `pm_late`, `pm_underTIME`, `overtime`, `work_hour`) VALUES
-(14, 8, '2023-12-18', NULL, NULL, '23:21:14', '23:21:15', 'NO', 'NO', 'YES', 'NO', '00:00:00', '00:00:01'),
-(15, 9, '2023-12-18', '23:04:11', '23:04:12', '23:04:09', '23:04:13', 'YES', 'NO', 'YES', 'NO', '00:00:00', '00:00:05'),
-(16, 11, '2023-12-18', NULL, NULL, NULL, NULL, 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:00'),
-(17, 12, '2023-12-18', '22:51:49', '22:51:51', NULL, NULL, 'YES', 'NO', 'NO', 'NO', '00:00:00', '00:00:02');
+INSERT INTO `atlog` (`atlog_id`, `emp_id`, `atlog_DATE`, `am_in`, `am_out`, `pm_in`, `pm_out`, `am_late`, `am_underTIME`, `pm_late`, `pm_underTIME`, `overtime`, `work_hour`, `status`) VALUES
+(14, 8, '2023-12-18', NULL, NULL, NULL, NULL, 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:00', NULL),
+(16, 11, '2023-12-18', NULL, NULL, NULL, NULL, 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:00', NULL),
+(18, 12, '2023-12-19', NULL, NULL, NULL, NULL, 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:00', NULL),
+(19, 9, '2023-12-19', '04:07:37', '04:07:46', '04:07:53', '04:08:44', 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:00', 'Offline'),
+(20, 8, '2023-12-19', NULL, NULL, '04:21:58', '04:21:59', 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:00', 'Offline'),
+(21, 10, '2023-12-19', '03:59:32', '03:59:39', NULL, NULL, 'NO', 'NO', 'NO', 'NO', '00:00:00', '00:00:07', 'Offline'),
+(22, 11, '2023-12-19', NULL, NULL, '04:22:33', '04:22:35', NULL, NULL, 'NO', 'NO', NULL, '00:00:00', 'Offline');
 
 -- --------------------------------------------------------
 
@@ -101,7 +105,7 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`emp_id`, `password`, `first_name`, `middle_name`, `last_name`, `address`, `zip`, `contact_number`, `email_address`, `contract`, `shift`) VALUES
 (8, '1234', 'Daniela', 'M.', 'Cantillo', 'Labnig, Malinao, Albay', '2311', '09669517555', 'danielamarzan.cantillo@bicol-u.edu.ph', 'Part Time', 'Afternoon Shift'),
-(9, '1234', 'Dee', 'Monde', 'Razon', 'Sagpon, Daraga, Albay', '3434', '09468381717', 'dee@outlook.com', 'Full Time', 'Full Time'),
+(9, '1234', 'Dee', 'Monde', 'Razon', 'Sagpon, Daraga, Albay', '3434', '09468381717', 'dee@outlook.com', 'Full Time', 'Day Shift'),
 (10, '1234', 'Minzy', 'Grado', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Part Time', 'Morning Shift'),
 (11, '1234', 'Alex', 'MIddle', 'Mendez', 'Zone 4 Bantayan, Tabaco City, Albay', '1232', '09135902471', 'minzy19@gmail.com', 'Part Time', 'Afternoon Shift'),
 (12, '1234', 'Dawn', 'Cruz', 'Bande', '1231 Harong Pagkamoot, Magapo, Albay', '1234', '09562849189', 'dawnbc@gmail.com', 'Full Time', 'Morning Shift');
@@ -127,7 +131,8 @@ ALTER TABLE `atlog`
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`emp_id`);
+  ADD PRIMARY KEY (`emp_id`),
+  ADD KEY `index_emp_id` (`emp_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -143,13 +148,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `atlog`
 --
 ALTER TABLE `atlog`
-  MODIFY `atlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `employee`
---
-ALTER TABLE `employee`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `atlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
