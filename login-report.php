@@ -1,27 +1,6 @@
 <?php
     session_start();
     include "update.php";
-    
-    // Check if employee ID is set in the session
-    if (isset($_SESSION['emp_id'])) {
-        $empId = $_SESSION['emp_id']; 
-
-        $sql = "SELECT atlog.emp_id, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
-                FROM atlog 
-                JOIN employee ON atlog.emp_id = employee.emp_id
-                WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
-        } else {
-            echo '<script>console.log("No previous entry found");</script>';
-        }
-    } else {
-        echo '<script>console.log("Employee ID not set in the session");</script>';
-    }
 
     if (isset($_SESSION['admin_id'])) {
         $adminId = $_SESSION['admin_id']; 
@@ -108,51 +87,47 @@
                     <tbody class="table_body">
                     <?php
                         include "connection.php";
+                        $sql = "SELECT atlog.emp_id,employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
+                        FROM atlog 
+                        JOIN employee ON atlog.emp_id = employee.emp_id
+                        WHERE  atlog.atlog_DATE = CURDATE()";
 
-                        $result = $conn->query($sql);
-                        
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
+                        $result = mysqli_query($conn,$sql);
+                        $result_check = mysqli_num_rows($result);
+
+                        if ($result_check > 0) {
+                            while ($row = mysqli_fetch_assoc($result)){
                                 echo "<tr>";
-                                echo "<td>" . $row["emp_id"] . "</td>";
-                                echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
-                                echo "<td>" . $row["shift"] . "</td>";
-                                if($row["am_late"] == "YES"){
-                                    echo "<td style='color:red'>" . $row["am_in"] . "</td>";
-                                    echo "<script>console.log('" . $row["am_in"] . "')</script>";
-                                } else{
-                                    echo "<td>" . $row["am_in"] . "</td>";
-                                }
-            
-                                if($row["am_underTIME"]== "YES"){
-                                    echo "<td style='color:blue'>" . $row["am_out"] . "</td>";
-                                } else{
-                                    echo "<td>" . $row["am_out"] . "</td>";
-                                }
-            
-                                if($row["pm_late"] == "YES"){
-                                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
-                                } else{
-                                    echo "<td>" . $row["pm_in"] . "</td>";
-                                }
-                                
-                                if($row["pm_out"]== "YES"){
-                                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
-                                } else {
-                                    echo "<td>" . $row["pm_out"] . "</td>";
-                                }
-                                echo "<td>" . $row["overtime"] . "</td>";
+                                echo "<td>";
+                                echo $row['emp_id'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['first_name']." ".$row['middle_name']." ".$row['last_name'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['shift'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['am_in'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['am_out'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['pm_in'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['pm_out'];
+                                echo "</td>";
                                 echo "</tr>";
                             }
-                            echo "</tbody></table>";
-                            
-                        } else {
+                        }else{
                             echo "
                             <div class='alert alert-danger m-0 p-3' role='alert'>
                             No Records Found
                             </div>";
-                        }
-                    
+                        }          
+                        echo "</tbody></table>";
                         $conn->close();
                     ?>
         </div>
