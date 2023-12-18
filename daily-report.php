@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">    
     <link rel="stylesheet" href="css/daily-report.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/nav-bar.js" defer></script>
@@ -61,9 +64,15 @@
 
         <!-- Main contents -->
         <div class="right_panel container p-5">
-        <p class="header_title"><span class="blue_title">Daily Log in</span> Report</p>
+            <div class="header row container-fluid align-items-center m-0 p-0">
+				<div class="col col-10 m-0 p-0"><p class="header_title"><span class="blue_title">Daily Log in</span> Report</p></div>
+				<div class="col col-auto m-0 p-0 ms-auto export_button">
+                    <!-- Export button -->
+                    <button id="exportButton" class="btn btn-secondary m-0">Export to PDF</button>
+				</div>
+			</div>
             <!-- First row -->
-            <div class="row container-fluid mt-4 gap-3 d-flex">
+            <div class="row container-fluid mt-2 gap-3 d-flex">
                 <!-- Display the date chosen by user -->
                 <div class="date_container card px-4 py-2 col col-4 justify-content-center" style="display: none;" id="date_picked">
                     <p class="date_subtitle">Viewing log in reports during</p>
@@ -101,5 +110,59 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // export a printable file of reports
+        document.getElementById('exportButton').addEventListener('click', function() {
+            
+            const selectedDate = document.getElementById('selected_date').innerHTML; // Get the selected date
+            const currentDate = document.getElementById('full_date').innerHTML; // Get the current date
+
+            let fileName = 'daily_report'; // default file name
+            let finalDate = '';
+
+            // if there is a selected date, set it as the file name as well as the date
+            if (selectedDate) {
+                fileName = selectedDate;
+                finalDate = selectedDate;
+            } else {
+                // else use current date
+                fileName = currentDate; 
+                finalDate = currentDate;
+            }
+
+            const pdf = new jsPDF();
+            const contentDiv = document.getElementById('table_main');
+
+            // Column widths
+            const columnWidths = [15, 30, 20, 20, 20, 20, 20, 20, 20];
+
+            pdf.autoTable({
+                html: contentDiv,
+                startY: 30,
+                theme: 'grid',
+                columnStyles: {
+                    0: { cellWidth: columnWidths[0], halign: 'center' },
+                    1: { cellWidth: columnWidths[1], halign: 'center' },
+                    2: { cellWidth: columnWidths[2], halign: 'center' },
+                    3: { cellWidth: columnWidths[3], halign: 'center' },
+                    4: { cellWidth: columnWidths[4], halign: 'center' },
+                    5: { cellWidth: columnWidths[5], halign: 'center' },
+                    6: { cellWidth: columnWidths[6], halign: 'center' },
+                    7: { cellWidth: columnWidths[7], halign: 'center' },
+                    8: { cellWidth: columnWidths[8], halign: 'center' }
+                },
+                headerStyles: {
+                fillColor: [7, 37, 96],
+                textColor: [255, 255, 255],
+                halign: 'center' // Center align for the header cells
+            }
+            });
+            
+            pdf.text(finalDate + ' Daily Report', 15, 15);
+            pdf.save(fileName + '.pdf'); // Save the PDF with the constructed file name
+
+        });
+    </script>
 </body>
 </html>
