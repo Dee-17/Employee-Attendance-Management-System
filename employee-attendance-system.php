@@ -3,19 +3,20 @@
     include "connection.php"; 
     $empId = $_SESSION['emp_id']; 
 
-    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.emp_id, employee.first_name, employee.middle_name, employee.last_name
+    $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.shift, employee.emp_id, employee.first_name, employee.middle_name, employee.last_name
                                 FROM atlog 
                                 JOIN employee ON atlog.emp_id = employee.emp_id
                                 WHERE atlog.emp_id = $empId AND atlog.atlog_DATE = CURDATE()";
 
     $result = $conn->query($checkPreviousEntryQuery);
 
-
-    echo '<script>console.log("hello");</script>';
+    $employeeShift = '';
+    echo '<script>console.log("aaa");</script>';
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
+        $employeeShift = $row['shift'];
 
         echo '<script>console.log(num_rows);</script>';
 
@@ -78,7 +79,7 @@
                     <span class="log_out_button mb-5"><a class="nav_button nav-link" href="employee-login.php">Log out</a></span>
                 </nav>
             </div>
-            <!-- Main contents -->
+        
             <div class="right_panel container p-5">
                 <?php
                 
@@ -113,10 +114,11 @@
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                                 <?php
                                 // LOG AM
-                                if ($row['am_in'] === null) {
+                                if ($row['am_in'] === null && ($employeeShift == 'Morning Shift' || $employeeShift == 'Both')) {
                                     echo '<button class="btn in_button col col-auto" onclick="logAM()">AM</button>';
                                 } else {
-                                    echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
+                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Checked In</button>';
+
                                 }
 
                                 // Add the JavaScript function to log AM time using AJAX
@@ -135,10 +137,10 @@
                                     </script>';
 
                                 // OUT AM
-                                if ($row['am_out'] === null) {
+                                if ($row['am_out'] === null && ($employeeShift == 'Morning Shift' || $employeeShift == 'Both')) {
                                     echo '<button class="btn out_button col col-auto" onclick="logAMOut()">OUT</button>';
                                 } else {
-                                    echo '<button class="btn out_button col col-auto" disabled>Logged</button>';
+                                    echo '<button class="btn in_button col col-auto" disabled style="font-size: small; padding: 9px;">Checked Out</button>';
                                 }
 
                                 // Add the JavaScript function to log AM out time using AJAX
@@ -163,10 +165,10 @@
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                                 <?php
                                     // Display PM button based on condition
-                                        if ($row['pm_in'] === null) {
+                                    if ($row['pm_in'] === null && ($employeeShift == 'Afternoon Shift' || $employeeShift == 'Both')) {
                                             echo '<button class="btn in_button col col-auto" onclick="logPM()">PM</button>';
                                         } else {
-                                            echo '<button class="btn in_button col col-auto" disabled>Logged</button>';
+                                            echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Checked In</button>';
                                         }
 
                                         // Add the JavaScript function to log PM time using AJAX
@@ -186,10 +188,10 @@
 
 
                                             // Display AM out button based on condition
-                                        if ($row['pm_out'] === null) {
+                                            if ($row['pm_out'] === null && ($employeeShift == 'Afternoon Shift' || $employeeShift == 'Both')) {
                                             echo '<button class="btn out_button col col-auto" onclick="logPMOut()">OUT</button>';
                                         } else {
-                                            echo '<button class="btn out_button col col-auto" disabled>Logged</button>';
+                                            echo '<button class="btn in_button col col-auto" disabled style="font-size: small; padding: 9px;">Checked Out</button>';
                                         }
 
                                         // Add the JavaScript function to log AM out time using AJAX
