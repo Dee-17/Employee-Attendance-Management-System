@@ -114,7 +114,7 @@
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                             <?php
                                 // Display "Unassigned" button when its != to shift 
-                                if ($employeeShift === 'Morning Shift' || $employeeShift === 'Full Time') {
+                                if ($employeeShift === 'Morning Shift' || $employeeShift === 'Day Shift') {
                                     // Display "AM" button if not checked in for PM and it's the Afternoon Shift
                                     if ($row['am_in'] === null ) {
                                         echo '<button class="btn in_button col col-auto" onclick="logAM()">IN</button>';
@@ -172,7 +172,7 @@
                             <form class="in_out_button row gap-2 m-0 p-0 justify-content-center" action="">
                             <?php
                                 // Display "Unassigned" button when its != to shift 
-                                if ($employeeShift === 'Afternoon Shift' || $employeeShift === 'Full Time' ) {
+                                if ($employeeShift === 'Afternoon Shift' || $employeeShift === 'Day Shift' ) {
                                     // Display "AM" button if not checked in for PM and it's the Afternoon Shift
                                     if ($row['pm_in'] === null) {
                                         echo '<button class="btn in_button col col-auto" onclick="logPM()">IN</button>';
@@ -218,8 +218,6 @@
                                             xhr.send();
                                         }
                                     </script>'; 
-                                        
-
                                 } else {
                                     echo '<button class="btn in_button col col-auto" disabled ">Unassigned</button>';
                                     }
@@ -254,4 +252,6 @@
     </body>
 </html>
 
-
+<?php
+    include "update.php";
+?>
