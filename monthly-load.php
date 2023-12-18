@@ -129,8 +129,7 @@
             }
             echo "</tbody>";
             echo "</table>";
-        } else {
-            echo "<div class='alert alert-danger m-0 p-3' role='alert'>No Records Found</div>";
+        } else {         
         }
     }
 

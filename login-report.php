@@ -74,7 +74,7 @@
                 <table class="table m-0 p-0">
                     <?php
                         include "connection.php";
-                        $sql = "SELECT atlog.emp_id,employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
+                        $sql = "SELECT atlog.work_hour,atlog.emp_id,employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.overtime
                         FROM atlog 
                         JOIN employee ON atlog.emp_id = employee.emp_id
                         WHERE  atlog.atlog_DATE = CURDATE()";
@@ -93,7 +93,7 @@
                                     <th scope='col'>AM Out</th>
                                     <th scope='col'>PM In</th>
                                     <th scope='col'>PM Out</th>
-                                    <th scope='col'>Overtime</th>
+                                    <th scope='col'>Work Hours</th>
                                 </tr>
                             </thead>
                             <tbody class='table_body'>
@@ -120,6 +120,9 @@
                                 echo "</td>";
                                 echo "<td>";
                                 echo $row['pm_out'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['work_hour'];
                                 echo "</td>";
                                 echo "</tr>";
                             }
