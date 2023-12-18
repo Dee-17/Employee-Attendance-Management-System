@@ -121,15 +121,17 @@
                                 echo "</td>";
                                 echo "</tr>";
                             }
-                        }else{
+                        } else {
                             echo "
                             <div class='alert alert-danger mb-3 p-3' role='alert'>
                             No Records Found
                             </div>";
                         }          
-                        echo "</tbody></table>";
                         $conn->close();
                     ?>
+                    </tbody>
+                </table>
+            </div>    
         </div>
     </div>
 </body>
