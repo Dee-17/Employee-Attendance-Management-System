@@ -253,6 +253,5 @@
 </html>
 
 <?php
-include "update.php";
-
+    include "update.php";
 ?>
