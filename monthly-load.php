@@ -71,7 +71,11 @@
                 } else{
                     echo "<td>" . $row["pm_out"] . "</td>";
                 }
-                echo "<td>" .$row["work_hour"]. "</td>";
+                if($row["overtime"] > "00:00:00"){
+                    echo "<td style='color:green'>" . $row["work_hour"] . "</td>";
+                } else {
+                    echo "<td>" . $row["work_hour"] . "</td>";
+                }
                 echo "<td>" .$row["overtime"]. "</td>";
                 echo "</tr>";
             }
@@ -152,10 +156,12 @@
                     } else {
                         echo "<td>" . $row["pm_out"] . "</td>";
                     }
-
-                    echo "<td>" .$row["work_hour"]. "</td>";
-                    echo "<td>" .$row["overtime"]. "</td>";
-
+                    if($row["overtime"] > "00:00:00"){
+                        echo "<td style='color:green'>" . $row["work_hour"] . "</td>";
+                    } else {
+                        echo "<td>" . $row["work_hour"] . "</td>";
+                    }
+                    echo "<td>" . $row["overtime"] . "</td>";
                     echo "</tr>";
             }
             echo "</tbody>";
@@ -191,7 +197,7 @@
                         echo "<th scope='col'>AM OUT</th>";
                         echo "<th scope='col'>PM IN</th>";
                         echo "<th scope='col'>PM OUT</th>";
-                        echo "<th scope='col'>Work Hour</th>";
+                        echo "<th scope='col'>Work Hours</th>";
                         echo "<th scope='col'>Overtime</th>";
                     echo "</tr>";
                 echo "</thead>";
@@ -238,10 +244,24 @@
                         echo "<td>" . $row["pm_out"] . "</td>";
                     }
 
-                    echo "<td>" .$row["work_hour"]. "</td>";
-                    echo "<td>" .$row["overtime"]. "</td>";
-
-                    echo "</tr>";
+                if ($row["pm_late"] == "YES"){
+                    echo "<td style='color:red'>" . $row["pm_in"] . "</td>";
+                } else {
+                    echo "<td>" . $row["pm_in"] . "</td>";
+                }
+                
+                if ($row["pm_underTIME"]== "YES"){
+                    echo "<td style='color:blue'>" . $row["pm_out"] . "</td>";
+                } else {
+                    echo "<td>" . $row["pm_out"] . "</td>";
+                }
+                if($row["overtime"] > "00:00:00"){
+                    echo "<td style='color:green'>" . $row["work_hour"] . "</td>";
+                } else {
+                    echo "<td>" . $row["work_hour"] . "</td>";
+                }
+                echo "<td>" . $row["overtime"] . "</td>";
+                echo "</tr>";
             }
             echo "</tbody>";
             echo "</table>";

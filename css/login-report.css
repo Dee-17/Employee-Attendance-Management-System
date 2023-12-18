@@ -53,7 +53,7 @@ body {
     background-color: #efefefa5;
     border-radius: 10px;
 }
-.legend_blue, .legend_red {
+.legend_blue, .legend_red, .legend_green {
     font-style: italic;
     font-size: 12px;
 }
@@ -62,6 +62,9 @@ body {
 }
 .legend_red {
     color: red;
+}
+.legend_green {
+    color: green;
 }
 .right_panel {
     width: 80%;

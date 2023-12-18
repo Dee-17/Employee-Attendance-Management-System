@@ -69,10 +69,6 @@
                 <div class="col col-auto m-0 p-0 ms-auto export_button">
                     <button id="exportButton" class="btn btn-secondary m-0">Export to PDF</button>
 				</div>
-                <!-- Refresh page -->
-                <div class="refresh_button col col-auto p-0">
-                    <a href="daily-report.php"><button type="button" class="btn btn-primary w-100"><i class="bi bi-arrow-clockwise"></i></button></a>
-                </div>
 			</div>
             <!-- First row -->
             <div class="row container-fluid mt-2 gap-3 d-flex">
@@ -104,6 +100,7 @@
                     <p class="legend_title text-center">Table legend</p>
                     <div class="legend_red"><i class="bi bi-square-fill"></i><span class="mx-1">Late</span></div>
                     <div class="legend_blue"><i class="bi bi-square-fill"></i><span class="mx-1">Undertime</span></div>
+                    <div class="legend_green"><i class="bi bi-square-fill"></i><span class="mx-1">Overtime</span></div>
                 </div>
             </div>
             <!-- Reports -->
