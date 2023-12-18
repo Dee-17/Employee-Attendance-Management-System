@@ -41,8 +41,8 @@ body {
     background-color: #A4C3FF;
     border: none;
     color: #072560;
-    font-weight: bolder;
-    font-size: 2rem;
+    font-weight: bold;
+    font-size: 15px;
 }
 .register_button button:hover {
     box-shadow: 0 0 15px 1px #A4C3FF;
