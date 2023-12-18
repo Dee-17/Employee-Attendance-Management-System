@@ -102,7 +102,7 @@
 								<select id="input-shift" name="input-shift" class="form-select" required>
 								<option>Morning Shift</option>
 								<option>Afternoon Shift</option>
-								<option>Full Time</option>
+								<option>Day Shift</option>
 								</select>
 							</div>
 							<div class="col-md-4">
