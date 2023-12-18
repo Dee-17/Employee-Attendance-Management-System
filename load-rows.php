@@ -27,7 +27,7 @@
         </thead>
         ";
         while ($row = mysqli_fetch_assoc($result)){
-            echo "<tbody class='table_body's>";
+            echo "<tbody class='table_body'>";
             echo "<tr>";
             echo "<td>" . $row["emp_id"] . "</td>";
             echo "<td>" . $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] . "</td>";
