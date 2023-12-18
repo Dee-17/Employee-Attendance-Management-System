@@ -90,12 +90,16 @@
 
         <!-- Main contents -->
         <div class="right_panel container p-5">
-            <div class="header row container-fluid align-items-center m-0 p-0">
+            <div class="header row container-fluid align-items-center m-0 p-0 gap-2">
 				<div class="col col-10 m-0 p-0"><p class="header_title"><span class="blue_title">Monthly Log in</span> Report</p></div>
-				<div class="col col-auto m-0 p-0 ms-auto export_button">
-                    <!-- Export button -->
+				<!-- Export button -->
+                <div class="col col-auto m-0 p-0 ms-auto export_button">
                     <button id="exportButton" class="btn btn-secondary m-0">Export to PDF</button>
 				</div>
+                <!-- Refresh button -->
+                <div class="refresh_button col col-auto p-0">
+                    <a href="monthly-report.php"><button type="button" class="btn btn-primary w-100"><i class="bi bi-arrow-clockwise"></i></button></a>
+                </div>
 			</div>
             <!-- First row -->
             <div class="row container-fluid mt-2 gap-3 d-flex">
@@ -166,7 +170,7 @@
                                     <input type="text" id="emp_search" class="form-control" name="emp_id" placeholder="Enter employee id">
                                 </div>
                                 <div class="col col-2 m-0 p-0">
-                                    <input class="btn btn-primary" id="search_ID" type="button" value="Search">
+                                    <input class="btn btn-primary search_button" id="search_ID" type="button" value="Search">
                                 </div>
                             </form>
                         </div>
