@@ -66,10 +66,9 @@
 							<div class="col-md-4">
 								<label for="inputShift" class="form-label">Shift</label>
 								<select id="input-shift" name="input-shift" class="form-select" required>
-								<option>Shift 1</option>
-								<option>Shift 2</option>
-								<option>Shift 3</option>
-								<option>Shift 4</option>
+								<option>Morning Shift</option>
+								<option>Afternoon Shift</option>
+								<option>Full Time</option>
 								</select>
 							</div>
 							<div class="col-md-4">
