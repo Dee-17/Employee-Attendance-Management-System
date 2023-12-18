@@ -55,6 +55,22 @@ body {
     font-weight: bold;
     color: #072560;
 }
+.employee_info label {
+    font-size: 12px;
+    color: #7e7e7e;
+    font-weight: bold;
+    font-style: italic;
+}
+.employee_info input, .employee_search input, .employee_search button {
+    font-size: 14px;
+}
+.employee_name2 input {
+    font-weight: bold;
+}
+.emp_title {
+    font-weight: bold;
+    font-size: 23px;
+}
 .grey_container {
     background-color: #efefefa5;
     border-radius: 10px;
