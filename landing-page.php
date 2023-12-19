@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-        <div class="container_1 card rounded-4 container shadow-lg m-0 p-0 overflow-hidden">
+        <div class="w-50 card rounded-4 container shadow-lg m-0 p-0 overflow-hidden">
             <div class="row container-fluid m-0 p-0">
                 <!-- Corporation Intro -->
                 <div class="left_panel m-0 p-5 col col-6">

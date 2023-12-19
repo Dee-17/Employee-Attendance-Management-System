@@ -15,14 +15,26 @@ $updatePmOutQuery = "UPDATE atlog SET pm_out = '$currentDateTime' WHERE emp_id =
 
 if ($conn->query($updatePmOutQuery) === TRUE) {
     echo "PM OUT time logged successfully";
+
+    // Update pm_underTIME column
+    $updatePmUnderTimeQuery = "UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out, '17:59:00') > '00:30:00', 'YES', 'NO')";
+    if ($conn->query($updatePmUnderTimeQuery) === TRUE) {
+        echo " and PM underTIME status updated successfully";
+
+        // Update status column to 'Offline'
+        $employeeStatus = 'Offline';
+        $updateStatusQuery = "UPDATE atlog SET status = '$employeeStatus' WHERE emp_id = $empId AND atlog_DATE = CURDATE()";
+        if ($conn->query($updateStatusQuery) === TRUE) {
+            echo " and status updated to '$employeeStatus'";
+        } else {
+            echo " but there was an error updating status: " . $conn->error;
+        }
+    } else {
+        echo " but there was an error updating PM underTIME status: " . $conn->error;
+    }
 } else {
     echo "Error logging PM OUT time: " . $conn->error;
 }
-
-// Update pm_underTIME column
-$updatePmUnderTimeQuery = "UPDATE atlog SET pm_underTIME = IF(TIMEDIFF(pm_out, '17:59:00') > '00:30:00', 'YES', 'NO')";
-$conn->query($updatePmUnderTimeQuery);
-
 
 $conn->close();
 ?>

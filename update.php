@@ -1,10 +1,21 @@
 <?php 
 include "connection.php";
-    $sql = "UPDATE atlog SET am_late = IF(TIMEDIFF(am_in, '8:29:00') > '00:12:00', 'YES', 'NO')";
-        $sql .= ", am_underTIME= IF(TIMEDIFF('11:30:00',am_out) > '00:30:00', 'YES', 'NO')";
-        $sql .= ", pm_late = IF(TIMEDIFF(pm_in, '16:30:00') > '00:30:00', 'YES', 'NO')";
-        $sql .= ", pm_underTIME = IF(TIMEDIFF('17:30:00',pm_out) > '00:30:00', 'YES', 'NO')";
-        $sql .= ", overtime = IF(pm_out < '22:00:00', 0, TIME_TO_SEC(TIMEDIFF(pm_out, '6:00:00')) * 0.10 / 3600)";
 
-    $conn->query($sql);
+$sql = "UPDATE atlog 
+        SET am_late = IF(TIMEDIFF(am_in, '8:00:00') > '00:00:00', 'YES', 'NO'),
+            am_underTIME = IF(TIMEDIFF('11:00:00', am_out) > '00:00:00', 'YES', 'NO'),
+            pm_late = IF(TIMEDIFF(pm_in, '16:00:00') > '00:00:00', 'YES', 'NO'),
+            pm_underTIME = IF(TIMEDIFF('17:00:00', pm_out) > '00:00:00', 'YES', 'NO'),
+            work_hour = ADDTIME(IFNULL(TIMEDIFF(pm_out, pm_in), '00:00:00'), IFNULL(TIMEDIFF(am_out, am_in), '00:00:00')),
+            overtime = 
+                CASE
+                    WHEN am_in IS NULL OR pm_in IS NULL THEN
+                        IF(work_hour > '06:00:01', TIMEDIFF(work_hour, '06:00:00'), '00:00:00')
+                    WHEN am_in IS NOT NULL AND pm_in IS NOT NULL THEN
+                        IF(work_hour > '10:00:01', TIMEDIFF(work_hour, '10:00:00'), '00:00:00')
+                    ELSE
+                        '00:00:00'
+                END";
+
+$conn->query($sql);
 ?>

@@ -49,15 +49,24 @@ body {
     margin-top: -3px;
     font-style: normal;
 }
+.export_button button {
+    background-color: #7e7e7e;
+    overflow: hidden;
+    border: none;
+    font-size: 14px;
+}
 .grey_container {
     background-color: #efefefa5;
     border-radius: 10px;
+}
+.header {
+    display: flex;
 }
 .header_title {
     font-size: 2rem;
     font-weight: bold;
 }
-.legend_blue, .legend_red {
+.legend_blue, .legend_red, .legend_green {
     font-style: italic;
     font-size: 12px;
 }
@@ -66,6 +75,9 @@ body {
 }
 .legend_red {
     color: red;
+}
+.legend_green {
+    color: green;
 }
 .legend_title {
     font-size: 13px;

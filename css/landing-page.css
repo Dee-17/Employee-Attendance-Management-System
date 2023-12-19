@@ -24,10 +24,6 @@ body {
     padding: 0;
     box-shadow: none;
 }
-.container_1 {
-    width: 55%;
-    height: 70%;
-}
 .custom_font1 {
     font-size: 30px;
 }
@@ -42,7 +38,7 @@ body {
     font-size: 11px;
 }
 .header_title {
-    font-size: 3.1rem;
+    font-size: 3.0rem;
     line-height: 3.1rem;
 }
 .left_panel {

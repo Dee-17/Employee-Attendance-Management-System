@@ -172,13 +172,12 @@
                                         </script>';
                                 }
 
-                                // Display the appropriate button based on the employee status
-                                if ($employeeStatus === 'Unassigned') {
+                                if ($employeeShift === 'Afternoon Shift') {
                                     echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
                                 } else {
-                                    // Output the employee status
-                                    echo '<p>Employee Status: ' . $employeeStatus . '</p>';
+                                    echo '';
                                 }
+                            
                                 ?>
 
                             </form>
@@ -246,11 +245,10 @@
                                 }
 
                                 // Display the appropriate button based on the employee status
-                                if ($employeeStatus === 'Unassigned') {
+                                if ($employeeShift === 'Morning Shift') {
                                     echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
                                 } else {
-                                    // Output the employee status
-                                    echo '<p>Employee Status: ' . $employeeStatus . '</p>';
+                                    echo '';
                                 }
                                 ?>
                             </form>
@@ -282,5 +280,3 @@
         </div>
     </body>
 </html>
-
-
