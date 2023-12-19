@@ -216,7 +216,7 @@
             
             const contentDiv = document.getElementById('table_rows');
             // Define the column widths
-            const columnWidths = [20, 35, 25, 25, 25, 25, 25]; // Replace with the desired widths for each column
+            const columnWidths = [20, 32, 22, 22, 22, 22, 22, 22]; // Replace with the desired widths for each column
 
             pdf.autoTable({
                 html: contentDiv,
@@ -230,7 +230,8 @@
                     4: { cellWidth: columnWidths[4], halign: 'center' },
                     5: { cellWidth: columnWidths[5], halign: 'center' },
                     6: { cellWidth: columnWidths[6], halign: 'center' },
-                    7: { cellWidth: columnWidths[7], halign: 'center' }
+                    7: { cellWidth: columnWidths[7], halign: 'center' },
+                    8: { cellWidth: columnWidths[8], halign: 'center' },
                 },
                 headerStyles: {
                 fillColor: [7, 37, 96],

@@ -255,12 +255,7 @@
                 } else {
                     echo "<td>" . $row["pm_out"] . "</td>";
                 }
-                if($row["overtime"] > "00:00:00"){
-                    echo "<td style='color:green'>" . $row["work_hour"] . "</td>";
-                } else {
-                    echo "<td>" . $row["work_hour"] . "</td>";
-                }
-                echo "<td>" . $row["overtime"] . "</td>";
+  
                 echo "</tr>";
             }
             echo "</tbody>";

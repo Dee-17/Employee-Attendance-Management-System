@@ -21,6 +21,21 @@
         echo '<script>console.log("Admin ID not set in the session");</script>';
         $adminUsername = ''; 
     }
+
+    $sql = "SELECT COUNT(*) AS online_employees_count 
+    FROM atlog 
+    WHERE status = 'online'";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $onlineEmployeesCount = $row['online_employees_count'];
+    } else {
+    $onlineEmployeesCount = 0; // Default value if there's an error
+    }
+
+
     $conn->close();
 ?>
 <!DOCTYPE html>
@@ -44,7 +59,15 @@
         <!-- Main contents -->
         <div class="right_panel container p-5">
             <!-- Name must be according to id inputted by admin -->
-            <p class="header_title">Welcome <span class="admin_name" id="admin_name"><?php echo htmlspecialchars($adminUsername); ?></span>!</p>
+            <div class="row">
+                <div class="col col-9">
+                    <p class="header_title">Welcome <span class="admin_name" id="admin_name"><?php echo htmlspecialchars($adminUsername); ?></span>!</p>
+                </div>
+                <div class="col col-auto">
+                        <input id="exportButton" class="btn btn-secondary m-0" value="Online Employees: <?php echo $onlineEmployeesCount; ?>"></input>
+                </div>
+            </div>
+            
             <div class="row container-fluid m-0 gap-3">
                 <!-- Date today -->
                 <div class="date_container card px-4 py-2 col col-4 justify-content-center">
@@ -75,7 +98,7 @@
                 <table class="table m-0 p-0">
                     <?php
                         include "connection.php";
-                        $sql = "SELECT atlog.work_hour,atlog.emp_id, employee.contract, employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.work_hour, atlog.overtime
+                        $sql = "SELECT atlog.work_hour,atlog.emp_id, employee.contract, employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.work_hour, atlog.overtime, atlog.status
                         FROM atlog 
                         JOIN employee ON atlog.emp_id = employee.emp_id
                         WHERE  atlog.atlog_DATE = CURDATE()";
@@ -97,6 +120,7 @@
                                     <th scope='col'>PM Out</th>
                                     <th scope='col'>Work Hours</th>
                                     <th scope='col'>Overtime</th>
+                                    <th scope='col'>Status</th>
                                 </tr>
                             </thead>
                             <tbody class='table_body'>
@@ -150,6 +174,7 @@
                                     echo "<td>" . $row["work_hour"] . "</td>";
                                 }
                                 echo "<td>" . $row["overtime"] . "</td>";
+                                echo "<td>" . $row["status"] . "</td>";
                                 echo "</tr>";
                                 
                             }
