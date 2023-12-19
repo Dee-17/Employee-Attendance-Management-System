@@ -1,13 +1,13 @@
 <?php 
-    include "connection.php";
+     include_once __DIR__ . '/../php/connection.php';
 
     //function para i-display lahat ng rows on current month 
     if(isset($_POST['table_onload'])){
         $date_picked = ($_POST['table_onload']);
-        
+
         echo "<script>console.log($date_picked);</script>";
-    
     }
+
     //function para sa specific date lang and specific person
     elseif(isset($_POST['emp_id'])){
         $emp_id = ($_POST['emp_id']);
@@ -21,7 +21,6 @@
         }
         else{
             echo json_encode([]);
-       
         }
     }
 ?>

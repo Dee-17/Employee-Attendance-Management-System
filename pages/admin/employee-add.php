@@ -1,5 +1,5 @@
 <?php
-    include "connection.php";
+    include_once __DIR__ . '/../php/connection.php';
 
     $first_name = $_POST['input-first-name'];
     $middle_name = $_POST['input-middle-name'];

@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/company-logo.png" alt="Logo" width="80" height="80">
+    <img src="pages/images/company-logo.png" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">C695: Employee Attendance Management System</h3>
   <p align="center">
@@ -97,8 +97,6 @@ Before starting the installation process, ensure you have the following prerequi
 
 Follow these step-by-step instructions to set up the project on your local machine. The guide covers cloning the repository (or downloading as a ZIP file), running the website locally using XAMPP, and setting up the server with a database and tables.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Step 1: Install GitHub Desktop (Optional)
 
 1. **Download GitHub Desktop:**
@@ -159,6 +157,9 @@ Follow these step-by-step instructions to set up the project on your local machi
 
 5. **Access the Local Website:**
    - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Contact
 

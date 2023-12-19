@@ -1,6 +1,6 @@
 <?php
-    include "connection.php";
-    
+    include_once __DIR__ . '/../php/connection.php';
+
     $emp_id = $_POST['emp-id']; 
     $first_name = $_POST['input-first-name'];
     $middle_name = $_POST['input-middle-name'];

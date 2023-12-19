@@ -1,5 +1,5 @@
 <?php 
-    include "connection.php";
+    include_once __DIR__ . '/../php/connection.php';
 
     // display reports for the current month 
     if(isset($_POST['table_onload'])){
@@ -89,6 +89,7 @@
 
     // for a specific date
     if(isset($_POST['select_date'])){
+        
         $selected_date = ($_POST['select_date']);
         list($year, $month) = explode('-', $selected_date);
         $year = substr($year, 1);
@@ -170,7 +171,6 @@
         }
     }
 
-    
 
     // for a specific employee and date
     if(isset($_POST['emp_id'])){

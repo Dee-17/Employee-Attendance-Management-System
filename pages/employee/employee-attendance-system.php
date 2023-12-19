@@ -1,8 +1,12 @@
 <?php
+    // Start the session
     session_start();
-    include "connection.php"; 
+
+    include_once __DIR__ . '/../php/connection.php';
+
     $empId = $_SESSION['emp_id']; 
 
+    // Query to check for previous entry
     $checkPreviousEntryQuery = "SELECT atlog.atlog_id, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, employee.shift, employee.emp_id, employee.contract, employee.first_name, employee.middle_name, employee.last_name
                                 FROM atlog 
                                 JOIN employee ON atlog.emp_id = employee.emp_id
@@ -13,6 +17,7 @@
     $employeeShift = '';
     echo '<script>console.log("aaa");</script>';
 
+    // Check if there are any results
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $employeeFullName = $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];
@@ -41,7 +46,6 @@
                 $resultNew = $conn->query($getNewEntries);   
 
                 $row = $resultNew->fetch_assoc();
-
             } else {
                 // Error creating new entry
             }
@@ -50,7 +54,6 @@
             // Handle the case when employee name retrieval fails
         }
     }
-
     $conn->close();
 ?>
 
@@ -61,16 +64,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Employee Log in</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/employee-attendance-system.css">
+        <link rel="stylesheet" href="../css/employee-attendance-system.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
-        <script src="js/nav-bar.js" defer></script>
-        <script src="js/date-time.js" defer></script>
+        <script src="../js/nav-bar.js" defer></script>
+        <script src="../js/date-time.js" defer></script>
     </head>
     <body class="container-fluid">
     <div class="container-fluid row gap-0">
         <!-- Navigation Bar -->
         <div class="left_panel sticky-top container text-center pt-3">
-            <img class="mt-3" src="images/company-logo.png" alt="C597 Corporation Logo">
+            <img class="mt-3" src="../images/company-logo.png" alt="C597 Corporation Logo">
             <p class="company_name mt-2 mb-0">C597 Corporation</p>
             <p class="system_name">Employee Attendance System</p>
 
@@ -171,15 +174,12 @@
                                             }
                                         </script>';
                                 }
-
                                 if ($employeeShift === 'Afternoon Shift') {
                                     echo '<button class="btn in_button col col-auto" disabled style="font-size: small;">Unassigned</button>';
                                 } else {
                                     echo '';
                                 }
-                            
-                                ?>
-
+                            ?>
                             </form>
                         </div>
                         <div class="col col-5 card p-3">
@@ -199,7 +199,6 @@
                                         echo '<button class="btn in_button col col-auto" disabled>Checked In</button>';
                                         $employeeStatus = 'Online';
                                     }
-
                                     // Add the JavaScript function to log AM time using AJAX
                                     echo '<script>
                                             function logPM() {
@@ -280,3 +279,7 @@
         </div>
     </body>
 </html>
+
+<?php
+    include_once __DIR__ . '/../php/update.php';
+?>

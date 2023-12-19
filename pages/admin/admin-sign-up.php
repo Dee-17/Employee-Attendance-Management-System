@@ -1,5 +1,6 @@
 <?php
-    include "connection.php";
+    include_once __DIR__ . '/../php/connection.php';
+
     
     if (isset($_POST['form_id'])) {
         // prepare and bind
@@ -52,7 +53,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="css/admin-emp-login.css">
+    <link rel="stylesheet" href="../css/admin-emp-login.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 <body>
@@ -61,7 +62,7 @@
             <!-- Back button -->
             <div class="top_panel p-3 d-flex justify-content-center">
                 <div class="row container-fluid justify-content-end">
-                    <a href="landing-page.php"><i class="bi bi-arrow-left" style="color: white;"></i></a>
+                    <a href="http://localhost/employee-attendance-management/index.php"><i class="bi bi-arrow-left" style="color: white;"></i></a>
                 </div>
             </div>
             <!-- Create account for admin -->

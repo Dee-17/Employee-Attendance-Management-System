@@ -1,5 +1,5 @@
 <?php 
-    include "connection.php";
+    include_once __DIR__ . '/../php/connection.php';
 
     $date_picked = ($_POST['table_date']);
     $date_picked = mysqli_real_escape_string($conn, $date_picked);

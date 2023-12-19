@@ -1,7 +1,10 @@
 <?php
+    // Start the session
     session_start();
-    include "update.php";
 
+    include_once __DIR__ . '/../php/connection.php';
+
+    // Check if admin_id is set in the session
     if (isset($_SESSION['admin_id'])) {
         $adminId = $_SESSION['admin_id']; 
 
@@ -9,6 +12,7 @@
         
         $adminResult = $conn->query($adminUsernameQuery);
 
+        // Check if admin entry is found
         if ($adminResult->num_rows > 0) {
             $adminRow = $adminResult->fetch_assoc();
             $adminUsername = $adminRow['username'];
@@ -22,22 +26,24 @@
         $adminUsername = ''; 
     }
 
+    // Query to get the count of online employees
     $sql = "SELECT COUNT(*) AS online_employees_count 
     FROM atlog 
     WHERE status = 'online'";
 
     $result = mysqli_query($conn, $sql);
 
+    // Check if the query was successful
     if ($result) {
-    $row = mysqli_fetch_assoc($result);
-    $onlineEmployeesCount = $row['online_employees_count'];
+        $row = mysqli_fetch_assoc($result);
+        $onlineEmployeesCount = $row['online_employees_count'];
     } else {
-    $onlineEmployeesCount = 0; // Default value if there's an error
+        $onlineEmployeesCount = 0; // Default value if there's an error
     }
-
 
     $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,15 +52,15 @@
     <title>Log in Reports</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/nav-bar.css">
-    <link rel="stylesheet" href="css/login-report.css">
-    <script src="js/nav-bar.js" defer></script>
-    <script src="js/date-time.js" defer></script>
+    <link rel="stylesheet" href="../css/nav-bar.css">
+    <link rel="stylesheet" href="../css/login-report.css">
+    <script src="../js/nav-bar.js" defer></script>
+    <script src="../js/date-time.js" defer></script>
 </head>
 <body class="container-fluid">
     <div class="container-fluid row gap-0">
         <?php 
-            include('nav-bar.php');
+            include('../php/nav-bar.php');
         ?> 
         <!-- Main contents -->
         <div class="right_panel container p-5">
@@ -97,13 +103,14 @@
             <div class="white_container row mt-3 p-4 mx-0 text-center justify-content-evenly">
                 <table class="table m-0 p-0">
                     <?php
-                        include "connection.php";
+                        include ('../php/connection.php');
+
                         $sql = "SELECT atlog.work_hour,atlog.emp_id, employee.contract, employee.shift, employee.first_name, employee.middle_name, employee.last_name, employee.shift, atlog.am_in, atlog.am_out, atlog.pm_in, atlog.pm_out, atlog.am_late, atlog.pm_late, atlog.am_underTIME, atlog.pm_underTIME, atlog.work_hour, atlog.overtime, atlog.status
                         FROM atlog 
                         JOIN employee ON atlog.emp_id = employee.emp_id
                         WHERE  atlog.atlog_DATE = CURDATE()";
 
-                        $result = mysqli_query($conn,$sql);
+                        $result = mysqli_query($conn, $sql);
                         $result_check = mysqli_num_rows($result);
 
                         if ($result_check > 0) {

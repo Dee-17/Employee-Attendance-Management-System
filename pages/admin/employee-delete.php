@@ -1,6 +1,6 @@
 <?php
     // Include your database connection file
-    include 'connection.php';
+    include_once __DIR__ . '/../php/connection.php';
 
     // Check if the 'id' GET parameter is set
     if (isset($_GET['emp_id'])) {
