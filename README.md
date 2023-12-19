@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -11,50 +10,31 @@
   <h3 align="center">C695: Employee Attendance Management System</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Dee-17/Employee-Attendance-Management"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/Dee-17/Employee-Attendance-Management">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/Dee-17/Employee-Attendance-Management/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/Dee-17/Employee-Attendance-Management/issues">Request Feature</a>
   </p>
 </div>
 
+<!-- MAIN CONTENTS -->
+## Table of Contents
+- [About the Project](#about-the-project)
+- [Getting Started](#getting-started)
+- [Installation Guide](#installation-guide)
+  - [Step 1: Install GitHub Desktop (Optional)](#step-1-install-github-desktop-optional)
+  - [Step 2: Sign in to GitHub Desktop (Optional)](#step-2-sign-in-to-github-desktop-optional)
+  - [Step 3: Clone a Repository Using GitHub Desktop (Optional)](#step-3-clone-a-repository-using-github-desktop-optional)
+  - [Step 3: Download a Repository as a ZIP File](#step-3-download-a-repository-as-a-zip-file)
+  - [Step 4: Install Required Dependencies (if any)](#step-4-install-required-dependencies-if-any)
+  - [Step 5: Run the Website Locally with XAMPP](#step-5-run-the-website-locally-with-xampp)
+- [Contact](#contact)
 
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -74,54 +54,45 @@ Click on `Getting Started` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![PHP][PHP.com]][PHP-url]
-* [![Javascript][Javascript.com]]
-* [![HTML][HTML.com]]
-* [![CSS][CSS.com]]
+* [PHP]
+* [Javascript]
+* [HTML]
+* [CSS]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 Here is a step-by-step guide on how to install the `Employee Attendance Management System (EAMS)` in your local computer.  
 
 ### Prerequisites
  
-Ensure that your local computer has an open web server that supports PHP. You can use XAMPP.
+Before starting the installation process, ensure you have the following prerequisites:
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1. **Operating System Compatibility:**
+   - The project is compatible with Windows, macOS, or Linux.
 
-# Project Name
+2. **Internet Connection:**
+   - A stable internet connection is required for downloading dependencies.
 
-## Table of Contents
+3. **GitHub Account (for Cloning):**
+   - If you plan to clone the repository, you need a GitHub account. Create one [here](https://github.com/join).
 
-- [Overview](#overview)
-- [Installation Guide](#installation-guide)
-  - [Step 1: Install GitHub Desktop (Optional)](#step-1-install-github-desktop-optional)
-  - [Step 2: Sign in to GitHub Desktop (Optional)](#step-2-sign-in-to-github-desktop-optional)
-  - [Step 3: Clone a Repository Using GitHub Desktop (Optional)](#step-3-clone-a-repository-using-github-desktop-optional)
-  - [Step 3: Download a Repository as a ZIP File](#step-3-download-a-repository-as-a-zip-file)
-  - [Step 4: Install Required Dependencies (if any)](#step-4-install-required-dependencies-if-any)
-  - [Step 5: Run the Website Locally with XAMPP](#step-5-run-the-website-locally-with-xampp)
-- [Congratulations](#congratulations)
-- [Note](#note)
-- [License](#license)
+4. **XAMPP Installation:**
+   - XAMPP should be installed on your local machine. Download it [here](https://www.apachefriends.org/index.html).
 
-## Overview
+5. **Web Browser:**
+   - Ensure that your local computer can open a web server that supports PHP.
 
-Briefly describe your project, its purpose, and any key features.
 
 ## Installation Guide
 
@@ -149,42 +120,27 @@ Follow these step-by-step instructions to set up the project on your local machi
 1. **Clone a Repository:**
    - Click on the "File" menu and select "Clone Repository."
    - Choose the repository you want to clone from the list or enter the repository URL.
-   - Select a local path where you want to save the repository on your computer.
+   - Select the 'htdocs' folder inside the XAMPP installation directory (e.g., `C:\xampp\htdocs` on Windows) as the local path where you want to save the repository on your computer.
    - Click "Clone."
 
 ### - OR -
 
 ### Step 3: Download a Repository as a ZIP File
 
-1. **Visit GitHub:**
-   - Open your web browser and go to [GitHub](https://github.com/).
 
-2. **Find the Repository:**
-   - Navigate to the GitHub repository you want to download.
-
-3. **Download the Repository ZIP File:**
+1. **Download the Repository ZIP File:**
    - Click on the "Code" button, and from the dropdown menu, select "Download ZIP."
    - Save the ZIP file to your computer.
 
-4. **Extract the ZIP File:**
-   - Open the file explorer on your computer, locate the ZIP file, and extract its contents to a folder.
+2. **Extract the ZIP File:**
+   - Open the file explorer on your computer, locate the ZIP file, and extract its contents to the 'htdocs' folder.
 
-### Step 4: Install Required Dependencies (if any)
 
-1. **Navigate to the Repository Folder:**
-   - Open the cloned or extracted folder in your file explorer.
-
-2. **Check for a README file:**
-   - Look for a README file in the folder, often containing instructions for installing dependencies.
-
-3. **Install Dependencies:**
-   - Follow the instructions in the README file to install any necessary dependencies. This may involve running commands in the terminal or using package managers like npm, yarn, or pip.
-
-### Step 5: Run the Website Locally with XAMPP
+### Step 4: Run the Website Locally with XAMPP
 
 1. **Open File Manager and Navigate to 'htdocs' Folder:**
    - Open your file manager on your local computer.
-   - Navigate to the 'htdocs' folder inside the XAMPP installation directory (e.g., `C:\xampp\htdocs` on Windows).
+   - Navigate to the 'htdocs' folder inside the XAMPP installation directory.
 
 2. **Extract the Downloaded Files into 'htdocs':**
    - Right-click the downloaded ZIP file or copied folder.
@@ -203,60 +159,9 @@ Follow these step-by-step instructions to set up the project on your local machi
 5. **Access the Local Website:**
    - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
 
-## Congratulations
-
-You have successfully cloned a GitHub repository or downloaded it as a ZIP file, run the website locally using XAMPP, and set up the server by creating a database and tables through the import of an SQL file in phpMyAdmin.
-
-## Note
-
-The specific steps may vary depending on the repository and technologies used. Always refer to the repository's documentation for project-specific instructions. Adjust file paths and names based on your specific setup.
-
-## License
-
-Include the license information for your project, if applicable.
-
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
+
 ## Contact
 
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
@@ -266,42 +171,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-
-
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [PHP.com]: https://img.shields.io/badge/PHP-7A86B8?style=for-the-badge&logo=PHP&logoColor=white
