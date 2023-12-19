@@ -70,7 +70,7 @@
                     <p class="header_title">Welcome <span class="admin_name" id="admin_name"><?php echo htmlspecialchars($adminUsername); ?></span>!</p>
                 </div>
                 <div class="col col-auto">
-                        <input id="exportButton" class="btn btn-secondary m-0" value="Online Employees: <?php echo $onlineEmployeesCount; ?>"></input>
+                        <input id="exportButton" class="btn btn-secondary m-0" disabled value="Online Employees: <?php echo $onlineEmployeesCount; ?>"></input>
                 </div>
             </div>
             
