@@ -1,14 +1,11 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/company-logo.png" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">C695: Employee Attendance Management System</h3>
-
   <p align="center">
     <br />
     <a href="https://github.com/Dee-17/Employee-Attendance-Management"><strong>Explore the docs »</strong></a>
@@ -60,10 +57,10 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [PHP]
-* [Javascript]
-* [HTML]
-* [CSS]
+* ![PHP][PHP.com]
+* ![Javascript][Javascript.com]
+* ![HTML][HTML.com]
+* ![CSS][CSS.com]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,10 +90,14 @@ Before starting the installation process, ensure you have the following prerequi
 5. **Web Browser:**
    - Ensure that your local computer can open a web server that supports PHP.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Installation Guide
 
 Follow these step-by-step instructions to set up the project on your local machine. The guide covers cloning the repository (or downloading as a ZIP file), running the website locally using XAMPP, and setting up the server with a database and tables.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Step 1: Install GitHub Desktop (Optional)
 
@@ -153,14 +154,11 @@ Follow these step-by-step instructions to set up the project on your local machi
 
 4. **Open phpMyAdmin and Import Database:**
    - In a web browser, type `localhost/phpmyadmin/`.
-   - Click on the "Import" tab and select the SQL file named "employee_db" from the extracted folder.
+   - Click on the "Import" tab and select the SQL file named `employee_db` from the extracted folder.
    - Click "Go" or "Import" to import the database.
 
 5. **Access the Local Website:**
    - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
-
-
-<!-- CONTACT -->
 
 ## Contact
 
