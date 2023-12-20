@@ -51,7 +51,7 @@
             <!-- Back button -->
             <div class="top_panel p-3 d-flex justify-content-center">
                 <div class="row container-fluid justify-content-end">
-                    <a href="http://localhost/employee-attendance-management/index.php"><i class="bi bi-arrow-left" style="color: white;"></i></a>
+                    <a href="../../index.php"><i class="bi bi-arrow-left" style="color: white;"></i></a>
                 </div>
             </div>
             <!-- Admin log in -->

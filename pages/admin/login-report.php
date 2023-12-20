@@ -1,6 +1,7 @@
 <?php
     // Start the session
     session_start();
+    include_once __DIR__ . '/../php/update.php';
 
     include_once __DIR__ . '/../php/connection.php';
 
