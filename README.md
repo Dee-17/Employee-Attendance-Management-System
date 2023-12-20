@@ -23,14 +23,41 @@
 ## Table of Contents
 - [About the Project](#about-the-project)
 - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
 - [Installation Guide](#installation-guide)
-  - [Step 1: Install GitHub Desktop (Optional)](#step-1-install-github-desktop-optional)
-  - [Step 2: Sign in to GitHub Desktop (Optional)](#step-2-sign-in-to-github-desktop-optional)
-  - [Step 3: Clone a Repository Using GitHub Desktop (Optional)](#step-3-clone-a-repository-using-github-desktop-optional)
-  - [Step 3: Download a Repository as a ZIP File](#step-3-download-a-repository-as-a-zip-file)
-  - [Step 4: Install Required Dependencies (if any)](#step-4-install-required-dependencies-if-any)
-  - [Step 5: Run the Website Locally with XAMPP](#step-5-run-the-website-locally-with-xampp)
-- [Contact](#contact)
+  - [Step 1: Clone Repository (Optional)](#step-1-clone-repository-optional)
+  - [Step 2: Download a Repository as a ZIP File](#step-2-download-repository-as-a-zip-file)
+  - [Step 3: Run the Website Locally with XAMPP](#step-3-run-the-website-locally-with-xampp)
+- [Login Information](#login-information)
+
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#installation-guide">Installation Guide</a>
+      <ul>
+         <li><a href="#step-1-clone-repository-optional">Step 1: Clone Repository (Optional)</a></li>
+         <li><a href="#step-2-download-repository-as-a-zip-file">Step 2: Download a Repository as a ZIP File</a></li>
+         <li><a href="#step-3-run-the-website-locally-with-xampp">Step 3: Run the Website Locally with XAMPP</a></li>
+      </ul>
+    </li>
+    <li><a href="#login-information">Login Information</a></li>
+  </ol>
+</details>
+
 
 
 ## About The Project
@@ -48,8 +75,6 @@ Here's how:
 In essence, the **Employee Attendance Management System** is a vital tool for businesses seeking to optimize their workforce management, improve accountability, and boost overall performance. 
 
 Click on `Getting Started` to get started.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
@@ -84,8 +109,6 @@ Before starting the installation process, ensure you have the following prerequi
 
 5. **Web Browser:**
    - Ensure that your local computer can open a web server that supports PHP.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Installation Guide
@@ -133,35 +156,19 @@ Follow these step-by-step instructions to set up the project on your local machi
 5. **Access the Local Website:**
    - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Login Information
 Use the following login information to navigate the system:
 
-### Admin
-- **Username:** admin1
-- **Password:** admin123
-
-### Part-Time (Afternoon Shift)
-- **Employee ID:** 17
-- **Password:** password17
-
-### Part-Time (Morning Shift)
-- **Employee ID:** 18
-- **Password:** password18
-
-### Full-Time (Day Shift)
-- **Employee ID:** 14
-- **Password:** password14
+| Role                       | Username | Password    |
+|----------------------------|----------|-------------|
+| **Admin**                  | admin1   | admin123    |
+| **Part-Time (Afternoon)**  | 17       | password17  |
+| **Part-Time (Morning)**    | 18       | password18  |
+| **Full-Time (Day)**        | 14       | password14  |
 
 
-## Contact
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
