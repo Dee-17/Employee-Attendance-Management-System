@@ -32,13 +32,10 @@
 
 
 <details>
-  <summary>Table of Contents</summary>
+  <summary><h1>Table of Contents</h1></summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -59,7 +56,6 @@
 </details>
 
 
-
 ## About The Project
 ![Project Demo][project-screenshot]
 
@@ -74,8 +70,6 @@ Here's how:
 
 In essence, the **Employee Attendance Management System** is a vital tool for businesses seeking to optimize their workforce management, improve accountability, and boost overall performance. 
 
-Click on `Getting Started` to get started.
-
 ### Built With
 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
@@ -83,9 +77,6 @@ Click on `Getting Started` to get started.
 * ![Javascript][Javascript.com]
 * ![HTML][HTML.com]
 * ![CSS][CSS.com]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 
@@ -167,6 +158,7 @@ Use the following login information to navigate the system:
 | **Part-Time (Morning)**    | 18       | password18  |
 | **Full-Time (Day)**        | 14       | password14  |
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
