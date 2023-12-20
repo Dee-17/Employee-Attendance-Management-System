@@ -93,8 +93,8 @@
 							<div class="col-md-4">
 							<label for="inputEmployeeContract" class="form-label">Employee Contract</label>
 								<select id="input-employee-contract" name="input-employee-contract" class="form-select" required>
-								<option>Full Time</option>
 								<option>Part Time</option>
+								<option>Full Time</option>
 								</select>
 							</div>
 							<div class="col-md-4">
