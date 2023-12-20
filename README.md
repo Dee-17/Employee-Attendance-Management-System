@@ -138,7 +138,8 @@ Use the following login information to navigate the system:
 | Role                       | Username | Password    |
 |----------------------------|----------|-------------|
 | **Admin**                  | admin1   | admin123    |
-<br/>
+
+
 | Employee Schedule          | Employee ID | Password    |
 |----------------------------|-------------|-------------|
 | **Part-Time (Afternoon)**  | 17          | password17  |
