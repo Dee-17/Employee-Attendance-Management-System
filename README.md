@@ -34,7 +34,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Project Demo][product-screenshot]]
 
 The Employee Attendance Management System (EAMS) is a comprehensive solution designed to automate and simplify the process of tracking employee attendance. This system aims to ensure accurate record-keeping of employee working hours, thereby enhancing productivity and operational efficiency.
 
@@ -174,7 +174,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [Javascript.com]: https://img.shields.io/badge/Javascript-EDD84B?style=for-the-badge&logo=Javascript&logoColor=white
 [HTML.com]: https://img.shields.io/badge/HTML-E34B24?style=for-the-badge&logo=HTML&logoColor=white
 [CSS.com]: https://img.shields.io/badge/CSS-1370B5?style=for-the-badge&logo=css&logoColor=white
-
+[product-screenshot]: images/installation-guide/demo.gif
 
 
 
