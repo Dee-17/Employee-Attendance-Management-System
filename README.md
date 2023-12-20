@@ -3,13 +3,10 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="pages/images/company-logo.png" alt="Logo" width="80" height="80">
+    <img src="pages/images/company-logo.png" alt="Logo" width="100" height="100">
   </a>
-  <h3 align="center">C695: Employee Attendance Management System</h3>
+  <h2 align="center">C695: Employee Attendance Management System</h2>
   <p align="center">
-    <br />
-    <a href="https://github.com/Dee-17/Employee-Attendance-Management"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/Dee-17/Employee-Attendance-Management">View Demo</a>
     ·
@@ -19,20 +16,8 @@
   </p>
 </div>
 
-<!-- MAIN CONTENTS -->
-## Table of Contents
-- [About the Project](#about-the-project)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-- [Installation Guide](#installation-guide)
-  - [Step 1: Clone Repository (Optional)](#step-1-clone-repository-optional)
-  - [Step 2: Download a Repository as a ZIP File](#step-2-download-repository-as-a-zip-file)
-  - [Step 3: Run the Website Locally with XAMPP](#step-3-run-the-website-locally-with-xampp)
-- [Login Information](#login-information)
-
-
 <details>
-  <summary><h1>Table of Contents</h1></summary>
+  <summary><h2>Table of Contents</h2></summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -81,7 +66,7 @@ In essence, the **Employee Attendance Management System** is a vital tool for bu
 <!-- GETTING STARTED -->
 
 ## Getting Started
-Here is a step-by-step guide on how to install the `Employee Attendance Management System (EAMS)` in your local computer.  
+Here is a step-by-step guide on how to install the **Employee Attendance Management System (EAMS)** in your local computer.  
 
 ### Prerequisites
 Before starting the installation process, ensure you have the following prerequisites:
@@ -103,7 +88,7 @@ Before starting the installation process, ensure you have the following prerequi
 
 
 ## Installation Guide
-Follow these step-by-step instructions to set up the project on your local machine. The guide covers cloning the repository (or downloading as a ZIP file), running the website locally using XAMPP, and setting up the server with a database and tables.
+Follow these step-by-step instructions to set up the project on your local machine. The guide covers cloning the repository (or downloading as a ZIP file), running the website locally using XAMPP, and setting up the server with a database.
 
 ### Step 1: Clone Repository (Optional)
 1. **Clone a Repository:**
@@ -122,7 +107,7 @@ Follow these step-by-step instructions to set up the project on your local machi
    - Save the ZIP file to your computer.
 
 2. **Extract the ZIP File:**
-   - Open the file explorer on your computer, locate the ZIP file, and extract its contents to the 'htdocs' folder.
+   - Open the file explorer on your computer, locate the ZIP file, and extract its contents inside the XAMPP directory (e.g., `C:\xampp\htdocs` on Windows).
 
 ### Step 3: Run the Website Locally with XAMPP
 
@@ -154,9 +139,12 @@ Use the following login information to navigate the system:
 | Role                       | Username | Password    |
 |----------------------------|----------|-------------|
 | **Admin**                  | admin1   | admin123    |
-| **Part-Time (Afternoon)**  | 17       | password17  |
-| **Part-Time (Morning)**    | 18       | password18  |
-| **Full-Time (Day)**        | 14       | password14  |
+<br/>
+| Employee Schedule          | Employee ID | Password    |  | Role                       | Username | Password    |
+|----------------------------|-------------|-------------|  |----------------------------|----------|-------------|
+| **Part-Time (Afternoon)**  | 17          | password17  |  | **Admin**                  | admin1   | admin123    |
+| **Part-Time (Morning)**    | 18          | password18  |
+| **Full-Time (Day)**        | 14          | password14  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
