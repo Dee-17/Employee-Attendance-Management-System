@@ -126,7 +126,7 @@ Follow these step-by-step instructions to set up the project on your local machi
 4. **Open phpMyAdmin and import database:**
    - In a web browser, type `localhost/phpmyadmin/`.
    - Click on the "Import" tab and select the SQL file named `employee_db` from the extracted folder.
-   - Click "Go" or "Import" to import the database.
+   - Click "Go" to import the database.
 
 5. **Access the local website:**
    - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
