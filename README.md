@@ -32,20 +32,20 @@
   - [Step 5: Run the Website Locally with XAMPP](#step-5-run-the-website-locally-with-xampp)
 - [Contact](#contact)
 
+
 ## About The Project
+![Project Demo][project-screenshot]
 
-[![Project Demo][product-screenshot]]
+The **Employee Attendance Management System (EAMS)** is a comprehensive solution designed to automate and simplify the process of tracking employee attendance. This system aims to ensure accurate record-keeping of employee working hours, thereby enhancing productivity and operational efficiency.
 
-The Employee Attendance Management System (EAMS) is a comprehensive solution designed to automate and simplify the process of tracking employee attendance. This system aims to ensure accurate record-keeping of employee working hours, thereby enhancing productivity and operational efficiency.
-
-Here's why:
+Here's how:
 * EAMS is designed with a focus on the importance of time in organizations.
 * Offers real-time insights into employee attendance for informed decision-making by managers.
-* Capable of handling diverse attendance policies and adaptable to the specific requirements of different organizations.
+* Capable of handling different time shifting schedules.
 * EAMS minimizes the administrative workload linked to manual attendance tracking.
 * Automation of the attendance tracking process reduces errors and enhances efficiency.
 
-In essence, the Employee Attendance Management System is a vital tool for businesses seeking to optimize their workforce management, improve accountability, and boost overall performance. 
+In essence, the **Employee Attendance Management System** is a vital tool for businesses seeking to optimize their workforce management, improve accountability, and boost overall performance. 
 
 Click on `Getting Started` to get started.
 
@@ -65,11 +65,9 @@ Click on `Getting Started` to get started.
 <!-- GETTING STARTED -->
 
 ## Getting Started
-
 Here is a step-by-step guide on how to install the `Employee Attendance Management System (EAMS)` in your local computer.  
 
 ### Prerequisites
- 
 Before starting the installation process, ensure you have the following prerequisites:
 
 1. **Operating System Compatibility:**
@@ -91,38 +89,19 @@ Before starting the installation process, ensure you have the following prerequi
 
 
 ## Installation Guide
-
 Follow these step-by-step instructions to set up the project on your local machine. The guide covers cloning the repository (or downloading as a ZIP file), running the website locally using XAMPP, and setting up the server with a database and tables.
 
-### Step 1: Install GitHub Desktop (Optional)
-
-1. **Download GitHub Desktop:**
-   - Visit the [GitHub Desktop download page](https://desktop.github.com/).
-   - Download the appropriate version for your operating system (Windows or macOS).
-
-2. **Install GitHub Desktop:**
-   - Follow the installation instructions provided by the installer.
-   - Launch GitHub Desktop once the installation is complete.
-
-### Step 2: Sign in to GitHub Desktop (Optional)
-
-1. **Sign in to your GitHub Account:**
-   - Open GitHub Desktop.
-   - If you don't have a GitHub account, create one [here](https://github.com/join).
-   - Sign in with your GitHub credentials.
-
-### Step 3: Clone a Repository Using GitHub Desktop (Optional)
-
+### Step 1: Clone Repository (Optional)
 1. **Clone a Repository:**
-   - Click on the "File" menu and select "Clone Repository."
-   - Choose the repository you want to clone from the list or enter the repository URL.
-   - Select the 'htdocs' folder inside the XAMPP installation directory (e.g., `C:\xampp\htdocs` on Windows) as the local path where you want to save the repository on your computer.
+   - Open GitHub Desktop.
+   - Click "File" > "Clone Repository."
+   - Choose the repository or enter its URL.
+   - Set the local path to the 'htdocs' folder inside the XAMPP directory (e.g., `C:\xampp\htdocs` on Windows).
    - Click "Clone."
 
 ### - OR -
 
-### Step 3: Download a Repository as a ZIP File
-
+### Step 2: Download Repository as a ZIP File
 
 1. **Download the Repository ZIP File:**
    - Click on the "Code" button, and from the dropdown menu, select "Download ZIP."
@@ -131,8 +110,7 @@ Follow these step-by-step instructions to set up the project on your local machi
 2. **Extract the ZIP File:**
    - Open the file explorer on your computer, locate the ZIP file, and extract its contents to the 'htdocs' folder.
 
-
-### Step 4: Run the Website Locally with XAMPP
+### Step 3: Run the Website Locally with XAMPP
 
 1. **Open File Manager and Navigate to 'htdocs' Folder:**
    - Open your file manager on your local computer.
@@ -158,14 +136,32 @@ Follow these step-by-step instructions to set up the project on your local machi
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Contact
+## Login Information
+Use the following login information to navigate the system:
 
+### Admin
+- **Username:** admin1
+- **Password:** admin123
+
+### Part-Time (Afternoon Shift)
+- **Employee ID:** 17
+- **Password:** password17
+
+### Part-Time (Morning Shift)
+- **Employee ID:** 18
+- **Password:** password18
+
+### Full-Time (Day Shift)
+- **Employee ID:** 14
+- **Password:** password14
+
+
+## Contact
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
@@ -174,7 +170,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [Javascript.com]: https://img.shields.io/badge/Javascript-EDD84B?style=for-the-badge&logo=Javascript&logoColor=white
 [HTML.com]: https://img.shields.io/badge/HTML-E34B24?style=for-the-badge&logo=HTML&logoColor=white
 [CSS.com]: https://img.shields.io/badge/CSS-1370B5?style=for-the-badge&logo=css&logoColor=white
-[product-screenshot]: pages/images/installation-guide/demo.gif
+[project-screenshot]: pages/images/installation-guide/demo.gif
 
 
 
