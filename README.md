@@ -5,9 +5,8 @@
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="pages/images/company-logo.png" alt="Logo" width="100" height="100">
   </a>
-  <h2 align="center">C695: Employee Attendance Management System</h2>
+  <h3 align="center">C695: Employee Attendance Management System</h3>
   <p align="center">
-    <br />
     <a href="https://github.com/Dee-17/Employee-Attendance-Management">View Demo</a>
     ·
     <a href="https://github.com/Dee-17/Employee-Attendance-Management/issues">Report Bug</a>
@@ -66,7 +65,7 @@ In essence, the **Employee Attendance Management System** is a vital tool for bu
 <!-- GETTING STARTED -->
 
 ## Getting Started
-Here is a step-by-step guide on how to install the **Employee Attendance Management System (EAMS)** in your local computer.  
+Before proceeding to install the **Employee Attendance Management System (EAMS)** in your local computer, follow these steps first.
 
 ### Prerequisites
 Before starting the installation process, ensure you have the following prerequisites:
@@ -91,7 +90,7 @@ Before starting the installation process, ensure you have the following prerequi
 Follow these step-by-step instructions to set up the project on your local machine. The guide covers cloning the repository (or downloading as a ZIP file), running the website locally using XAMPP, and setting up the server with a database.
 
 ### Step 1: Clone Repository (Optional)
-1. **Clone a Repository:**
+1. **Clone Repository:**
    - Open GitHub Desktop.
    - Click "File" > "Clone Repository."
    - Choose the repository or enter its URL.
@@ -102,7 +101,7 @@ Follow these step-by-step instructions to set up the project on your local machi
 
 ### Step 2: Download Repository as a ZIP File
 
-1. **Download the Repository ZIP File:**
+1. **Download the repository as a ZIP File:**
    - Click on the "Code" button, and from the dropdown menu, select "Download ZIP."
    - Save the ZIP file to your computer.
 
@@ -111,25 +110,25 @@ Follow these step-by-step instructions to set up the project on your local machi
 
 ### Step 3: Run the Website Locally with XAMPP
 
-1. **Open File Manager and Navigate to 'htdocs' Folder:**
+1. **Open file manager and navigate to 'htdocs' folder:**
    - Open your file manager on your local computer.
    - Navigate to the 'htdocs' folder inside the XAMPP installation directory.
 
-2. **Extract the Downloaded Files into 'htdocs':**
+2. **Extract the downloaded files into 'htdocs':**
    - Right-click the downloaded ZIP file or copied folder.
    - Select the "Extract" or "Extract Here" option.
    - Alternatively, copy the downloaded files and paste them directly into the 'htdocs' folder.
 
-3. **Start XAMPP Services:**
+3. **Start XAMPP services:**
    - Open the XAMPP Control Panel.
    - Start both Apache and MySQL services by clicking the "Start" button next to each.
 
-4. **Open phpMyAdmin and Import Database:**
+4. **Open phpMyAdmin and import database:**
    - In a web browser, type `localhost/phpmyadmin/`.
    - Click on the "Import" tab and select the SQL file named `employee_db` from the extracted folder.
    - Click "Go" or "Import" to import the database.
 
-5. **Access the Local Website:**
+5. **Access the local website:**
    - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
 
 
@@ -140,9 +139,9 @@ Use the following login information to navigate the system:
 |----------------------------|----------|-------------|
 | **Admin**                  | admin1   | admin123    |
 <br/>
-| Employee Schedule          | Employee ID | Password    |  | Role                       | Username | Password    |
-|----------------------------|-------------|-------------|  |----------------------------|----------|-------------|
-| **Part-Time (Afternoon)**  | 17          | password17  |  | **Admin**                  | admin1   | admin123    |
+| Employee Schedule          | Employee ID | Password    |
+|----------------------------|-------------|-------------|
+| **Part-Time (Afternoon)**  | 17          | password17  |
 | **Part-Time (Morning)**    | 18          | password18  |
 | **Full-Time (Day)**        | 14          | password14  |
 
