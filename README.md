@@ -5,7 +5,7 @@
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="pages/images/company-logo.png" alt="Logo" width="100" height="100">
   </a>
-  <h3 align="center">C695: Employee Attendance Management System</h3>
+  <h3 align="center">C597: Employee Attendance Management System</h3>
   <p align="center">
     <a href="https://github.com/Dee-17/Employee-Attendance-Management">View Demo</a>
     ·
@@ -129,7 +129,7 @@ Follow these step-by-step instructions to set up the project on your local machi
    - Click "Go" to import the database.
 
 5. **Access the local website:**
-   - Open your web browser and type `localhost/Employee-Attendance-Management/` in the address bar.
+   - Open your web browser and type the folder name (e.g `localhost/Employee-Attendance-Management-System/`) in the address bar.
 
 
 ## Login Information
